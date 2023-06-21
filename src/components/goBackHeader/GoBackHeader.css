@@ -1,0 +1,13 @@
+.go-back-header {
+	display: flex;
+	align-items: center;
+}
+
+.go-back-header button {
+	border: none;
+	background: none;
+}
+
+.go-back-header p {
+	font-size: 3rem;
+}
