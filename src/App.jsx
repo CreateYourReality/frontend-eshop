@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes} from "react-router-dom"
 import './App.css'
 import { useState } from "react"
-import ProductList from "./pages/ProductList";
+import ProductListPage from "./pages/ProductListPage";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 import LoadingScreen from "./pages/LoadingScreen";
@@ -18,9 +18,10 @@ function App() {
           <dataContext.Provider value={{data, setData}}>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={loading?<LoadingScreen/>:<ProductList/>}/>
-              <Route path="/productlist" element={loading?<LoadingScreen/>:<ProductList/>}/>
-              <Route path="/details" element={loading?<LoadingScreen/>:<Details/>}/>
+              <Route path="/" element={loading?<LoadingScreen/>:<ProductListPage/>}/>
+              <Route path="/home" element={loading?<LoadingScreen/>:<Home/>}/>
+              <Route path="/productlist" element={loading?<LoadingScreen/>:<ProductListPage/>}/>
+              <Route path="/details/:id" element={loading?<LoadingScreen/>:<Details/>}/>
             </Routes>
           </BrowserRouter>
           </dataContext.Provider>

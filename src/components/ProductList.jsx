@@ -36,8 +36,6 @@ const ProductList = () => {
         setFilteredData(newArray);
     }
 
-
-
     const getSortType = (sortType) => {
         switch(sortType){
             case "AZ": return sortAZ;break;
