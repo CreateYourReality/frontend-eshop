@@ -20,7 +20,7 @@ function App() {
             <Routes>
               <Route path="/" element={loading?<LoadingScreen/>:<Home/>}/>
               <Route path="/productlist" element={loading?<LoadingScreen/>:<ProductList/>}/>
-              <Route path="/details" element={loading?<LoadingScreen/>:<Details/>}/>
+              <Route path="/details/:id" element={loading?<LoadingScreen/>:<Details/>}/>
             </Routes>
           </BrowserRouter>
           </dataContext.Provider>
