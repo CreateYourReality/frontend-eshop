@@ -18,7 +18,7 @@ function App() {
           <dataContext.Provider value={{data, setData}}>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={loading?<LoadingScreen/>:<Home/>}/>
+              <Route path="/" element={loading?<LoadingScreen/>:<ProductList/>}/>
               <Route path="/productlist" element={loading?<LoadingScreen/>:<ProductList/>}/>
               <Route path="/details" element={loading?<LoadingScreen/>:<Details/>}/>
             </Routes>
