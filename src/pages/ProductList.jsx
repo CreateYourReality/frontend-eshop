@@ -9,11 +9,34 @@ const ProductList = () => {
     const [filteredData, setFilteredData] = useState([]);
     const [sortBy, setSortBy] = useState("");
 
+
+    const filterByPrice = (a) => {
+        if(a.price <= 20 && a.price >= 0)
+            return a;
+    } 
+
+    const filterByCategories = (a) => {
+        if(a.category == "fragrances")
+            return a;
+    }
+
+    const filterArray = [
+      // filterByPrice,
+      // filterByCategories
+    ]
+
     const sortME = (sortType) => {
         let newArray = [...data.products];
         newArray = [...newArray].sort(getSortType(sortType));
+        
+        filterArray.forEach(filter => {
+            newArray = newArray.filter(filter);
+        });
+
         setFilteredData(newArray);
     }
+
+
 
     const getSortType = (sortType) => {
         switch(sortType){
@@ -42,6 +65,13 @@ const ProductList = () => {
         sortME(sortBy);
     },[sortBy])
 
+
+    /* 
+          {filteredData?.filter((item) =>
+                item.name.toLowerCase().includes(searchInput.toLowerCase())
+          )
+          .map((item, index) => (
+    */
    
     return ( 
         <>
