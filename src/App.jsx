@@ -15,7 +15,8 @@ function App() {
 
 	return (
 		<>
-			<main>
+
+			<>
 				<loadingContext.Provider value={{ loading, setLoading }}>
 					<dataContext.Provider value={{ data, setData }}>
 						<filterContext.Provider value={{ filter, setFilter }}>
@@ -42,7 +43,8 @@ function App() {
 						</filterContext.Provider>
 					</dataContext.Provider>
 				</loadingContext.Provider>
-			</main>
+			</>
+
 		</>
 	);
 }
