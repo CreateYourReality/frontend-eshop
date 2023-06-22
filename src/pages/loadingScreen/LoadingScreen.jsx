@@ -30,6 +30,7 @@ const LoadingScreen = () => {
 		<section className='loader'>
 			<ShoppingBag />
 			<EshopFont />
+			<p>Your shopping solution</p>
 		</section>
 	);
 };

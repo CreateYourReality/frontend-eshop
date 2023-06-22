@@ -3,6 +3,13 @@
 	flex-direction: column;
 }
 
+.loader p {
+	font-family: sans-serif;
+	font-size: 1.2rem;
+	font-weight: 300;
+	color: white;
+}
+/* +++++++++ Shopping Bag ++++++++++ */
 .shopping-bag-svg {
 	margin-bottom: 5vh;
 	animation: shaking 0.5s linear infinite;
@@ -24,6 +31,11 @@
 	100% {
 		transform: translate(0, 0) rotate(0deg);
 	}
+}
+
+/* +++++++++++++ E SHop Font +++++++++++++ */
+.eshop-svg {
+	margin-bottom: 2vh;
 }
 
 .path-to-animate {
