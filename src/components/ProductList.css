@@ -3,6 +3,7 @@
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: auto;
     row-gap: 7.5vw;
+    padding: 0 17.5px;
 }
 
 #sortSelect{
@@ -11,4 +12,8 @@
     outline: 0px;
     appearance: none;
     width: 100px;
+}
+
+.productList a{
+    text-decoration: none;
 }

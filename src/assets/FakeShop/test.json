@@ -1,0 +1,48 @@
+{
+	"products": [
+	{
+		"id": 1,
+		"title": "iPhone 9",
+		"description": "An apple mobile which is nothing like apple",
+		"price": 549,
+		"rating": 4.69,
+		"stock": 94,
+		"brand": "Apple",
+		"category": "smartphones",
+		"image": "../src/assets/FakeShop/images/1.png"
+	},
+	{
+		"id": 2,
+		"title": "iPhone 9",
+		"description": "An apple mobile which is nothing like apple",
+		"price": 549,
+		"rating": 4.69,
+		"stock": 94,
+		"brand": "Apple",
+		"category": "smartphones",
+		"image": "../src/assets/FakeShop/images/1.png"
+	},
+	{
+		"id": 3,
+		"title": "iPhone 9",
+		"description": "An apple mobile which is nothing like apple",
+		"price": 549,
+		"rating": 4.69,
+		"stock": 94,
+		"brand": "Apple",
+		"category": "smartphones",
+		"image": "../src/assets/FakeShop/images/1.png"
+	},
+	{
+		"id": 4,
+		"title": "iPhone 9",
+		"description": "An apple mobile which is nothing like apple",
+		"price": 549,
+		"rating": 4.69,
+		"stock": 94,
+		"brand": "Apple",
+		"category": "smartphones",
+		"image": "../src/assets/FakeShop/images/1.png"
+	}
+	]
+}

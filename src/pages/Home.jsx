@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { dataContext } from "../context/Context";
 import Search from "../components/Search/Search";
+import "./Home.css";
 import ProductList from "../components/ProductList";
 import Footer from "../components/Footer";
 import CategorieSlider from "../components/CategorieSlider/CategorieSlider";

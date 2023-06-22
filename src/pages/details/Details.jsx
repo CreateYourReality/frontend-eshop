@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import "./Details.css";
 import AddToCartBtn from "../../components/addToCartBtn/AddToCartBtn";
 import GoBackHeader from "../../components/goBackHeader/GoBackHeader";
+import Footer from "../../components/Footer"
 
 const Details = () => {
 	const { data, setData } = useContext(dataContext);
@@ -35,7 +36,7 @@ const Details = () => {
 					<>
 					<GoBackHeader text={selectedProduct.title} />
 					<article>
-						<img src={selectedProduct.images[0]} alt={selectedProduct.title} />
+						<img src={selectedProduct.image} alt={selectedProduct.title} />
 						<div className='title-div'>
 							<h2>{selectedProduct.title}</h2>
 							<div className='button-div'>
@@ -65,6 +66,7 @@ const Details = () => {
 					<p>Loading Data...</p>
 				)}
 			</section>
+			<Footer/>
 		</>
 	);
 };
