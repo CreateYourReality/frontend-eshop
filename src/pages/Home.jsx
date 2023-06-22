@@ -2,6 +2,9 @@ import { useContext } from "react";
 import { dataContext } from "../context/Context";
 import Search from "../components/Search/Search";
 
+import ProductList from "../components/ProductList";
+
+
 const Home = () => {
     const {data,setData} = useContext(dataContext)
     {console.log(data);}
@@ -9,7 +12,8 @@ const Home = () => {
     return (  
         <section>
             <Search />
-            <h1>HOME</h1>
+            <ProductList/>
+
         </section>
     );
 }

@@ -1,0 +1,17 @@
+.title-div {
+	display: flex;
+	justify-content: space-between;
+}
+
+.button-div {
+	display: flex;
+}
+
+.product-rating {
+	display: inline-block;
+}
+
+.price-div {
+	display: flex;
+	justify-content: space-between;
+}
