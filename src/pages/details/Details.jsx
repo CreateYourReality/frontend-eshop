@@ -16,8 +16,13 @@ const Details = () => {
 	// Nur auf die Produkte zugreifen
 	const productArray = data.products;
 
+	{console.log(productArray);}
+
 	//das Object finden mit der passenden ID (PARAM)
-	const selectedProduct = productArray.find(item => item.id === params.id);
+	const selectedProduct = productArray.find(item => item.id === Number(params.id));
+
+	{console.log(selectedProduct);}
+
 
 	// * Counter
 	const [counter, setCounter] = useState(1);
@@ -32,9 +37,10 @@ const Details = () => {
 
 	return (
 		<>
-			<GoBackHeader text={selectedProduct.title} />
-			<section className='detail-sec'>
+		<section className='detail-sec'>
 				{selectedProduct ? (
+					<>
+					<GoBackHeader text={selectedProduct.title} />
 					<article>
 						<img src={selectedProduct.images[0]} alt={selectedProduct.title} />
 						<div className='title-div'>
@@ -61,6 +67,7 @@ const Details = () => {
 						</div>
 						<AddToCartBtn />
 					</article>
+					</>
 				) : (
 					<p>Loading Data...</p>
 				)}

@@ -9,7 +9,7 @@ const ArticleCard = (probs) => {
             <h2>{probs.title}</h2>
             <div>
                 <h3>{probs.price}</h3>
-                <Link>DETAIL</Link>
+                <Link to={`/details/${probs.id}`}>DETAIL</Link>
             </div>
         </>
     );
