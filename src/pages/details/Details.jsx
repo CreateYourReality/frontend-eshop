@@ -7,22 +7,15 @@ import GoBackHeader from "../../components/goBackHeader/GoBackHeader";
 
 const Details = () => {
 	const { data, setData } = useContext(dataContext);
-	{
-		console.log(data);
-	}
 
 	const params = useParams();
 
 	// Nur auf die Produkte zugreifen
 	const productArray = data.products;
 
-	{console.log(productArray);}
 
 	//das Object finden mit der passenden ID (PARAM)
 	const selectedProduct = productArray.find(item => item.id === Number(params.id));
-
-	{console.log(selectedProduct);}
-
 
 	// * Counter
 	const [counter, setCounter] = useState(1);

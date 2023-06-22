@@ -10,8 +10,6 @@ const Home = () => {
     const {data, setData} = useContext(dataContext)
     const [searchtext, setSearchText] = useState("");
 
-    {console.log(data);}
-
     return (  
         <>
             <header>
