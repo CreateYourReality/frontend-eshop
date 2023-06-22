@@ -1,0 +1,24 @@
+.articleCard h3{
+    display: inline-block;
+}
+
+.articleCard a{
+    float: right;
+}
+
+.articleCard{
+    border: 1px solid black;
+    max-width: 40vw;
+    min-width: 40vw;
+    min-height: 40vw;
+    max-height: 40vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.3fr 0.7fr;
+    padding:5px;
+}
+
+.articleCard img{
+
+}
