@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { dataContext, filterContext } from "../context/Context";
-import ArticleCard from "../components/ArticleCard"; 
 import "./ProductList.css"
 import SelectSortType from "../components/SelectSortType";
 //import ArticleCardAlternative from "./ArticleCardAlternative";
