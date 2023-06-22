@@ -1,0 +1,8 @@
+.example {
+	width: 100%;
+	border: none;
+	border-radius: 15px;
+	background-color: #364fd4;
+	color: white;
+	padding: 1rem;
+}
