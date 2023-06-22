@@ -15,7 +15,7 @@ const Onboarding = () => {
       <div className="p-tag">
         <p>Find your best products from popular shop without any delay</p>
       </div>
-      <Link to="/home">Get started</Link>
+      <Link to="/home">Get Started</Link>
     </section>
   );
 };
