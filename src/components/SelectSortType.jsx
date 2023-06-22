@@ -1,7 +1,7 @@
 const SelectSortType = (probs) => {
     return (  
         <>
-        <label >Sort by</label>
+        <label >Sort by: </label>
         <select onChange={probs.changeSortBy} name="" id="sortSelect">
             <option value="">none</option>
             <option value="AZ">A-Z</option>

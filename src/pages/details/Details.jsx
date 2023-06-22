@@ -42,7 +42,7 @@ const Details = () => {
 					<>
 					<GoBackHeader text={selectedProduct.title} />
 					<article>
-						<img src={selectedProduct.images[0]} alt={selectedProduct.title} />
+						<img src={selectedProduct.image} alt={selectedProduct.title} />
 						<div className='title-div'>
 							<h2>{selectedProduct.title}</h2>
 							<div className='button-div'>

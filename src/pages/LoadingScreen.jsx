@@ -1,12 +1,13 @@
 import { useContext, useEffect } from "react";
 import { loadingContext,dataContext } from "../context/Context";
-
 const LoadingScreen = () => {
     const {setData} = useContext(dataContext);
     const {setLoading} = useContext(loadingContext);
 
+
     useEffect(() => {
-        fetch("https://dummyjson.com/products")
+    //fetch("https://dummyjson.com/products")
+     fetch("../src/assets/FakeShop/test.json")
           .then((res) => res.json())
           .then((data) => {
             setData(data);
