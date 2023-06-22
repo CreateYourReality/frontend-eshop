@@ -1,0 +1,32 @@
+:root {
+  --black: #000;
+  --blue: blue;
+  --white: white;
+  --lightgrey: #f1faff;
+  --grey: grey;
+}
+
+@font-face {
+  font-family: "Poppins-ExtraLight";
+  src: url(../src/pages/Poppins-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: "Poppins-LightItalic";
+  src: url(../src/pages/Poppins-LightItalic.ttf);
+}
+
+@font-face {
+  font-family: "Poppins-MediumItalic";
+  src: url(../src/pages/Poppins-MediumItalic.ttf);
+}
+
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url(../src/pages/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url(../src/pages/Poppins-SemiBold.ttf);
+}

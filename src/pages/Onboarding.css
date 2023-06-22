@@ -29,8 +29,8 @@
   justify-content: center;
   margin-top: 5rem;
   padding: 10px 37px;
-  background-color: blue;
-  color: white;
+  background-color: var(--blue);
+  color: var(--white);
   border-radius: 10px;
   border: none;
   cursor: pointer;
