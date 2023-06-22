@@ -17,11 +17,10 @@ const SearchPopUp = ({setOpen}) => {
     const brandsArray = [...new Set(data.products.map((item, i) => item.brand))]
 
     useEffect(() => {
-/*         const prices = price.map((item, i ) => item === "0 - 20 €"?data.price<20:item==="20 - 50 €"?data.price>20&&data.price<50:item==="50 - 100 €"?data.price>50&&data.price<100:item==="über 100 €"?item>100:null) */
-        setFilter([categories, price, brands])
+        const prices = price.map((item, i ) => item === "0 - 20 €"?0:item==="20 - 50 €"?20:item==="50 - 100 €"?50:item==="über 100 €"?100:null)
+        setFilter([categories, prices, brands])
     }, [categories, price, brands])
 
-    console.log(filter);
     return ( 
         <>
             <section>
@@ -37,7 +36,6 @@ const SearchPopUp = ({setOpen}) => {
                     <h2>Brands</h2>
                     {brandsArray.map((ele, i) => <CheckBox setFilterType={setBrands} text={ele} key={i}/>)}
                 </article>
-
 
                 <ApplyBtn setOpen={setOpen} link="/productlist" text="Apply Filter"/>
             </section>
