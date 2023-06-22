@@ -19,7 +19,7 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={loading?<LoadingScreen/>:<Home/>}/>
-              <Route path="/productlist" element={loading?<LoadingScreen/>:<ProductList/>}/>
+              <Route path="/productlist" element={loading?<LoadingScreen/>:<ProductListPage/>}/>
               <Route path="/details" element={loading?<LoadingScreen/>:<Details/>}/>
             </Routes>
           </BrowserRouter>
