@@ -1,0 +1,14 @@
+.productList{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    row-gap: 7.5vw;
+}
+
+#sortSelect{
+    border: none;
+    color: blue;
+    outline: 0px;
+    appearance: none;
+    width: 100px;
+}

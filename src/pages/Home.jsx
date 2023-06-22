@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { dataContext } from "../context/Context";
+import ProductList from "../components/ProductList";
 
 const Home = () => {
     const {data,setData} = useContext(dataContext)
@@ -7,7 +8,7 @@ const Home = () => {
 
     return (  
         <section>
-            <h1>HOME</h1>
+            <ProductList/>
         </section>
     );
 }
