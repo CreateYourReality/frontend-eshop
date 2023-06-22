@@ -13,14 +13,11 @@ const Details = () => {
 
 	const params = useParams();
 
-	//!Test ID
-	const testId = 25;
-
 	// Nur auf die Produkte zugreifen
 	const productArray = data.products;
 
 	//das Object finden mit der passenden ID (PARAM)
-	const selectedProduct = productArray.find(item => item.id === testId);
+	const selectedProduct = productArray.find(item => item.id === params.id);
 
 	// * Counter
 	const [counter, setCounter] = useState(1);
