@@ -3,6 +3,7 @@ import { dataContext } from "../context/Context";
 import Search from "../components/Search/Search";
 import ProductList from "../components/ProductList";
 import Footer from "../components/Footer";
+import CategorieSlider from "../components/CategorieSlider/CategorieSlider";
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
                 <Search setSearchText={setSearchText}/>
             </header>
             <main>
+                <CategorieSlider />
                 <ProductList searchtext={searchtext}/>
             </main>
             <Footer />

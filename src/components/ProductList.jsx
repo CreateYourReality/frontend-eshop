@@ -12,6 +12,7 @@ const ProductList = ({searchtext}) => {
 
 
     const filterByCategories = (a) => {
+        console.log(filter[0]);
         return filter[0].length!==0?filter[0].some((filter) => a.category.includes(filter))?a:null:a
     }
 
@@ -34,7 +35,7 @@ const ProductList = ({searchtext}) => {
     }
 
     const filterByText = (a) => {
-        return a.id.toString().includes(searchtext)?a:a.title.includes(searchtext)?a:a.description.includes(searchtext)?a:a.brand.includes(searchtext)?a:null
+        return a.id.toString().toLowerCase().includes(searchtext.toLowerCase())?a:a.title.toLowerCase().includes(searchtext.toLowerCase())?a:a.brand.toLowerCase().includes(searchtext.toLowerCase())?a:null
     }
     const filterArray = []
 
@@ -59,8 +60,6 @@ const ProductList = ({searchtext}) => {
             default : return;break;
         }
     }
-
-
 
     const changeSortBy = (event) => {
         setSortBy(event.target.value);
