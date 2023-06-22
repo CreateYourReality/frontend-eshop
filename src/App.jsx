@@ -13,7 +13,7 @@ import Onboarding from "./pages/Onboarding";
 function App() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [filter, setFilter] = useState([]);
+  const [filter, setFilter] = useState([[],[],[]]);
 
   return (
     <>

@@ -1,14 +1,21 @@
 import { useEffect, useState } from "react";
 import "./CheckBox.css"
 
-const CheckBox = ({text, setFilterType}) => {
+const CheckBox = ({text, setFilterType, filterType, unique=false}) => {
     const [check, setCheck] = useState(false)
 
     useEffect(() => {
-        check?setFilterType((prev)=>[...prev, text]):setFilterType((prev)=>{prev.splice(prev.indexOf(text), 1); return prev})
+        if (!unique) {
+        check?setFilterType((prev)=>[...prev, text]):setFilterType((prev)=>{prev.splice(prev.indexOf(text), 1); return prev})} 
+        else {
+            check?setFilterType([text]):setFilterType([])
+        }
     }, [check])
 
     return ( 
+        unique?<div onClick={() => {setCheck((prev) => !prev)}} className={filterType[0]===text?"checkbox checked":"checkbox"} >
+            {text}
+        </div>:
         <div onClick={() => {setCheck((prev) => !prev)}} className={check?"checkbox checked":"checkbox"}>
             {text}
         </div>
