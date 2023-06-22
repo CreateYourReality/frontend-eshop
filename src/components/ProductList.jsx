@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../context/Context";
-import ArticleCard from "../components/ArticleCard"; 
 import "./ProductList.css"
 import SelectSortType from "../components/SelectSortType";
-import ArticleCardAlternative from "./ArticleCardAlternative";
+//import ArticleCardAlternative from "./ArticleCardAlternative";
 import { Link } from "react-router-dom";
+import ArticleCard from "./ArticleCard";
 
 const ProductList = () => {
     const {data} = useContext(dataContext);
