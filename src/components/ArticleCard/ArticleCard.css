@@ -70,3 +70,100 @@
   border-radius: 15px;
   opacity: 75%;
 }
+
+.articleCard h3 {
+  display: inline-block;
+  color: var(--blue, #364fd4);
+  font-size: 1.2rem;
+  font-family: "Poppins-Medium", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.articleCard figure div {
+  margin-bottom: 6px;
+}
+
+.articleCard h2 {
+  color: var(--gray-01, #1e2126);
+  font-size: 1.4rem;
+  font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  line-height: 2rem;
+  margin-bottom: 3px;
+}
+
+.articleCard figcaption {
+  display: flex;
+  align-items: flex-start;
+}
+
+.articleCard figcaption p {
+  color: var(--gray-03, #828b9a);
+  font-size: 0.9rem;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  line-height: 1.6rem;
+}
+
+.articleCard .star {
+  width: 12px;
+  height: 12px;
+}
+
+.articleCard a {
+  float: right;
+  text-decoration: none;
+}
+
+.articleCard {
+  position: relative;
+  padding: 8px;
+  background-color: var(--white, #fff);
+  border-radius: 12px;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.05);
+  min-height: 275px;
+}
+
+.articleCard .frame-img {
+  position: absolute;
+  bottom: 18px;
+  right: 11px;
+}
+
+.imgDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--gray-07, #f0f3f8);
+  min-height: 150px;
+  min-width: 138px;
+  padding: 10px;
+}
+
+.imgDiv img {
+  width: 80%;
+  height: 100%;
+  border-radius: 15px;
+  opacity: 75%;
+}
+
+@media screen and (min-width: 1440px) {
+  .articleCard h3 {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin-bottom: 3px;
+  }
+
+  .articleCard h2 {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin-bottom: 2px;
+  }
+
+  .articleCard figcaption p {
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+  }
+}

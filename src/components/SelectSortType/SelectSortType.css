@@ -1,23 +1,39 @@
 .sortSelect {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 .sortSelect label {
-	color: var(--gray-04, #b9c1cc);
-	font-size: 1.4rem;
-	font-family: "Poppins", Arial, Helvetica, sans-serif;
-	font-weight: 500;
-	line-height: 2rem;
+  color: var(--gray-04, #b9c1cc);
+  font-size: 1.4rem;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 2rem;
 }
 
 .sortSelect select {
-	border: none;
-	outline: 0px;
-	appearance: none;
-	width: 100px;
-	color: var(--blue, #364fd4);
-	/* Body 5 */
-	font-size: 1.4rem;
-	font-family: "Poppins", Arial, Helvetica, sans-serif;
-	font-weight: 500;
-	line-height: 2rem;
+  border: none;
+  outline: 0px;
+  appearance: none;
+  width: 100px;
+  color: var(--blue, #364fd4);
+  /* Body 5 */
+  font-size: 1.4rem;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 2rem;
+}
+
+@media screen and (min-width: 1440px) {
+  .sortSelect {
+    margin-bottom: 20px;
+  }
+
+  .sortSelect label {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+
+  .sortSelect select {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
 }
