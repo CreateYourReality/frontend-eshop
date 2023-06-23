@@ -1,48 +1,195 @@
 {
-	"products": [
-	{
-		"id": 1,
-		"title": "iPhone 9",
-		"description": "An apple mobile which is nothing like apple",
-		"price": 549,
-		"rating": 4.69,
-		"stock": 94,
-		"brand": "Apple",
-		"category": "smartphones",
-		"image": "../src/assets/FakeShop/images/1.png"
-	},
-	{
-		"id": 2,
-		"title": "iPhone 9",
-		"description": "An apple mobile which is nothing like apple",
-		"price": 549,
-		"rating": 4.69,
-		"stock": 94,
-		"brand": "Apple",
-		"category": "smartphones",
-		"image": "../src/assets/FakeShop/images/1.png"
-	},
-	{
-		"id": 3,
-		"title": "iPhone 9",
-		"description": "An apple mobile which is nothing like apple",
-		"price": 549,
-		"rating": 4.69,
-		"stock": 94,
-		"brand": "Apple",
-		"category": "smartphones",
-		"image": "../src/assets/FakeShop/images/1.png"
-	},
-	{
-		"id": 4,
-		"title": "iPhone 9",
-		"description": "An apple mobile which is nothing like apple",
-		"price": 549,
-		"rating": 4.69,
-		"stock": 94,
-		"brand": "Apple",
-		"category": "smartphones",
-		"image": "../src/assets/FakeShop/images/1.png"
-	}
-	]
+  "products": [
+    {
+      "id": 17,
+      "title": "Letter H Poster",
+      "description": "a linen cloth in black-white color",
+      "price": 45,
+      "rating": 4.45,
+      "stock": 102,
+      "brand": "HeyStudio",
+      "category": "textil",
+      "image": "../src/assets/FakeShop/images/17.png"
+    },
+
+    {
+      "id": 18,
+      "title": "Coffee Can",
+      "description": "Original Coffee Beans in higher quality",
+      "price": 11,
+      "rating": 4.52,
+      "stock": 116,
+      "brand": "Blue Bottle Company",
+      "category": "nutritional supplement",
+      "image": "../src/assets/FakeShop/images/18.png"
+    },
+
+    {
+      "id": 19,
+      "title": "Beoplay H4",
+      "description": "robust, powerful-sounding headset with Bluetooth connection",
+      "price": 160,
+      "rating": 4.61,
+      "stock": 56,
+      "brand": "Bang & Olufsen",
+      "category": "headset",
+      "image": "../src/assets/FakeShop/images/19.png"
+    },
+
+    {
+      "id": 20,
+      "title": "Make It Now",
+      "description": "Textbook for a successful and creative graphic design",
+      "price": 22,
+      "rating": 4.47,
+      "stock": 74,
+      "brand": "Anthony Burrill",
+      "category": "books",
+      "image": "../src/assets/FakeShop/images/20.png"
+    },
+
+    {
+      "id": 21,
+      "title": "Black Side Chair",
+      "description": "Modern side chair with natural wood legs",
+      "price": 54,
+      "rating": 4.21,
+      "stock": 45,
+      "brand": "Eames Style",
+      "category": "furniture",
+      "image": "../src/assets/FakeShop/images/21.png"
+    },
+
+    {
+      "id": 22,
+      "title": "The New Simplicity in Graphic Design",
+      "description": "An inspiring visual survey of the resurgence of minimalism in contemporary graphic design",
+      "price": 28,
+      "rating": 4.39,
+      "stock": 77,
+      "brand": "Thames & Hudson",
+      "category": "books",
+      "image": "../src/assets/FakeShop/images/22.png"
+    },
+
+    {
+      "id": 23,
+      "title": "Grid systems in graphic design",
+      "description": "Exact directions for using all of the grid systems",
+      "price": 42,
+      "rating": 4.5,
+      "stock": 49,
+      "brand": "Josef Müller-Brockmann",
+      "category": "books",
+      "image": "../src/assets/FakeShop/images/23.png"
+    },
+
+    {
+      "id": 24,
+      "title": "Card Wallet",
+      "description": "Wallet with compact and practical card holder.",
+      "price": 15,
+      "rating": 4.23,
+      "stock": 81,
+      "brand": "Herschel",
+      "category": "bags",
+      "image": "../src/assets/FakeShop/images/24.png"
+    },
+
+    {
+      "id": 25,
+      "title": "Classic Advice Print Black",
+      "description": "a small motivational sheet to hang up",
+      "price": 30,
+      "rating": 4.31,
+      "stock": 97,
+      "brand": "Good Fucking Design Advice",
+      "category": "prints",
+      "image": "../src/assets/FakeShop/images/25.png"
+    },
+
+    {
+      "id": 26,
+      "title": "Magic Mouse 2",
+      "description": "Kabellos, wiederaufladbarer Komfort – Magic Mouse",
+      "price": 92,
+      "rating": 4.95,
+      "stock": 112,
+      "brand": "Apple",
+      "category": "mouse",
+      "image": "../src/assets/FakeShop/images/26.png"
+    },
+
+    {
+      "id": 27,
+      "title": "Travel Tumbler",
+      "description": "high quality, small travel mug for to go",
+      "price": 34,
+      "rating": 4.22,
+      "stock": 75,
+      "brand": "Kinto",
+      "category": "drinkware",
+      "image": "../src/assets/FakeShop/images/27.png"
+    },
+
+    {
+      "id": 28,
+      "title": "Magic Keyboard",
+      "description": "a sleek and innovative wireless keyboard designed to enhance your typing experience",
+      "price": 139,
+      "rating": 4.69,
+      "stock": 90,
+      "brand": "Apple",
+      "category": "keyboards",
+      "image": "../src/assets/FakeShop/images/28.png"
+    },
+
+    {
+      "id": 29,
+      "title": "Bottle Grinder",
+      "description": "This salt mill has a durable construction and adjustable grinding mechanism,",
+      "price": 75,
+      "rating": 4.33,
+      "stock": 123,
+      "brand": "Menu",
+      "category": "kitchen tools",
+      "image": "../src/assets/FakeShop/images/29.png"
+    },
+
+    {
+      "id": 30,
+      "title": "Geo Thermos",
+      "description": "perfect for preserving temperature-sensitive dishes during travel",
+      "price": 62,
+      "rating": 4.59,
+      "stock": 84,
+      "brand": "Normann Copenhagen",
+      "category": "thermal cookware",
+      "image": "../src/assets/FakeShop/images/30.png"
+    },
+
+    {
+      "id": 31,
+      "title": "Womb Chair & Ottoman",
+      "description": "a timeless and cozy lounge chair designed to envelop and provide exceptional comfort ",
+      "price": 799,
+      "rating": 4.78,
+      "stock": 68,
+      "brand": "Kardiel",
+      "category": "furniture",
+      "image": "../src/assets/FakeShop/images/31.png"
+    },
+
+    {
+      "id": 32,
+      "title": "Water Filter Glass Carafe",
+      "description": "Shatter-resistant glass carafe holds 6 glasses (48oz) of fresh filtered water",
+      "price": 30,
+      "rating": 4.49,
+      "stock": 141,
+      "brand": "Soma",
+      "category": "kitchen tool",
+      "image": "../src/assets/FakeShop/images/32.png"
+    }
+  ]
 }
