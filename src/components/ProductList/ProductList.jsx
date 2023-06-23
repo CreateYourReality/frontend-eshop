@@ -16,7 +16,6 @@ const ProductList = ({searchtext}) => {
 
 
     const filterByCategories = (a) => {
-        console.log(filter[0]);
         return filter[0].length!==0?filter[0].some((filter) => a.category.includes(filter))?a:null:a
     }
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./CheckBox.css"
 
-const CheckBox = ({text, setFilterType, filterType, unique=false}) => {
+const CheckBox = ({text, uniqueCheck, setUniqueCheck, setFilterType, filterType, unique=false}) => {
     const [check, setCheck] = useState(false)
 
     useEffect(() => {
@@ -13,9 +13,12 @@ const CheckBox = ({text, setFilterType, filterType, unique=false}) => {
     }, [check])
 
     return ( 
-        unique?<div onClick={() => {setCheck((prev) => !prev)}} className={filterType[0]===text?"checkbox checked":"checkbox"} >
+        unique
+        ?
+        <div onClick={() => {setCheck((prev) => !prev);setUniqueCheck(text)}} className={uniqueCheck===text&&filterType[0]===text?"checkbox checked":"checkbox"} >
             {text}
-        </div>:
+        </div>
+        :
         <div onClick={() => {setCheck((prev) => !prev)}} className={check?"checkbox checked":"checkbox"}>
             {text}
         </div>
