@@ -33,7 +33,7 @@ const Details = () => {
 	return (
 		<>
 		<header>
-			{selectedProduct?(<><GoBackHeader text={selectedProduct.title} />
+			{selectedProduct?(<><GoBackHeader id={selectedProduct.id} text={selectedProduct.title} />
 			</>):null}
 		</header>
 		<main className='detail-sec'>
