@@ -94,8 +94,8 @@ const ProductList = ({searchtext}) => {
     },[sortBy, searchtext, filter])
 
 
-  
-
+    const maxArticleHome = 4;
+    let i = 0;
 
     return ( 
         <>
@@ -107,7 +107,16 @@ const ProductList = ({searchtext}) => {
         <section className="productList">
             {filteredData? (
                 <> 
-                    {filteredData?.map((product, index) => (
+                    {filteredData?.map((product, index) => {
+
+                        if(location.pathname == "/home"){
+                            if(i == maxArticleHome)
+                                return null;
+                            else 
+                                i++;
+                        }
+
+                        return (
                         <Link key={index} to={`/details/${product.id}`}>
                             <article className="articleCard"  >
                                 <ArticleCard
@@ -119,7 +128,8 @@ const ProductList = ({searchtext}) => {
                                 />
                             </article>
                         </Link>
-                        ))}
+                        )}                             
+                        )}
                 </>
             ) : (
                 <p>DATEN WERDEN GELADEN...</p>
