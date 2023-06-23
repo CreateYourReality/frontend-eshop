@@ -121,10 +121,11 @@ const AdminPanel = () => {
 
                 <label htmlFor="">DELETE
                     <select onChange={handleDelete} name="" id="">
+                        <option key={-1}>NONE</option>
+
                         {[...data.products].map((product,index) => {
                           return <option key={index}>{product.title}</option>
                         })}
-                        
                     </select>
 
                     <button onClick={handleDeleteButton}>DELETE</button>
