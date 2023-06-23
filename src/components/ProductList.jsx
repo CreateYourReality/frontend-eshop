@@ -1,8 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../context/Context";
-import ArticleCard from "../components/ArticleCard"; 
 import "./ProductList.css"
 import SelectSortType from "../components/SelectSortType";
+//import ArticleCardAlternative from "./ArticleCardAlternative";
+import { Link } from "react-router-dom";
+import ArticleCard from "./ArticleCard";
 
 const ProductList = () => {
     const {data} = useContext(dataContext);
@@ -79,16 +81,18 @@ const ProductList = () => {
             {filteredData? (
                 <> 
                     {filteredData?.map((product, index) => (
-                        <article className="articleCard" key={index} >
-                            <ArticleCard
-                                title={product.title}
-                                img={product.images}
-                                id={product.id}
-                                rating={product.rating}
-                                price={product.price}
-                            />
-                        </article>
-                    ))}
+                        <Link key={index} to={`/details/${product.id}`}>
+                            <article className="articleCard"  >
+                                <ArticleCard
+                                    title={product.title}
+                                    image={product.image}
+                                    id={product.id}
+                                    rating={product.rating}
+                                    price={product.price}
+                                />
+                            </article>
+                        </Link>
+                        ))}
                 </>
             ) : (
                 <p>DATEN WERDEN GELADEN...</p>

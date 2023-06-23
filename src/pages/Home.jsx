@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { dataContext } from "../context/Context";
 import Search from "../components/Search/Search";
-
+import "./Home.css";
 import ProductList from "../components/ProductList";
+import Footer from "../components/Footer";
 
 
 const Home = () => {
@@ -10,10 +11,10 @@ const Home = () => {
     {console.log(data);}
 
     return (  
-        <section>
+        <section className="homeSection">
             <Search />
             <ProductList/>
-
+            <Footer/>
         </section>
     );
 }

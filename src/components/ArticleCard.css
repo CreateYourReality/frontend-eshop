@@ -4,21 +4,42 @@
 
 .articleCard a{
     float: right;
+    text-decoration: none;
 }
 
 .articleCard{
-    border: 1px solid black;
-    max-width: 40vw;
-    min-width: 40vw;
-    min-height: 40vw;
-    max-height: 40vw;
+    max-width: 37.5vw;
+    min-width: 37.5vw;
+    min-height: 45vw;
+    max-height: 45vw;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1.3fr 0.7fr;
-    padding:5px;
+    padding:7.5px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    background-color: white; /* #d3d3d357 */
+    border: lightgray 1px solid;
+
 }
 
-.articleCard img{
+.imgDiv{
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding: 7.5px 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 
 }
+
+.imgDiv img{
+    width: 80%;
+    height: 100%;
+    border-radius: 15px;
+    opacity: 75%;
+}
+
