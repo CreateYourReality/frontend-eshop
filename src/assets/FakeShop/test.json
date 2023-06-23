@@ -1,6 +1,239 @@
 {
   "products": [
     {
+      "id": 1,
+      "title": "Kanken Art Laptop Special Edition Backpack",
+      "description": "Kanken Art is what you get when you invite artists to express their relationship with nature using a Kanken backpack as their canvas. This year, we’re proud to introduce Erik Olovsson and Cecilia Heikkila, two fantastic young creatives, both with their own unique form of expression. Erik’s Summer/Spring Landscape and Cecilia’s Blue/Green Fable are beautiful new members of the Kanken family. These special edition Kankens are also part of the Arctic Fox Initiative.",
+      "price": 119,
+      "rating": 4.5,
+      "stock": 27,
+      "brand": "Fjallraven",
+      "category": "backpacks",
+      "image": "../src/assets/FakeShop/images/1.png"
+    },
+    {
+      "id": 2,
+      "title": "Swing Arm Wood Desk Lamp",
+      "description": "The tomons reading lamp was specifically designed for a healthy reading experience. Long and comfortable working and reading sessions are now possible, simply by flexibly adjusting the joints of the lamp - exhausted and aching eyes are now a thing of the past.",
+      "price": 36,
+      "rating": 4.6,
+      "stock": 94,
+      "brand": "Tomons",
+      "category": "interior design",
+      "image": "../src/assets/FakeShop/images/2.png"
+    },
+    {
+      "id": 3,
+      "title": "Hajo Backpack",
+      "description": "This minimalist backpack is suitable for every Occasion. Whether on the street by bike, while shopping or in nightlife. The Roll top closes with a Velcro fastener and Enables a practical filling of the hajo backpack.",
+      "price": 89,
+      "rating": 4.4,
+      "stock": 12,
+      "brand": "Ucon Acrobatics",
+      "category": "backpacks",
+      "image": "../src/assets/FakeShop/images/3.png"
+    },
+    {
+      "id": 4,
+      "title": "Zed Bamboo Longboard",
+      "description": "Our freshest longboard nods with its classic surfboard shape and feel. Zed Pintail doesn't just carry us here and there, but transports us back to a time of sun, surfing, salty air, breezy days, dewy nights, and reverberating hits of past seasons. Zed Pintail weaves California beach nostalgia with 104.1 cm of ethically sourced bamboo and 8-ply Canadian maple. The classic shape enhances balance and cuts corners with precision and speed.",
+      "price": 60,
+      "rating": 4.7,
+      "stock": 35,
+      "brand": "Retrospec",
+      "category": "sports",
+      "image": "../src/assets/FakeShop/images/4.png"
+    },
+    {
+      "id": 5,
+      "title": "Electric Pour-Over Kettle",
+      "description": "Simple aesthetic meets powerful design. A gooseneck kettle that pours as good as it looks, it’s made from quality 304 stainless steel with a minimalist base to save space and a 0.9-liter capacity.",
+      "price": 149,
+      "rating": 4.5,
+      "stock": 8,
+      "brand": "Fellow",
+      "category": "home",
+      "image": "../src/assets/FakeShop/images/5.png"
+    },
+    {
+      "id": 6,
+      "title": "Woodie Vintage Car",
+      "description": "The famous classic, now in a boxier 80's vibe. With real veneer-paneled sides and a magnet embedded in the roof, it comes with a surfboard that snaps onto it. This car also features a magnetic tow hook - allowing it to hitch to our equally awesome trailer. Pairs perfectly with our Campers.",
+      "price": 35,
+      "rating": 4.2,
+      "stock": 49,
+      "brand": "Candylab Toys",
+      "category": "toys",
+      "image": "../src/assets/FakeShop/images/6.png"
+    },
+    {
+      "id": 7,
+      "title": "Logo Modernism",
+      "description": "In addition to the comprehensive catalog, the volume includes an introduction by Jens Müller on the history of logos and an essay by R. Roger Remington on graphic design and modernism. Eight designer profiles and eight enlightening case studies delve into the lives and works of industry giants such as Paul Rand, Yusaku Kamekura, and Anton Stankowski, as well as groundbreaking projects like Fiat, The Daiei Inc., and the 1968 Mexico Olympics. Logo Modernism is not only a unique source of inspiration for graphic designers, advertising professionals, and branding specialists, but it also captivates anyone interested in social, cultural, and corporate history, as well as the incredible power of image and form.",
+      "price": 60,
+      "rating": 4.0,
+      "stock": 71,
+      "brand": "Taschen",
+      "category": "books",
+      "image": "../src/assets/FakeShop/images/7.png"
+    },
+    {
+      "id": 8,
+      "title": "Dieter Rams: As Little Design as Possible",
+      "description": "A comprehensive monograph on highly influential product designer Dieter Rams who created some of the most iconic objects of the twentieth century.",
+      "price": 150,
+      "rating": 4.4,
+      "stock": 20,
+      "brand": "Sophie Lovell",
+      "category": "books",
+      "image": "../src/assets/FakeShop/images/8.png"
+    },
+    {
+      "id": 9,
+      "title": "The Eye",
+      "description": "A comprehensive monograph on highly influential product designer Dieter Rams who created some of the most iconic objects of the twentieth century.",
+      "price": 150,
+      "rating": 4.4,
+      "stock": 20,
+      "brand": "Sophie Lovell",
+      "category": "books",
+      "image": "../src/assets/FakeShop/images/9.png"
+    },
+    {
+      "id": 10,
+      "title": "Gather Desk Organizer",
+      "description": "Gather is a minimal, modular organizer that helps you cut through your clutter. Gather adapts to your workspace and workflow to make sure the tools you need are always within reach and is flexible enough to use in any space.",
+      "price": 149,
+      "rating": 4.4,
+      "stock": 59,
+      "brand": "Ugmonk",
+      "category": "office",
+      "image": "../src/assets/FakeShop/images/10.png"
+    },
+    {
+      "id": 11,
+      "title": "Dipped Canteen",
+      "description": "The colorfully cool Corkcicle Canteen. This modern, BPA free water bottle is available in an array of sizes and trend-inspired colors. Plus, it keeps drinks ice cold for 25 hours or warm for 12. Available in four sizes including 25oz, which holds an entire bottle of wine, and our larger-than-life 60oz — perfect for sharing sangria, margaritas and more.",
+      "price": 28,
+      "rating": 4.1,
+      "stock": 43,
+      "brand": "Corkcicle.",
+      "category": "sports",
+      "image": "../src/assets/FakeShop/images/11.png"
+    },
+    {
+      "id": 12,
+      "title": "Sayl Office Chair White",
+      "description": "The two innovations that make this chair so state-of-the-art are the ArcSpan and the Y-Tower. ArcSpan shapes the back and anchors the suspension fabric, while the Y-tower is the backbone that stretches the fabric and provides support. As affordable as it is inventive, Sayl proves the belief that a reasonably priced work chair can be well designed and include leading-edge ergonomics..",
+      "price": 599,
+      "rating": 4.2,
+      "stock": 6,
+      "brand": "Herman Miller",
+      "category": "office",
+      "image": "../src/assets/FakeShop/images/12.png"
+    },
+    {
+      "id": 13,
+      "title": "Three Cherry Wood Notebook",
+      "description": "Cherry Graph features real cherry wood covers with black text, and filled with 48 pages of our tried-and true Finch Opaque Smooth 50#T with 48 pages of 3/16 graph paper inside.",
+      "price": 13,
+      "rating": 4.6,
+      "stock": 39,
+      "brand": "Field Notes",
+      "category": "office",
+      "image": "../src/assets/FakeShop/images/13.png"
+    },
+    {
+      "id": 14,
+      "title": "From Japan",
+      "description": "From Japan’ is a collection of work from some of the most talented agencies in Japan, such as Nendo, MR Design, Grand Deluxe, Daikoku Design Institute, The Simple Society and many more.",
+      "price": 16,
+      "rating": 4.1,
+      "stock": 15,
+      "brand": "Counter Print",
+      "category": "books",
+      "image": "../src/assets/FakeShop/images/14.png"
+    },
+    {
+      "id": 15,
+      "title": "Arigato Desk Lamp",
+      "description": "The idea behind our Arigato lamp collection was to present a stylized everyday object inspired by the shape of a person bowing, a universally recognized gesture used to express gratitude and greetings.",
+      "price": 380,
+      "rating": 4.5,
+      "stock": 10,
+      "brand": "Grupa",
+      "category": "home",
+      "image": "../src/assets/FakeShop/images/15.png"
+    },
+    {
+      "id": 16,
+      "title": "Winston Regal Watch",
+      "description": "Meet Winston, your right hand man. Our marquee style boasts a classic 41mm shape dressed up in an outfit for every occasion.",
+      "price": 58,
+      "rating": 4.1,
+      "stock": 19,
+      "brand": "Komono",
+      "category": "clothing",
+      "image": "../src/assets/FakeShop/images/16.png"
+    },
+
+    {
+      "id": 33,
+      "title": "Sport TWS Earphones PDT40",
+      "description": "True wireless sport in-ear headphones in an exclusive design for gym or outdoor training with active noise cancellation (ANC). IP55 dust and waterproof.",
+      "price": 199,
+      "rating": 4.6,
+      "stock": 25,
+      "brand": "Porsche",
+      "category": "electronics",
+      "image": "../src/assets/FakeShop/images/33.png"
+    },
+    {
+      "id": 34,
+      "title": "Baseus Encok True Wireless Earphones W3",
+      "description": "The 10mm diameter speakers of the wireless earphones provide a powerful and wide sound range, producing dynamic highs and impactful bass. With the advanced Bluetooth chip, the sound reproduced by the headset is more beautiful and pleasant, making it suitable for sports or remote work.",
+      "price": 58,
+      "rating": 4.5,
+      "stock": 30,
+      "brand": "Baseus",
+      "category": "electronics",
+      "image": "../src/assets/FakeShop/images/34.png"
+    },
+    {
+      "id": 35,
+      "title": "Microsoft Surface Laptop 4 13 Ryzen 5",
+      "description": "As with the previous generation, the Microsoft Surface Laptop 4 is a very nice ultraportable laptop. It’s slim and light, looks great and the keyboard, touchpad and display are all superb.",
+      "price": 1049,
+      "rating": 4.2,
+      "stock": 11,
+      "brand": "Microsoft",
+      "category": "electronics",
+      "image": "../src/assets/FakeShop/images/35.png"
+    },
+    {
+      "id": 36,
+      "title": "XPS 13 Laptop",
+      "description": "Our thinnest and lightest 34 cm XPS laptop for a dynamic lifestyle. Enjoy a long battery life while streaming on the Netflix app for Windows 11 with both display options: up to 12 hours with the non-touch FHD+ display and up to 7 hours with the 4K+ display.",
+      "price": 889,
+      "rating": 4.1,
+      "stock": 15,
+      "brand": "Dell",
+      "category": "electronics",
+      "image": "../src/assets/FakeShop/images/36.png"
+    },
+    {
+      "id": 37,
+      "title": "Bergen Sandstone",
+      "description": "Allow us to introduce Bergen Sandstone - the perfect back-to-school backpack for those who love the trendy Scandi style. This minimalist backpack impresses with its sleek design and high functionality.",
+      "price": 99,
+      "rating": 4.4,
+      "stock": 39,
+      "brand": "Kapten & Son",
+      "category": "backpacks",
+      "image": "../src/assets/FakeShop/images/37.png"
+    },
+
+    {
       "id": 17,
       "title": "Letter H Poster",
       "description": "a linen cloth in black-white color",
