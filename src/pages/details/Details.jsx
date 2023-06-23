@@ -1,14 +1,17 @@
 import { useContext, useState } from "react";
-import { dataContext } from "../../context/Context";
+import { dataContext, favoritesContext } from "../../context/Context";
 import { useParams } from "react-router-dom";
 import "./Details.css";
 import AddToCartBtn from "../../components/addToCartBtn/AddToCartBtn";
 import GoBackHeader from "../../components/goBackHeader/GoBackHeader";
 import Footer from "../../components/Footer/Footer";
 import star from "../../assets/img/Star.png";
+import AddToFavBtn from "../../components/addToFavBtn/addToFavBtn";
 
 const Details = () => {
 	const { data, setData } = useContext(dataContext);
+
+	const { favorites } = useContext(favoritesContext);
 
 	const params = useParams();
 
@@ -110,6 +113,7 @@ const Details = () => {
 									<p>{selectedProduct.stock} pieces in stock</p>
 									<h3>${selectedProduct.price}</h3>
 								</div>
+								<AddToFavBtn />
 							</div>
 						</article>
 						<div className='description-div'>
