@@ -16,7 +16,6 @@ const ProductList = ({searchtext}) => {
 
 
     const filterByCategories = (a) => {
-        console.log(filter[0]);
         return filter[0].length!==0?filter[0].some((filter) => a.category.includes(filter))?a:null:a
     }
 
@@ -65,6 +64,7 @@ const ProductList = ({searchtext}) => {
         }
     }
 
+    //* sortby
     const changeSortBy = (event) => {
         setSortBy(event.target.value);
     }
@@ -88,7 +88,7 @@ const ProductList = ({searchtext}) => {
 
     const location = useLocation();
     return ( 
-        <>
+        <>  //* sortby
         {location.pathname!=="/home"?<SelectSortType changeSortBy={changeSortBy} />:<>                <CategorieSlider />
         </>}
         <section className="productList">

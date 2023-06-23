@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import './SelectSortType.css'
 
 const SelectSortType = (probs) => {
+    const [text, setText] = useState();
+
     return (  
         <div className="sortSelect">
         <label htmlFor="sortSelect">Sort by: </label>
