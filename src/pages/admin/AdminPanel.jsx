@@ -15,7 +15,7 @@ const AdminPanel = () => {
     const [brandInput, setBrandInput] = useState("")
     const [deleteInput, setDeleteInput] = useState("")
 
-    let generatedID = data.products.length;
+    let generatedID = data.products.length <= 40 ? 40 : data.products.length; //hardcoden? oder einmalig am anfang length speichern.
     const imgPath = `../src/assets/FakeShop/images/${generatedID}.png`
 
     const newProductLayout = { 
@@ -23,7 +23,7 @@ const AdminPanel = () => {
 			"title": titleInput,
 			"description": descriptionInput,
 			"price": priceInput,
-			"rating": priceInput,
+			"rating": ratingInput,
 			"stock": stockInput,
 			"brand": brandInput,
 			"category": categoryInput,
