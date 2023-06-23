@@ -3,6 +3,8 @@ import ApplyBtn from "../../../btns/ApplyBtn/ApplyBtn";
 import { useContext, useEffect, useState } from "react";
 import { filterContext, dataContext } from "../../../../context/Context";
 import CheckBox from "../../../inputs/CheckBox/CheckBox";
+import './SearchPopUp.css'
+import GoBackHeader from "../../../goBackHeader/GoBackHeader";
 
 const SearchPopUp = ({setOpen}) => {
     const {filter, setFilter} = useContext(filterContext);
@@ -17,26 +19,33 @@ const SearchPopUp = ({setOpen}) => {
     const brandsArray = [...new Set(data.products.map((item, i) => item.brand))]
 
     useEffect(() => {
-        const prices = price.map((item, i ) => item === "0 - 20 €"?0:item==="20 - 50 €"?20:item==="50 - 100 €"?50:item==="über 100 €"?100:null)
-        setFilter([categories, prices, brands])
+        setFilter([categories, price, brands])
     }, [categories, price, brands])
 
     return ( 
         <>
-            <section>
-                <article className="categorie-container">
+            <section className="popup">
+                    <GoBackHeader text="Filters"/>
+                <div className="article-wrapper">    
+                <article className="container">
                     <h2>Categorie</h2>
+                    <div className="wrapper">
                     {categoriesArray.map((ele, i) => <CheckBox setFilterType={setCategories} text={ele} key={i}/>)}
+                    </div>
                 </article>
-                <article className="price-container">
+                <article className="container">
                     <h2>Price</h2>
-                    {priceArray.map((ele, i) => <CheckBox setFilterType={setprice} text={ele} key={i}/>)}
+                    <div className="wrapper">
+                    {priceArray.map((ele, i) => <CheckBox unique={true} filterType={price}setFilterType={setprice} text={ele} key={i}/>)}
+                    </div>
                 </article>
-                <article className="brands-container">
+                <article className="container">
                     <h2>Brands</h2>
+                    <div className="wrapper">
                     {brandsArray.map((ele, i) => <CheckBox setFilterType={setBrands} text={ele} key={i}/>)}
+                    </div>
                 </article>
-
+                </div>
                 <ApplyBtn setOpen={setOpen} link="/productlist" text="Apply Filter"/>
             </section>
         </>

@@ -11,7 +11,7 @@ const SearchFilterNav = () => {
     return ( 
         <>
             <nav>
-                <img onClick={() => setOpen(true)&setFilter([])} src={navIcon} alt="navicon"/> 
+                <img onClick={() => setOpen(true)} src={navIcon} alt="navicon"/> 
                 {open?<SearchPopUp setOpen={setOpen}/>:<></>}
             </nav>
         </>

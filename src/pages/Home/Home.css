@@ -1,0 +1,22 @@
+header {
+	background-color: var(--white);
+	padding-top: 40px;
+	padding-bottom: 18px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	border-radius: 0 0 12px 12px;
+	box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.05);
+}
+header h1 {
+	color: var(--gray-01);
+	font-size: 2.8rem;
+	font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	line-height: 3.8rem;
+	letter-spacing: 0.02rem;
+	margin-top: 10px;
+	margin-bottom: 4px;
+}

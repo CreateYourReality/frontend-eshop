@@ -1,31 +1,47 @@
 import { useContext, useEffect, useState } from "react";
-import { dataContext } from "../context/Context";
+import { dataContext, filterContext } from "../../context/Context";
 import "./ProductList.css"
-import SelectSortType from "../components/SelectSortType";
+import SelectSortType from "../SelectSortType/SelectSortType";
 //import ArticleCardAlternative from "./ArticleCardAlternative";
 import { Link } from "react-router-dom";
-import ArticleCard from "./ArticleCard";
+import ArticleCard from "../ArticleCard/ArticleCard";
+import { useLocation } from "react-router-dom";
+import CategorieSlider from "../CategorieSlider/CategorieSlider";
 
-const ProductList = () => {
+const ProductList = ({searchtext}) => {
     const {data} = useContext(dataContext);
+    const {filter, setFilter} = useContext(filterContext);
     const [filteredData, setFilteredData] = useState([]);
     const [sortBy, setSortBy] = useState("");
 
 
-    const filterByPrice = (a) => {
-        if(a.price <= 20 && a.price >= 0)
-            return a;
-    } 
-
     const filterByCategories = (a) => {
-        if(a.category == "fragrances")
-            return a;
+        console.log(filter[0]);
+        return filter[0].length!==0?filter[0].some((filter) => a.category.includes(filter))?a:null:a
     }
 
-    const filterArray = [
-      // filterByPrice,
-      // filterByCategories
-    ]
+    const filterByPrice = (a) => {
+        const getPriceRange = (priceType) => {
+            switch(priceType[0]){
+                case "0 - 20 €": return a.price>=0&&a.price<=20;break;
+                case "20 - 50 €": return a.price>=20&&a.price<=50 ;break;
+                case "50 - 100 €": return a.price>=50&&a.price<=100 ;break;
+                case "über 100 €": return a.price>=100 ;break;
+                default : return null;
+            }
+        }
+        const priceRange = getPriceRange(filter[1])
+        return priceRange?a:null
+    } 
+    
+    const filterByBrands = (a) => {
+        return filter[2].length!==0?filter[2].some((filter) => a.brand.includes(filter))?a:null:a
+    }
+
+    const filterByText = (a) => {
+        return a.id.toString().toLowerCase().includes(searchtext.toLowerCase())?a:a.title.toLowerCase().includes(searchtext.toLowerCase())?a:a.brand.toLowerCase().includes(searchtext.toLowerCase())?a:null
+    }
+    const filterArray = []
 
     const sortME = (sortType) => {
         let newArray = [...data.products];
@@ -34,7 +50,6 @@ const ProductList = () => {
         filterArray.forEach(filter => {
             newArray = newArray.filter(filter);
         });
-
         setFilteredData(newArray);
     }
 
@@ -62,21 +77,20 @@ const ProductList = () => {
     const sortRatingHigh = (a, b) => b.rating - a.rating;
 
     useEffect(() => {
+        searchtext.length!==0?filterArray.push(filterByText):null
+        filter[0].length!==0?filterArray.push(filterByCategories):null
+        filter[1].length!==0?filterArray.push(filterByPrice):null
+        filter[2].length!==0?filterArray.push(filterByBrands):null
+
         sortME(sortBy);
-    },[sortBy])
+    },[sortBy, searchtext, filter])
 
 
-    /* 
-          {filteredData?.filter((item) =>
-                item.name.toLowerCase().includes(searchInput.toLowerCase())
-          )
-          .map((item, index) => (
-    */
-   
+    const location = useLocation();
     return ( 
         <>
-        <h2>PRODUCTLIST</h2>
-       <SelectSortType changeSortBy={changeSortBy} />
+        {location.pathname!=="/home"?<SelectSortType changeSortBy={changeSortBy} />:<>                <CategorieSlider />
+        </>}
         <section className="productList">
             {filteredData? (
                 <> 

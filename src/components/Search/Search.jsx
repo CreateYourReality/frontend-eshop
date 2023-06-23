@@ -3,13 +3,12 @@ import "./Search.css"
 import SearchInput from "../inputs/SearchInput/SearchInput";
 import SearchFilterNav from "./SearchFilterNav/SearchFilterNav";
 
-const Search = () => {
-    const [text, setText] = useState();
+const Search = ({setSearchText}) => {
     return ( 
-        <>
-            <SearchInput setText={setText}/>
+        <div className="search">
+            <SearchInput setText={setSearchText}/>
             <SearchFilterNav />
-        </>
+        </div>
      );
 }
  

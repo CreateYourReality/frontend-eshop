@@ -1,8 +1,10 @@
+import './SelectSortType.css'
+
 const SelectSortType = (probs) => {
     return (  
-        <>
-        <label >Sort by: </label>
-        <select onChange={probs.changeSortBy} name="" id="sortSelect">
+        <div className="sortSelect">
+        <label htmlFor="sortSelect">Sort by: </label>
+        <select onChange={probs.changeSortBy} name="sortSelect" id="sortSelect">
             <option value="">none</option>
             <option value="AZ">A-Z</option>
             <option value="ZA">Z-A</option>
@@ -11,7 +13,7 @@ const SelectSortType = (probs) => {
             <option value="*****">Highest rating</option>
             <option value="*">Lowest rating</option>
         </select>
-        </>
+        </div>
     );
 }
  

@@ -1,8 +1,16 @@
 .example {
 	width: 100%;
 	border: none;
-	border-radius: 15px;
-	background-color: #364fd4;
 	color: white;
 	padding: 1rem;
+	border-radius: 12px;
+	background: var(--blue, #364fd4);
+	color: #fff;
+	text-align: center;
+	/* Body 1 */
+	font-size: 1.6rem;
+	font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+	font-weight: 600;
+	line-height: 2.4rem;
+	letter-spacing: 0.01rem;
 }

@@ -1,13 +1,26 @@
 .go-back-header {
 	display: flex;
 	align-items: center;
+	position: relative;
+	width: 100%;
 }
 
 .go-back-header button {
 	border: none;
 	background: none;
+	position: absolute;
+	top: 0;
+	bottom: 0;
 }
 
 .go-back-header p {
-	font-size: 3rem;
+	color: var(--gray-01, #1e2126);
+	width: 100%;
+	font-size: 2rem;
+	font-family: "Poppins-Medium", Arial, Helvetica, sans-serif;
+	font-weight: 500;
+	line-height: 2.2rem;
+	letter-spacing: 0.02rem;
+	text-align: center;
+	padding: 14px;
 }
