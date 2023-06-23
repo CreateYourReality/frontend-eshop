@@ -9,6 +9,7 @@ const LoadingScreen = () => {
 	const { setLoading } = useContext(loadingContext);
 
 	useEffect(() => {
+		//fetch("../src/assets/FakeShop/test.json")
 		fetch("https://dummyjson.com/products")
 			.then(res => res.json())
 			.then(data => {
