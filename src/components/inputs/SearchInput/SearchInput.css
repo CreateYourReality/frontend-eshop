@@ -17,3 +17,15 @@
 	width: 100%;
 	padding: 0px 5px;
 }
+
+@media screen and (min-width: 1440px) {
+	.search-field {
+		padding: 12px 6px;
+		border-radius: 10px;
+	}
+
+	.search-field input {
+		font-size: 1.2rem;
+		line-height: 1.8rem;
+	}
+}
