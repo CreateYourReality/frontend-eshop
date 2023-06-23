@@ -10,15 +10,12 @@ import ArticleCard from "../../components/ArticleCard/ArticleCard";
 const Favorites = () => {
 	const { data } = useContext(dataContext);
 	const { favorites } = useContext(favoritesContext);
-	console.log(favorites);
 
 	const productArray = data.products;
 
 	const favoriteProducts = productArray.filter(product =>
 		favorites.some(fav => product.id === Number(fav)),
 	);
-
-	console.log("Das sind die Fav Products: ", favoriteProducts);
 
 	return (
 		<>

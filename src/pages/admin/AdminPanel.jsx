@@ -73,10 +73,8 @@ const AdminPanel = () => {
     const handleDeleteButton = (event) => {
         event.preventDefault();
         const products = [...data.products];
-        console.log(deleteInput);
         products.splice(deleteInput, 1);
         const newData = {products}
-        console.log(newData);
         setData(newData);
     }
 
@@ -85,7 +83,6 @@ const AdminPanel = () => {
         const products =[...data.products];
         products.push(newProductLayout);
         const newData = {products}
-        console.log(newData);
         setData(newData);
         generatedID++;
 

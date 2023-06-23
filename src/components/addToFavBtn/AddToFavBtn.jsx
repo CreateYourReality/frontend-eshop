@@ -7,7 +7,6 @@ import RemoveFav from "../../assets/svg/RemoveFav";
 
 const AddToFavBtn = () => {
 	const params = useParams();
-	console.log(params.id);
 
 	const { data, setData } = useContext(dataContext);
 	const { favorites, setFavorites } = useContext(favoritesContext);
@@ -20,7 +19,6 @@ const AddToFavBtn = () => {
 		}
 	};
 
-	console.log(favorites);
 
 	const isFavorite = favorites.includes(params.id);
 

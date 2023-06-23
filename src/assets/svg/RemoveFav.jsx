@@ -21,7 +21,7 @@ const RemoveFav = () => {
 				ry='0'
 				transform='matrix(1 0 0 0.953072 78.411244 55.62071)'
 				fill='#364fd4'
-				stroke-width='0'
+				strokeWidth='0'
 			/>
 			<line
 				x1='-19.906807'
@@ -31,7 +31,7 @@ const RemoveFav = () => {
 				transform='matrix(1 0 0 5 94.648597 72.617956)'
 				fill='none'
 				stroke='#fff'
-				stroke-width='1.2288'
+				strokeWidth='1.2288'
 			/>
 		</svg>
 	);

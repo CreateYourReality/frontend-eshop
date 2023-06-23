@@ -78,7 +78,7 @@ const ProductList = ({searchtext}) => {
         }
     }
 
-    //* sortby
+    
     const changeSortBy = (event) => {
         setSortBy(event.target.value);
     }
@@ -98,7 +98,7 @@ const ProductList = ({searchtext}) => {
     let i = 0;
 
     return ( 
-        <>  //* sortby
+        <>  
         {location.pathname!=="/home"?<SelectSortType changeSortBy={changeSortBy} />
         :
         <>

@@ -23,7 +23,7 @@ const Footer = () => {
 					<path
 						fill='none'
 						stroke='#B9C1CC'
-						stroke-width='2'
+						strokeWidth='2'
 						d='M12 5.5C9.04 2.81 4.5 4.5 4.5 8c0 3.53 3.79 6.48 7.5 9.5 3.71-3.02 7.5-5.97 7.5-9.5 0-3.5-4.54-5.19-7.5-2.5z'
 					/>
 				</svg>
