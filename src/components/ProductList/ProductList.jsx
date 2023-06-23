@@ -12,7 +12,29 @@ const ProductList = ({searchtext}) => {
     const {data} = useContext(dataContext);
     const {filter, setFilter} = useContext(filterContext);
     const [filteredData, setFilteredData] = useState([]);
-    const [sortBy, setSortBy] = useState("");
+
+    const location = useLocation();
+    let sortStart = "";
+    location.pathname == "/home" ? sortStart = "*****" : "";
+    
+    const [sortBy, setSortBy] = useState(sortStart);
+
+    const sortAZ = (a, b) => a.title.localeCompare(b.title);
+    const sortZA = (a, b) => b.title.localeCompare(a.title);
+    const sortLow = (a, b) => a.price - b.price;
+    const sortHigh = (a, b) => b.price - a.price;
+    const sortRatingLow = (a, b) => a.rating - b.rating;
+    const sortRatingHigh = (a, b) => b.rating - a.rating;
+
+    const sortME = (sortType) => {
+        let newArray = [...data.products];
+        newArray = [...newArray].sort(getSortType(sortType));
+        
+        filterArray.forEach(filter => {
+            newArray = newArray.filter(filter);
+        });
+        setFilteredData(newArray);
+    }
 
 
     const filterByCategories = (a) => {
@@ -42,15 +64,7 @@ const ProductList = ({searchtext}) => {
     }
     const filterArray = []
 
-    const sortME = (sortType) => {
-        let newArray = [...data.products];
-        newArray = [...newArray].sort(getSortType(sortType));
-        
-        filterArray.forEach(filter => {
-            newArray = newArray.filter(filter);
-        });
-        setFilteredData(newArray);
-    }
+
 
     const getSortType = (sortType) => {
         switch(sortType){
@@ -69,12 +83,6 @@ const ProductList = ({searchtext}) => {
         setSortBy(event.target.value);
     }
 
-    const sortAZ = (a, b) => a.title.localeCompare(b.title);
-    const sortZA = (a, b) => b.title.localeCompare(a.title);
-    const sortLow = (a, b) => a.price - b.price;
-    const sortHigh = (a, b) => b.price - a.price;
-    const sortRatingLow = (a, b) => a.rating - b.rating;
-    const sortRatingHigh = (a, b) => b.rating - a.rating;
 
     useEffect(() => {
         searchtext.length!==0?filterArray.push(filterByText):null
@@ -86,15 +94,29 @@ const ProductList = ({searchtext}) => {
     },[sortBy, searchtext, filter])
 
 
-    const location = useLocation();
+    const maxArticleHome = 4;
+    let i = 0;
+
     return ( 
         <>  //* sortby
-        {location.pathname!=="/home"?<SelectSortType changeSortBy={changeSortBy} />:<>                <CategorieSlider />
+        {location.pathname!=="/home"?<SelectSortType changeSortBy={changeSortBy} />
+        :
+        <>
+            <CategorieSlider />
         </>}
         <section className="productList">
             {filteredData? (
                 <> 
-                    {filteredData?.map((product, index) => (
+                    {filteredData?.map((product, index) => {
+
+                        if(location.pathname == "/home"){
+                            if(i == maxArticleHome)
+                                return null;
+                            else 
+                                i++;
+                        }
+
+                        return (
                         <Link key={index} to={`/details/${product.id}`}>
                             <article className="articleCard"  >
                                 <ArticleCard
@@ -106,7 +128,8 @@ const ProductList = ({searchtext}) => {
                                 />
                             </article>
                         </Link>
-                        ))}
+                        )}                             
+                        )}
                 </>
             ) : (
                 <p>DATEN WERDEN GELADEN...</p>

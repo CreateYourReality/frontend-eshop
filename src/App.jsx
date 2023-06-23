@@ -13,6 +13,7 @@ import {
 } from "./context/Context";
 import Onboarding from "./pages/Onboarding/Onboarding";
 import Favorites from "./pages/Favorites/Favorites";
+import AdminPanel from "./pages/admin/AdminPanel";
 
 function App() {
 	const [loading, setLoading] = useState(true);
@@ -51,7 +52,11 @@ function App() {
 											path='/favorites'
 											element={loading ? <LoadingScreen /> : <Favorites />}
 										/>
-									</Routes>
+										<Route
+										path='/adminpanel'
+										element={loading ? <LoadingScreen /> : <AdminPanel />}
+									/>
+								</Routes>
 								</BrowserRouter>
 							</favoritesContext.Provider>
 						</filterContext.Provider>

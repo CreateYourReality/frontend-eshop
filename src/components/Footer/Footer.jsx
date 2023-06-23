@@ -28,8 +28,10 @@ const Footer = () => {
 					/>
 				</svg>
 			</Link>
+			<Link to="/adminpanel">ADMIN</Link>    
 		</footer>
 	);
 };
 
 export default Footer;
+

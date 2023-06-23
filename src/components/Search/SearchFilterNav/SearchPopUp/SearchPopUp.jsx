@@ -27,7 +27,7 @@ const SearchPopUp = ({setOpen}) => {
     return ( 
         <>
             <section className="popup">
-                    <GoBackHeader text="Filters"/>
+                    <GoBackHeader setOpen={setOpen} text="Filters"/>
                 <div className="article-wrapper">    
                 <article className="container">
                     <h2>Categorie</h2>
