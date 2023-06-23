@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../context/Context";
 import {Link, useNavigate} from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
@@ -72,7 +72,12 @@ const AdminPanel = () => {
 
     const handleDeleteButton = (event) => {
         event.preventDefault();
+        const products = [...data.products];
         console.log(deleteInput);
+        products.splice(deleteInput, 1);
+        const newData = {products}
+        console.log(newData);
+        setData(newData);
     }
 
     const addNewProduct = (event) => {
@@ -87,6 +92,10 @@ const AdminPanel = () => {
      //   let response = confirm("Neues Produkt wurde erstellt. Auf Home zurückkehren?");
      //   response? useNavigate("./home") : null;
     }
+
+    useEffect(() => {
+
+    },[data])
 
 
     return (
@@ -124,7 +133,7 @@ const AdminPanel = () => {
                         <option key={-1}>NONE</option>
 
                         {[...data.products].map((product,index) => {
-                          return <option key={index}>{product.title}</option>
+                          return <option value={index} key={index}>{product.title}</option>
                         })}
                     </select>
 
