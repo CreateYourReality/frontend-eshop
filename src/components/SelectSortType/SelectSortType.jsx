@@ -1,23 +1,27 @@
 import { useState } from 'react';
 import './SelectSortType.css'
 
-const SelectSortType = (probs) => {
-    const [text, setText] = useState();
 
-    return (  
-        <div className="sortSelect">
-        <label htmlFor="sortSelect">Sort by: </label>
-        <select onChange={probs.changeSortBy} name="sortSelect" id="sortSelect">
-            <option value="">none</option>
-            <option value="AZ">A-Z</option>
-            <option value="ZA">Z-A</option>
-            <option value="Low">Lowest Price</option>
-            <option value="High">Highest Price</option>
-            <option value="*****">Highest rating</option>
-            <option value="*">Lowest rating</option>
-        </select>
-        </div>
-    );
+// prob => setSortBy
+const SelectSortType = (probs) => {
+    const [visible, setVisible] = useState(false);
+    return (
+        <>
+            <div className='selectSortType'>
+            <p className='label'>Sort by: </p>
+            <div  className='dd-wrapper'>
+                <div onClick={() => setVisible((prev) => !prev)} className='dd-header'>
+                    <div className='dd-header-title'>
+                        <span>{probs.sortBy?probs.sortBy:"none"}</span>
+                    </div>
+                </div>
+                <div onMouseLeave={() => setVisible(false)} className={visible?'dd-list visible':'dd-list'}>
+                    {probs.mySortArray.map((listEle, i) => <div key={i} onClick={()=>{setVisible(false);probs.setSortBy(listEle)}} className='dd-list-item'>{listEle}</div>)}
+                </div>
+            </div>
+            </div>
+        </>
+    )
 }
  
 export default SelectSortType;

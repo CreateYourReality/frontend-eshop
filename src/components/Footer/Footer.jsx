@@ -3,7 +3,10 @@ import "./Footer.css";
 import Shape from "../../assets/img/Shape.svg";
 import Search from "../../assets/img/Search.svg";
 
+
+
 const Footer = () => {
+
 	return (
 		<footer>
 			<Link to='/home'>

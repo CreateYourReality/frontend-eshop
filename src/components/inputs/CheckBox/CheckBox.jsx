@@ -7,21 +7,22 @@ const CheckBox = ({text, uniqueCheck, setUniqueCheck, setFilterType, filterType,
     const {filter, setFilter} = useContext(filterContext);
     useEffect(() => {
         filter.forEach((filter) => {filter.includes(text)?setCheck(true):null})
+
         unique?filter[1].length!==0?setUniqueCheck(filter[1][0]):null:null
     }, [])
-
+^
     useEffect(() => {
         if (!unique) {
         check?setFilterType((prev)=>[...prev, text]):setFilterType((prev)=>{prev.splice(prev.indexOf(text), 1); return prev})} 
         else {
-            setFilterType([uniqueCheck])
+            uniqueCheck?setFilterType([uniqueCheck]):setFilterType([])
         }
     }, [check, uniqueCheck])
 
     return ( 
         unique
         ?
-        <div onClick={() => {setUniqueCheck(text)}} className={uniqueCheck===text?"checkbox checked":"checkbox"} >
+        <div onClick={() => {uniqueCheck===text?setUniqueCheck(''):setUniqueCheck(text)}} className={uniqueCheck===text?"checkbox checked":"checkbox"} >
             {text}
         </div>
         :

@@ -15,7 +15,7 @@ const ProductList = ({searchtext}) => {
 
     const location = useLocation();
     let sortStart = "";
-    location.pathname == "/home" ? sortStart = "*****" : "";
+    location.pathname == "/home" ? sortStart = "Highest rating" : "";
     
     const [sortBy, setSortBy] = useState(sortStart);
 
@@ -65,15 +65,15 @@ const ProductList = ({searchtext}) => {
     const filterArray = []
 
 
-
+    const mySortArray = ["none","A-Z","Z-A","Lowest Price","Highest Price","Highest rating","Lowest rating"]
     const getSortType = (sortType) => {
         switch(sortType){
-            case "AZ": return sortAZ;break;
-            case "ZA": return sortZA;break;
-            case "Low": return sortLow;break;
-            case "High": return sortHigh;break;
-            case "*****": return sortRatingHigh;break;
-            case "*": return sortRatingLow;break;
+            case "A-Z": return sortAZ;break;
+            case "Z-A": return sortZA;break;
+            case "Lowest Price": return sortLow;break;
+            case "Highest Price": return sortHigh;break;
+            case "Highest rating": return sortRatingHigh;break;
+            case "Lowest rating": return sortRatingLow;break;
             default : return;break;
         }
     }
@@ -99,7 +99,7 @@ const ProductList = ({searchtext}) => {
 
     return ( 
         <>  
-        {location.pathname!=="/home"?<SelectSortType changeSortBy={changeSortBy} />
+        {location.pathname!=="/home"?<SelectSortType mySortArray={mySortArray}sortBy={sortBy} setSortBy={setSortBy} />
         :
         <>
             <CategorieSlider />
