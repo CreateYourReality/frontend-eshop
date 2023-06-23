@@ -106,7 +106,7 @@ const AdminPanel = () => {
                     <input type="range" max={5.0} min={0.0} step={0.1} onChange={handleRating} />
                 </label>
                 <label htmlFor=""> Stock: {stockInput}
-                    <input type="range" max={1000.0} min={0} step={1} onChange={handleStock} />
+                    <input type="range" max={1000.0} min={1} step={1} onChange={handleStock} />
                 </label>
                 <label htmlFor=""> brand: 
                     <input type="text" onChange={handleBrand} />
