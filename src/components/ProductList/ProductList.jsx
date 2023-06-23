@@ -64,6 +64,7 @@ const ProductList = ({searchtext}) => {
         }
     }
 
+    //* sortby
     const changeSortBy = (event) => {
         setSortBy(event.target.value);
     }
@@ -87,7 +88,7 @@ const ProductList = ({searchtext}) => {
 
     const location = useLocation();
     return ( 
-        <>
+        <>  //* sortby
         {location.pathname!=="/home"?<SelectSortType changeSortBy={changeSortBy} />:<>                <CategorieSlider />
         </>}
         <section className="productList">
