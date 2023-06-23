@@ -8,19 +8,23 @@ import GoBackHeader from "../../../goBackHeader/GoBackHeader";
 
 const SearchPopUp = ({setOpen}) => {
     const {filter, setFilter} = useContext(filterContext);
+    const [myFilters, setMyFilters] = useState();
     const {data} = useContext(dataContext)
 
     const [categories, setCategories] = useState([]);
     const [price, setprice] = useState([]);
     const [brands, setBrands] = useState([]);
+
     const [uniqueCheck, setUniqueCheck] = useState();
 
     const categoriesArray = [...new Set(data.products.map((item, i) => item.category))]
     const priceArray = ["0 - 20 €", "20 - 50 €", "50 - 100 €", "über 100 €"]
     const brandsArray = [...new Set(data.products.map((item, i) => item.brand))]
-
     useEffect(() => {
-        setFilter([categories, price, brands])
+        //filter?setMyFilters(filter):null
+        setMyFilters([categories, price, brands])
+        console.log("myFilters: "+myFilters);
+        console.log("filter: "+filter);
     }, [categories, price, brands])
 
     return ( 
@@ -47,7 +51,7 @@ const SearchPopUp = ({setOpen}) => {
                     </div>
                 </article>
                 </div>
-                <ApplyBtn setOpen={setOpen} link="/productlist" text="Apply Filter"/>
+                <ApplyBtn myFilters={myFilters} setOpen={setOpen} link="/productlist" text="Apply Filter"/>
             </section>
         </>
      );
