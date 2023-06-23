@@ -5,10 +5,10 @@ import SearchFilterNav from "./SearchFilterNav/SearchFilterNav";
 
 const Search = ({setSearchText}) => {
     return ( 
-        <>
+        <div className="search">
             <SearchInput setText={setSearchText}/>
             <SearchFilterNav />
-        </>
+        </div>
      );
 }
  

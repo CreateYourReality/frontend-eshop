@@ -3,6 +3,8 @@ import ApplyBtn from "../../../btns/ApplyBtn/ApplyBtn";
 import { useContext, useEffect, useState } from "react";
 import { filterContext, dataContext } from "../../../../context/Context";
 import CheckBox from "../../../inputs/CheckBox/CheckBox";
+import './SearchPopUp.css'
+import GoBackHeader from "../../../goBackHeader/GoBackHeader";
 
 const SearchPopUp = ({setOpen}) => {
     const {filter, setFilter} = useContext(filterContext);
@@ -22,20 +24,28 @@ const SearchPopUp = ({setOpen}) => {
 
     return ( 
         <>
-            <section>
-                <article className="categorie-container">
+            <section className="popup">
+                    <GoBackHeader text="Filters"/>
+                <div className="article-wrapper">    
+                <article className="container">
                     <h2>Categorie</h2>
+                    <div className="wrapper">
                     {categoriesArray.map((ele, i) => <CheckBox setFilterType={setCategories} text={ele} key={i}/>)}
+                    </div>
                 </article>
-                <article className="price-container">
+                <article className="container">
                     <h2>Price</h2>
+                    <div className="wrapper">
                     {priceArray.map((ele, i) => <CheckBox unique={true} filterType={price}setFilterType={setprice} text={ele} key={i}/>)}
+                    </div>
                 </article>
-                <article className="brands-container">
+                <article className="container">
                     <h2>Brands</h2>
+                    <div className="wrapper">
                     {brandsArray.map((ele, i) => <CheckBox setFilterType={setBrands} text={ele} key={i}/>)}
+                    </div>
                 </article>
-
+                </div>
                 <ApplyBtn setOpen={setOpen} link="/productlist" text="Apply Filter"/>
             </section>
         </>

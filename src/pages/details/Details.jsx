@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 import "./Details.css";
 import AddToCartBtn from "../../components/addToCartBtn/AddToCartBtn";
 import GoBackHeader from "../../components/goBackHeader/GoBackHeader";
-import Footer from "../../components/Footer"
+import Footer from "../../components/Footer/Footer"
+import star from "../../assets/img/Star.png"
 
 const Details = () => {
 	const { data, setData } = useContext(dataContext);
@@ -31,41 +32,75 @@ const Details = () => {
 
 	return (
 		<>
-		<section className='detail-sec'>
+		<header>
+			{selectedProduct?(<><GoBackHeader text={selectedProduct.title} />
+			</>):null}
+		</header>
+		<main className='detail-sec'>
 				{selectedProduct ? (
 					<>
-					<GoBackHeader text={selectedProduct.title} />
 					<article>
-						<img src={selectedProduct.image} alt={selectedProduct.title} />
+						<div className="img-wrapper">
+							<img src={selectedProduct.image} alt={selectedProduct.title} />
+						</div>
+						<div className="infoBox">
 						<div className='title-div'>
 							<h2>{selectedProduct.title}</h2>
 							<div className='button-div'>
-								<button onClick={subOne}>-</button>
+								<button onClick={subOne}>
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g id="Frame" clipPath="url(#clip0_1_1371)">
+											<path id="Vector" d="M7.33334 7.33338L8.66668 7.33337L12.6667 7.33338V8.66671H8.66668L7.33334 8.66672L3.33334 8.66671V7.33338H7.33334Z" fill="white"/>
+										</g>
+										<defs>
+											<clipPath id="clip0_1_1371">
+												<rect width="16" height="16" fill="white"/>
+											</clipPath>
+										</defs>
+									</svg>
+								</button>
 								<p className='counter-state'>{counter}</p>
-								<button onClick={addOne}>+</button>
+								<button onClick={addOne}>
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g id="Frame" clipPath="url(#clip0_1_1368)">
+											<path id="Vector" d="M7.33334 7.33337V3.33337H8.66668V7.33337H12.6667V8.66671H8.66668V12.6667H7.33334V8.66671H3.33334V7.33337H7.33334Z" fill="white"/>
+										</g>
+										<defs>
+											<clipPath id="clip0_1_1368">
+												<rect width="16" height="16" fill="white"/>
+											</clipPath>
+										</defs>
+									</svg>
+								</button>
 							</div>
 						</div>
-						<img
+						<div className="rating">
+							<img
 							className='star'
-							src='../src/pages/details/Star.png'
+							src={star}
 							alt='Star'
-						/>
-						<p className='product-rating'>{selectedProduct.rating}</p>
+							/>
+							<p className='product-rating'>
+							{selectedProduct.rating}</p>
+						</div>
 						<div className='price-div'>
-							<p>{selectedProduct.stock} in stock</p>
+							<p>{selectedProduct.stock} pieces in stock</p>
 							<h3>${selectedProduct.price}</h3>
 						</div>
+						</div>
+						</article>
 						<div className='description-div'>
 							<h4>Description</h4>
 							<p>{selectedProduct.description}</p>
 						</div>
 						<AddToCartBtn />
-					</article>
+						
+					
 					</>
 				) : (
 					<p>Loading Data...</p>
 				)}
-			</section>
+			</main>
 			<Footer/>
 		</>
 	);

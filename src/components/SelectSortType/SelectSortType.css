@@ -1,0 +1,23 @@
+.sortSelect {
+	margin-bottom: 30px;
+}
+.sortSelect label {
+	color: var(--gray-04, #b9c1cc);
+	font-size: 1.4rem;
+	font-family: "Poppins", Arial, Helvetica, sans-serif;
+	font-weight: 500;
+	line-height: 2rem;
+}
+
+.sortSelect select {
+	border: none;
+	outline: 0px;
+	appearance: none;
+	width: 100px;
+	color: var(--blue, #364fd4);
+	/* Body 5 */
+	font-size: 1.4rem;
+	font-family: "Poppins", Arial, Helvetica, sans-serif;
+	font-weight: 500;
+	line-height: 2rem;
+}

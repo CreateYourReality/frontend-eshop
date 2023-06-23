@@ -1,3 +1,6 @@
-.checked {
-	text-decoration: line-through;
+.popup .container .checkbox.checked {
+	border-radius: 12px;
+	background-color: var(--blue, #364fd4);
+	padding: 8px 15px;
+	color: var(--white, #fff);
 }

@@ -1,32 +1,50 @@
 :root {
-  --black: #000;
-  --blue: blue;
-  --white: white;
-  --lightgrey: #f1faff;
-  --grey: grey;
+	--alert: #fdc34e;
+	--black: #000;
+	--blue: #364fd4;
+	--white: #fff;
+	--lightgrey: #f1faff;
+	--gray-01: #1e2126;
+	--gray-02: #b9c1cc;
+	--gray-03: #828b9a;
+	--gray-04: #b9c1cc;
+	--gray-05: #cad1d9;
+	--gray-06: #c4c4c4;
+	--gray-07: #f0f3f8;
+	--gap-10: 10px;
 }
 
 @font-face {
-  font-family: "Poppins-ExtraLight";
-  src: url(../src/pages/Poppins-ExtraLight.ttf);
+	font-family: "Poppins-ExtraLight";
+	src: url(./assets/fonts/Poppins-ExtraLight.ttf);
 }
 
 @font-face {
-  font-family: "Poppins-LightItalic";
-  src: url(../src/pages/Poppins-LightItalic.ttf);
+	font-family: "Poppins-LightItalic";
+	src: url(./assets/fonts/Poppins-LightItalic.ttf);
 }
 
 @font-face {
-  font-family: "Poppins-MediumItalic";
-  src: url(../src/pages/Poppins-MediumItalic.ttf);
+	font-family: "Poppins-MediumItalic";
+	src: url(./assets/fonts/Poppins-MediumItalic.ttf);
 }
 
 @font-face {
-  font-family: "Poppins-Regular";
-  src: url(../src/pages/Poppins-Regular.ttf);
+	font-family: "Poppins-Bold";
+	src: url(./assets/fonts/Poppins-Bold.ttf);
 }
 
 @font-face {
-  font-family: "Poppins-SemiBold";
-  src: url(../src/pages/Poppins-SemiBold.ttf);
+	font-family: "Poppins-Medium";
+	src: url(./assets/fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+	font-family: "Poppins";
+	src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Poppins-SemiBold";
+	src: url(./assets/fonts/Poppins-SemiBold.ttf);
 }

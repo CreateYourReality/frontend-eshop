@@ -1,3 +1,36 @@
 .CategorieSlider {
 	display: flex;
+	overflow-x: auto;
+	gap: 10px;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	align-items: flex-start;
+}
+
+.CategorieSlider::-webkit-scrollbar {
+	display: none;
+}
+.ProductListHome {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.ProductListHome h3 {
+	color: var(--gray-01, #1e2126);
+	/* Body 1 */
+	font-size: 1.6rem;
+	font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+	font-weight: 600;
+	line-height: 2.4rem;
+	letter-spacing: 0.01rem;
+}
+.viewAll {
+	color: var(--gray-04, #b9c1cc);
+	text-align: right;
+	/* Caption 2 */
+	font-size: 1.2rem;
+	font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+	font-weight: 600;
+	line-height: 1.8rem;
 }

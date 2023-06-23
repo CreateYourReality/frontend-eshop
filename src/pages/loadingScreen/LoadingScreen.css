@@ -1,6 +1,8 @@
 .loader {
 	background-color: #364fd4;
 	flex-direction: column;
+	min-height: 100vh;
+	min-height: 100svh;
 }
 
 .loader p {

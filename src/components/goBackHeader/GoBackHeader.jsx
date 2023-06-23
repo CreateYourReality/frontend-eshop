@@ -1,5 +1,6 @@
 import "./GoBackHeader.css";
 import { useNavigate } from "react-router-dom";
+import arrow from "../../assets/img/arrow.png"
 
 const GoBackHeader = props => {
 	const navigate = useNavigate();
@@ -8,12 +9,12 @@ const GoBackHeader = props => {
 	};
 
 	return (
-		<header className='go-back-header'>
+		<div className='go-back-header'>
 			<button onClick={goBack}>
-				<img src='../src/components/goBackHeader/arrow.png' alt='go-back' />
+				<img src={arrow} alt='go-back' />
 			</button>
 			<p>{props.text}</p>
-		</header>
+		</div>
 	);
 };
 

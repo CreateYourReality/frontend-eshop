@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { useState } from "react";
-import ProductListPage from "./pages/ProductListPage";
-import Home from "./pages/Home";
+import ProductListPage from "./pages/ProductListPage/ProductListPage";
+import Home from "./pages/Home/Home";
 import Details from "./pages/details/Details.jsx";
 import LoadingScreen from "./pages/loadingScreen/LoadingScreen";
 import { loadingContext, dataContext, filterContext } from "./context/Context";
-import Onboarding from "./pages/Onboarding";
+import Onboarding from "./pages/Onboarding/Onboarding";
 
 function App() {
   const [loading, setLoading] = useState(true);

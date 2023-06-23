@@ -1,3 +1,8 @@
 nav {
-	background-color: green;
+	background-color: var(--blue, #364fd4);
+	padding: 16px;
+	border-radius: 12px;
+}
+nav img {
+	margin: auto;
 }

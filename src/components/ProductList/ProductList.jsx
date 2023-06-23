@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import { dataContext, filterContext } from "../context/Context";
+import { dataContext, filterContext } from "../../context/Context";
 import "./ProductList.css"
-import SelectSortType from "../components/SelectSortType";
+import SelectSortType from "../SelectSortType/SelectSortType";
 //import ArticleCardAlternative from "./ArticleCardAlternative";
 import { Link } from "react-router-dom";
-import ArticleCard from "./ArticleCard";
+import ArticleCard from "../ArticleCard/ArticleCard";
+import { useLocation } from "react-router-dom";
+import CategorieSlider from "../CategorieSlider/CategorieSlider";
 
 const ProductList = ({searchtext}) => {
     const {data} = useContext(dataContext);
@@ -83,10 +85,12 @@ const ProductList = ({searchtext}) => {
         sortME(sortBy);
     },[sortBy, searchtext, filter])
 
+
+    const location = useLocation();
     return ( 
         <>
-        <h2>PRODUCTLIST</h2>
-       <SelectSortType changeSortBy={changeSortBy} />
+        {location.pathname!=="/home"?<SelectSortType changeSortBy={changeSortBy} />:<>                <CategorieSlider />
+        </>}
         <section className="productList">
             {filteredData? (
                 <> 

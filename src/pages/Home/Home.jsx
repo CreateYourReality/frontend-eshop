@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
-import { dataContext } from "../context/Context";
-import Search from "../components/Search/Search";
+import { dataContext } from "../../context/Context";
+import Search from "../../components/Search/Search";
 import "./Home.css";
-import ProductList from "../components/ProductList";
-import Footer from "../components/Footer";
-import CategorieSlider from "../components/CategorieSlider/CategorieSlider";
+import ProductList from "../../components/ProductList/ProductList";
+import Footer from "../../components/Footer/Footer";
+import CategorieSlider from "../../components/CategorieSlider/CategorieSlider";
 
 
 const Home = () => {
@@ -14,10 +14,10 @@ const Home = () => {
     return (  
         <>
             <header>
+                <h1>Find your favourite Product</h1>
                 <Search setSearchText={setSearchText}/>
             </header>
             <main>
-                <CategorieSlider />
                 <ProductList searchtext={searchtext}/>
             </main>
             <Footer />
