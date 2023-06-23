@@ -7,6 +7,7 @@ const Footer = () => {
         <footer>
             <Link to="/home"><img src={Shape} alt="shape-icon"/></Link>    
             <Link to="/productlist"><img src={Search} alt="Search-icon"/></Link>    
+            <Link to="/adminpanel">ADMIN</Link>    
         </footer>
      );
 }

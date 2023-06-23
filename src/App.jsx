@@ -7,6 +7,7 @@ import Details from "./pages/details/Details.jsx";
 import LoadingScreen from "./pages/loadingScreen/LoadingScreen";
 import { loadingContext, dataContext, filterContext } from "./context/Context";
 import Onboarding from "./pages/Onboarding/Onboarding";
+import AdminPanel from "./pages/admin/AdminPanel";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -37,6 +38,10 @@ function App() {
 									<Route
 										path='/details/:id'
 										element={loading ? <LoadingScreen /> : <Details />}
+									/>
+									<Route
+										path='/adminpanel'
+										element={loading ? <LoadingScreen /> : <AdminPanel />}
 									/>
 								</Routes>
 							</BrowserRouter>
