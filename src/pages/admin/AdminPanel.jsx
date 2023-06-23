@@ -16,7 +16,7 @@ const AdminPanel = () => {
     const [deleteInput, setDeleteInput] = useState("")
 
     let generatedID = data.products.length <= 40 ? 40 : data.products.length; //hardcoden? oder einmalig am anfang length speichern.
-    const imgPath = `../src/assets/FakeShop/images/${generatedID}.png`
+    const imgPath = `../src/assets/FakeShop/images/default.png`
 
     const newProductLayout = { 
 			"id": generatedID,
@@ -97,7 +97,6 @@ const AdminPanel = () => {
 
     },[data])
 
-
     return (
     <>
         <section className="adminSection">
@@ -139,8 +138,6 @@ const AdminPanel = () => {
 
                         <button onClick={handleDeleteButton}>DELETE</button>
                 </label>
-
-
             </form>
         </section>
         <Footer/>
