@@ -8,7 +8,7 @@ const CheckBox = ({text, setFilterType, filterType, unique=false}) => {
         if (!unique) {
         check?setFilterType((prev)=>[...prev, text]):setFilterType((prev)=>{prev.splice(prev.indexOf(text), 1); return prev})} 
         else {
-            check?setFilterType([text]):setFilterType([])
+            filterType[0]!==text?setFilterType([text]):setFilterType([])
         }
     }, [check])
 
