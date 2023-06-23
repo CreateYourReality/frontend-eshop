@@ -9,8 +9,8 @@ const AdminPanel = () => {
     const [titleInput, setTitleInput] = useState("")
     const [descriptionInput, setDescriptionInput] = useState("")
     const [priceInput, setPriceInput] = useState("")
-    const [ratingInput, setRatingInput] = useState("")
-    const [stockInput, setStockInput] = useState("")
+    const [ratingInput, setRatingInput] = useState(2.5)
+    const [stockInput, setStockInput] = useState(1)
     const [categoryInput, setCategoryInput] = useState("")
     const [brandInput, setBrandInput] = useState("")
     const [deleteInput, setDeleteInput] = useState("")
@@ -32,17 +32,17 @@ const AdminPanel = () => {
 
     const handleTitle = (event) => {
         event.preventDefault();
-        setTitleInput(event.target.text)
+        setTitleInput(event.target.value)
     }
 
     const handleDescription = (event) => {
         event.preventDefault();
-        setDescriptionInput(event.target.text)
+        setDescriptionInput(event.target.value)
     }
 
     const handlePrice = (event) => {
         event.preventDefault();
-        setPriceInput(event.target.text)
+        setPriceInput(event.target.value)
     }
 
     const handleRating = (event) => {
@@ -57,12 +57,12 @@ const AdminPanel = () => {
 
     const handleCategory = (event) => {
         event.preventDefault();
-        setCategoryInput(event.target.text)
+        setCategoryInput(event.target.value)
     }
 
     const handleBrand = (event) => {
         event.preventDefault();
-        setBrandInput(event.target.text)
+        setBrandInput(event.target.value)
     }
 
     const handleDelete = (event) => {
@@ -101,30 +101,30 @@ const AdminPanel = () => {
     return (
     <>
         <section className="adminSection">
-            <form >
+            <form onSubmit={addNewProduct}>
                 <label htmlFor="title">Title: 
-                    <input name="title" type="text" onChange={handleTitle} />
+                    <input required name="title" type="text" onChange={handleTitle} />
                 </label>
                 <label htmlFor="description">Description: 
-                    <input name="description" type="text" onChange={handleDescription} />
+                    <input required name="description" type="text" onChange={handleDescription} />
                 </label>
                 <label htmlFor=""> Price: 
-                    <input type="text" onChange={handlePrice} />
+                    <input required type="number" onChange={handlePrice} />
                 </label>
                 <label htmlFor=""> Rating: {ratingInput}
-                    <input type="range" max={5.0} min={0.0} step={0.1} onChange={handleRating} />
+                    <input required type="range"  value={ratingInput} max={5.0} min={0.0} step={0.1} onChange={handleRating} />
                 </label>
                 <label htmlFor=""> Stock: {stockInput}
-                    <input type="range" max={1000.0} min={1} step={1} onChange={handleStock} />
+                    <input required type="range" value={stockInput} max={1000.0} min={1} step={1} onChange={handleStock} />
                 </label>
                 <label htmlFor=""> brand: 
-                    <input type="text" onChange={handleBrand} />
+                    <input required type="text" onChange={handleBrand} />
                 </label>
                 <label htmlFor=""> category: 
-                    <input type="text" onChange={handleCategory} />
+                    <input required type="text" onChange={handleCategory} />
                 </label>
               
-                <button onClick={addNewProduct}>ADD NEW PRODUCT</button>
+                <input type="submit" value="ADD NEW PRODUCT"/>
 
                 <hr />
 
@@ -137,7 +137,7 @@ const AdminPanel = () => {
                         })}
                     </select>
 
-                    <button onClick={handleDeleteButton}>DELETE</button>
+                        <button onClick={handleDeleteButton}>DELETE</button>
                 </label>
 
 
