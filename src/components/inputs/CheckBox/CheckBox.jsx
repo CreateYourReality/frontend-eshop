@@ -7,7 +7,7 @@ const CheckBox = ({text, uniqueCheck, setUniqueCheck, setFilterType, filterType,
     const {filter, setFilter} = useContext(filterContext);
     useEffect(() => {
         filter.forEach((filter) => {filter.includes(text)?setCheck(true):null})
-        unique?filter[1].length!==0?setUniqueCheck(filter[1][0]):console.log("mep"):null
+        unique?filter[1].length!==0?setUniqueCheck(filter[1][0]):null:null
     }, [])
 
     useEffect(() => {

@@ -21,10 +21,7 @@ const SearchPopUp = ({setOpen}) => {
     const priceArray = ["0 - 20 €", "20 - 50 €", "50 - 100 €", "über 100 €"]
     const brandsArray = [...new Set(data.products.map((item, i) => item.brand))]
     useEffect(() => {
-        //filter?setMyFilters(filter):null
         setMyFilters([categories, price, brands])
-        console.log("myFilters: "+myFilters);
-        console.log("filter: "+filter);
     }, [categories, price, brands])
 
     return ( 
