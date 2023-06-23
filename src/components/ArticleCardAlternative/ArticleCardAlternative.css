@@ -1,50 +1,51 @@
-
-.articleCard{
-    max-width: 37.5vw;
-    min-width: 37.5vw;
-    min-height: 40vw;
-    max-height: 40vw;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    background-color: white; /* #d3d3d357 */
-    border: lightgray 1px solid;
-    position: relative;
-    color: white;
+.articleCard {
+  max-width: 37.5vw;
+  min-width: 37.5vw;
+  min-height: 40vh;
+  max-height: 40vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  background-color: white; /* #d3d3d357 */
+  border: lightgray 1px solid;
+  position: relative;
+  color: white;
 }
 
-.articleCard:hover{
-    transform: scale(0.95);
-    filter: grayscale(100%);
+.articleCard:hover {
+  transform: scale(0.95);
+  filter: grayscale(100%);
 }
 
-.articleCard img{
-    background-color: white;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    z-index: 0;
+.articleCard img {
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  z-index: 0;
 }
 
-.articleCardInfo{
-    z-index: 0;
-    align-self: flex-end;
-    width: 100%;
-    text-shadow: 1px 1px 1px black;
-    background-color: rgba(200,200,200,60%);
-    border-radius: 5px;
-    padding: 5px;
+.articleCardInfo {
+  z-index: 0;
+  align-self: flex-end;
+  width: 100%;
+  text-shadow: 1px 1px 1px black;
+  background-color: rgba(200, 200, 200, 60%);
+  border-radius: 5px;
+  padding: 5px;
 }
 
-.articleCard h3{
-    display: inline-block;
-    font-size: clamp(1rem,1.2vw,2rem);
+.articleCard h3 {
+  display: inline-block;
+  font-size: clamp(1rem, 1.2vw, 2rem);
 }
