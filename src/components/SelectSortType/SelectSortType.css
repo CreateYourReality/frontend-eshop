@@ -22,7 +22,23 @@
   line-height: 2rem;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
+  .sortSelect {
+    margin-bottom: 20px;
+  }
+
+  .sortSelect label {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+
+  .sortSelect select {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
   .sortSelect {
     margin-bottom: 20px;
   }

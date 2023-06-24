@@ -9,8 +9,14 @@
   text-decoration: none;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
   .productList {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .productList {
+    grid-template-columns: repeat(6, 1fr);
   }
 }

@@ -22,7 +22,19 @@
   line-height: 1.8rem;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
+  .categorieContainer .img-wrapper {
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+
+  .categorieContainer p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
   .categorieContainer .img-wrapper {
     padding: 10px;
     margin-bottom: 5px;
