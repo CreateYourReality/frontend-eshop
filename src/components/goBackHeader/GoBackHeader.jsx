@@ -17,7 +17,10 @@ const GoBackHeader = props => {
 			<button onClick={() => currentLocation == path?  goBack() : props.setOpen?props.setOpen(false) : null}>
 				<img src={arrow} alt='go-back' />
 			</button>
-			<p>{props.text}</p>
+			<div>
+				<p>{props.text}</p>
+				{props.summe?<span>{props.summe}€</span>:<></>}
+			</div>
 		</div>
 	);
 };

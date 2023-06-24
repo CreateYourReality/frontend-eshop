@@ -19,8 +19,10 @@ const Favorites = () => {
 
 	return (
 		<>
-			<GoBackHeader text='Favorites' />
-			<section className='productList'>
+			<header>
+				<GoBackHeader text='Favorites' />
+			</header>
+			<main className='productList'>
 				{favoriteProducts ? (
 					<>
 						{favoriteProducts?.map((product, index) => (
@@ -40,7 +42,7 @@ const Favorites = () => {
 				) : (
 					<p>DATEN WERDEN GELADEN...</p>
 				)}
-			</section>
+			</main>
 			<Footer />
 		</>
 	);

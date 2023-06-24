@@ -1,14 +1,17 @@
 nav {
-  background-color: var(--blue, #364fd4);
-  padding: 16px;
-  border-radius: 12px;
+	background-color: var(--blue, #364fd4);
+	padding: 16px;
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 nav img {
-  margin: auto;
+	margin: auto;
 }
 
 @media screen and (min-width: 1440px) {
-  nav {
-    padding: 12px;
-  }
+	nav {
+		padding: 12px;
+	}
 }

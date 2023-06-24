@@ -117,7 +117,7 @@ const Details = () => {
 							<h4>Description</h4>
 							<p>{selectedProduct.description}</p>
 						</div>
-						<AddToCartBtn />
+						<AddToCartBtn selectedProduct={selectedProduct} counter={counter}/>
 					</>
 				) : (
 					<p>Loading Data...</p>

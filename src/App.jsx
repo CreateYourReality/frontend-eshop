@@ -10,16 +10,19 @@ import {
 	dataContext,
 	filterContext,
 	favoritesContext,
+	shoppingcartContext,
 } from "./context/Context";
 import Onboarding from "./pages/Onboarding/Onboarding";
 import Favorites from "./pages/Favorites/Favorites";
 import AdminPanel from "./pages/admin/AdminPanel";
+import Shoppingcart from "./pages/Shoppingcart/Shoppingcart";
 
 function App() {
 	const [loading, setLoading] = useState(true);
 	const [data, setData] = useState([]);
 	const [filter, setFilter] = useState([[], [], []]);
 	const [favorites, setFavorites] = useState([]);
+	const [shoppingcart, setShoppingcart] = useState([])
 
 	return (
 		<>
@@ -28,6 +31,7 @@ function App() {
 					<dataContext.Provider value={{ data, setData }}>
 						<filterContext.Provider value={{ filter, setFilter }}>
 							<favoritesContext.Provider value={{ favorites, setFavorites }}>
+								<shoppingcartContext.Provider value= {{shoppingcart, setShoppingcart}}>
 								<BrowserRouter>
 									<Routes>
 										<Route
@@ -53,11 +57,16 @@ function App() {
 											element={loading ? <LoadingScreen /> : <Favorites />}
 										/>
 										<Route
+											path='/cart'
+											element={loading ? <LoadingScreen /> : <Shoppingcart />}
+										/>
+										<Route
 										path='/adminpanel'
 										element={loading ? <LoadingScreen /> : <AdminPanel />}
 									/>
 								</Routes>
 								</BrowserRouter>
+								</shoppingcartContext.Provider>
 							</favoritesContext.Provider>
 						</filterContext.Provider>
 					</dataContext.Provider>
