@@ -38,7 +38,7 @@ const Shoppingcart = () => {
 					<>
 						{shoppingcart?.map((products, index) => (
 								<article className='articleCard'>
-                                    <div onClick={() => removeProduct(index)}>
+                                    <div onClick={() => removeProduct(index)} className="svg-wrapper">
                                         <DeleteSvg />
                                     </div>
                                 	<Link key={index} to={`/details/${products.product.id}`}>
