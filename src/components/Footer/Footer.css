@@ -23,6 +23,7 @@ footer .svg-wrapper {
 	width: 73px;
 	height: 44px;
 	border-radius: 26px;
+	position: relative;
 }
 
 footer .active .svg-wrapper {
@@ -38,6 +39,22 @@ footer .active .svg-wrapper .heart {
 
 .heart {
 	stroke: var(--gray-04, #b9c1cc);
+}
+
+.note {
+	position: absolute;
+	background-color: var(--blue, #364fd4);
+	border-radius: 100%;
+	min-height: 20px;
+	min-width: 20px;
+	bottom: calc(50% - 20px);
+	right: calc(50% - 20px);
+	color: var(--white, #fff);
+	text-align: center;
+	font-size: 1.2rem;
+	font-family: "Poppins", Arial, Helvetica, sans-serif;
+	padding: 4px;
+	transform: scale(0.7);
 }
 
 @media screen and (min-width: 1440px) {

@@ -11,3 +11,7 @@
 .search-field {
 	width: 100%;
 }
+.shoppingcart {
+	display: flex;
+	flex-direction: column;
+}
