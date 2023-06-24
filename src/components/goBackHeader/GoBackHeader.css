@@ -11,6 +11,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
+  cursor: pointer;
 }
 
 .go-back-header p {
@@ -25,7 +26,15 @@
   padding: 14px;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
+  .go-back-header p {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 992px) {
   .go-back-header p {
     font-size: 1.6rem;
     line-height: 2rem;

@@ -5,7 +5,14 @@
   color: var(--white, #fff);
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
+  .popup .container .checkbox.checked {
+    padding: 6px 12px;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (min-width: 992px) {
   .popup .container .checkbox.checked {
     padding: 6px 12px;
     border-radius: 10px;
