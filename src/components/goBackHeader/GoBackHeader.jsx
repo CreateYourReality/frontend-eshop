@@ -14,7 +14,7 @@ const GoBackHeader = props => {
 
 	return (
 		<div className='go-back-header'>
-			<button onClick={() => currentLocation == path?  goBack() : props.setOpen?props.setOpen(false) : null}>
+			<button onClick={() => props.isMenu?props.setOpen?props.setOpen(false):null:goBack()}>
 				<img src={arrow} alt='go-back' />
 			</button>
 			<div>
