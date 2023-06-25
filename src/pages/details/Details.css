@@ -115,8 +115,6 @@
 	letter-spacing: 0.02rem;
 }
 
-.description-div {
-}
 .description-div p {
 	color: var(--gray-04, #b9c1cc);
 	text-align: justify;
