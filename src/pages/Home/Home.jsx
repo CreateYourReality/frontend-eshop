@@ -5,6 +5,7 @@ import "./Home.css";
 import ProductList from "../../components/ProductList/ProductList";
 import Footer from "../../components/Footer/Footer";
 import CategorieSlider from "../../components/CategorieSlider/CategorieSlider";
+import Header from "../../components/Header/Header";
 
 
 const Home = () => {
@@ -17,10 +18,7 @@ const Home = () => {
     }, [])
     return (  
         <>
-            <header>
-                <h1>Find your favourite Product</h1>
-                <Search setSearchText={setSearchText}/>
-            </header>
+            <Header text="Find your favourite Product" setSearchText={setSearchText}/>
             <main>
                 <ProductList searchtext={searchtext}/>
             </main>
