@@ -1,0 +1,18 @@
+.add-to-fav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.add-to-fav-btn {
+	display: inline-block;
+	margin: 0 auto;
+	border: none;
+	background: none;
+	width: 10vw;
+	cursor: pointer;
+}
+
+.add-to-fav-svg {
+	fill: var(--blue);
+}

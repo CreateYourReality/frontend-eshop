@@ -25,16 +25,11 @@
   text-align: center;
   padding: 14px;
 }
-
-@media screen and (min-width: 768px) {
-  .go-back-header p {
-    font-size: 1.6rem;
-    line-height: 2rem;
-    padding: 10px;
-  }
+.go-back-header div {
+  width: 100%;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1440px) {
   .go-back-header p {
     font-size: 1.6rem;
     line-height: 2rem;

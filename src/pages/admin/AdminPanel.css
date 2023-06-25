@@ -1,0 +1,21 @@
+.adminSection{
+    flex-direction: column;
+    min-height: 80vh;
+}
+
+
+.adminSection form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.adminSection form input,
+.adminSection form button{
+    margin-top: 10px;
+}
+
+.adminSection label{
+    display: inline-block;
+}

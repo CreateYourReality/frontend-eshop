@@ -8,24 +8,26 @@ import GoBackHeader from "../../../goBackHeader/GoBackHeader";
 
 const SearchPopUp = ({setOpen}) => {
     const {filter, setFilter} = useContext(filterContext);
+    const [myFilters, setMyFilters] = useState();
     const {data} = useContext(dataContext)
 
     const [categories, setCategories] = useState([]);
     const [price, setprice] = useState([]);
     const [brands, setBrands] = useState([]);
 
+    const [uniqueCheck, setUniqueCheck] = useState();
+
     const categoriesArray = [...new Set(data.products.map((item, i) => item.category))]
     const priceArray = ["0 - 20 €", "20 - 50 €", "50 - 100 €", "über 100 €"]
     const brandsArray = [...new Set(data.products.map((item, i) => item.brand))]
-
     useEffect(() => {
-        setFilter([categories, price, brands])
+        setMyFilters([categories, price, brands])
     }, [categories, price, brands])
 
     return ( 
         <>
             <section className="popup">
-                    <GoBackHeader text="Filters"/>
+                    <GoBackHeader isMenu={true}setOpen={setOpen} text="Filters"/>
                 <div className="article-wrapper">    
                 <article className="container">
                     <h2>Categorie</h2>
@@ -36,7 +38,7 @@ const SearchPopUp = ({setOpen}) => {
                 <article className="container">
                     <h2>Price</h2>
                     <div className="wrapper">
-                    {priceArray.map((ele, i) => <CheckBox unique={true} filterType={price}setFilterType={setprice} text={ele} key={i}/>)}
+                    {priceArray.map((ele, i) => <CheckBox unique={true} uniqueCheck={uniqueCheck} setUniqueCheck={setUniqueCheck} filterType={price}setFilterType={setprice} text={ele} key={i}/>)}
                     </div>
                 </article>
                 <article className="container">
@@ -46,7 +48,7 @@ const SearchPopUp = ({setOpen}) => {
                     </div>
                 </article>
                 </div>
-                <ApplyBtn setOpen={setOpen} link="/productlist" text="Apply Filter"/>
+                <ApplyBtn myFilters={myFilters} setOpen={setOpen} link="/productlist" text="Apply Filter"/>
             </section>
         </>
      );

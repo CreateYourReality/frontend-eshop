@@ -4,7 +4,7 @@
   background: var(--gray-07, #f0f3f8);
   padding: 16px 8px;
   margin-right: 8px;
-  width: 80%;
+  width: 100%;
 }
 
 .search-field input {
@@ -14,21 +14,11 @@
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   line-height: 2rem;
   border: none;
+  width: 100%;
+  padding: 0px 5px;
 }
 
-@media screen and (min-width: 768px) {
-  .search-field {
-    padding: 12px 6px;
-    border-radius: 10px;
-  }
-
-  .search-field input {
-    font-size: 1.2rem;
-    line-height: 1.8rem;
-  }
-}
-
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1440px) {
   .search-field {
     padding: 12px 6px;
     border-radius: 10px;

@@ -12,11 +12,32 @@ const ProductList = ({searchtext}) => {
     const {data} = useContext(dataContext);
     const {filter, setFilter} = useContext(filterContext);
     const [filteredData, setFilteredData] = useState([]);
-    const [sortBy, setSortBy] = useState("");
+
+    const location = useLocation();
+    let sortStart = "";
+    location.pathname == "/home" ? sortStart = "Highest rating" : "";
+    
+    const [sortBy, setSortBy] = useState(sortStart);
+
+    const sortAZ = (a, b) => a.title.localeCompare(b.title);
+    const sortZA = (a, b) => b.title.localeCompare(a.title);
+    const sortLow = (a, b) => a.price - b.price;
+    const sortHigh = (a, b) => b.price - a.price;
+    const sortRatingLow = (a, b) => a.rating - b.rating;
+    const sortRatingHigh = (a, b) => b.rating - a.rating;
+
+    const sortME = (sortType) => {
+        let newArray = [...data.products];
+        newArray = [...newArray].sort(getSortType(sortType));
+        
+        filterArray.forEach(filter => {
+            newArray = newArray.filter(filter);
+        });
+        setFilteredData(newArray);
+    }
 
 
     const filterByCategories = (a) => {
-        console.log(filter[0]);
         return filter[0].length!==0?filter[0].some((filter) => a.category.includes(filter))?a:null:a
     }
 
@@ -43,38 +64,25 @@ const ProductList = ({searchtext}) => {
     }
     const filterArray = []
 
-    const sortME = (sortType) => {
-        let newArray = [...data.products];
-        newArray = [...newArray].sort(getSortType(sortType));
-        
-        filterArray.forEach(filter => {
-            newArray = newArray.filter(filter);
-        });
-        setFilteredData(newArray);
-    }
 
+    const mySortArray = ["none","A-Z","Z-A","Lowest Price","Highest Price","Highest rating","Lowest rating"]
     const getSortType = (sortType) => {
         switch(sortType){
-            case "AZ": return sortAZ;break;
-            case "ZA": return sortZA;break;
-            case "Low": return sortLow;break;
-            case "High": return sortHigh;break;
-            case "*****": return sortRatingHigh;break;
-            case "*": return sortRatingLow;break;
+            case "A-Z": return sortAZ;break;
+            case "Z-A": return sortZA;break;
+            case "Lowest Price": return sortLow;break;
+            case "Highest Price": return sortHigh;break;
+            case "Highest rating": return sortRatingHigh;break;
+            case "Lowest rating": return sortRatingLow;break;
             default : return;break;
         }
     }
 
+    
     const changeSortBy = (event) => {
         setSortBy(event.target.value);
     }
 
-    const sortAZ = (a, b) => a.title.localeCompare(b.title);
-    const sortZA = (a, b) => b.title.localeCompare(a.title);
-    const sortLow = (a, b) => a.price - b.price;
-    const sortHigh = (a, b) => b.price - a.price;
-    const sortRatingLow = (a, b) => a.rating - b.rating;
-    const sortRatingHigh = (a, b) => b.rating - a.rating;
 
     useEffect(() => {
         searchtext.length!==0?filterArray.push(filterByText):null
@@ -86,15 +94,29 @@ const ProductList = ({searchtext}) => {
     },[sortBy, searchtext, filter])
 
 
-    const location = useLocation();
+    const maxArticleHome = 4;
+    let i = 0;
+
     return ( 
+        <>  
+        {location.pathname!=="/home"?<SelectSortType mySortArray={mySortArray}sortBy={sortBy} setSortBy={setSortBy} />
+        :
         <>
-        {location.pathname!=="/home"?<SelectSortType changeSortBy={changeSortBy} />:<>                <CategorieSlider />
+            <CategorieSlider />
         </>}
         <section className="productList">
             {filteredData? (
                 <> 
-                    {filteredData?.map((product, index) => (
+                    {filteredData?.map((product, index) => {
+
+                        if(location.pathname == "/home"){
+                            if(i == maxArticleHome)
+                                return null;
+                            else 
+                                i++;
+                        }
+
+                        return (
                         <Link key={index} to={`/details/${product.id}`}>
                             <article className="articleCard"  >
                                 <ArticleCard
@@ -106,7 +128,8 @@ const ProductList = ({searchtext}) => {
                                 />
                             </article>
                         </Link>
-                        ))}
+                        )}                             
+                        )}
                 </>
             ) : (
                 <p>DATEN WERDEN GELADEN...</p>
