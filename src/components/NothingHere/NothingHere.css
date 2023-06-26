@@ -1,0 +1,31 @@
+.nothing-here-div {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	grid-column-start: 1;
+	grid-column-end: -1;
+	padding: 20px 0;
+}
+
+.nothing-here-div img {
+	filter: opacity(50%);
+	margin-bottom: var(--gap-10);
+}
+
+.nothing-here-div p {
+	font-family: Poppins-MediumItalic;
+	font-weight: 500;
+	color: var(--gray-04);
+	margin-bottom: var(--gap-10);
+}
+
+.nothing-here-div a {
+	text-decoration: none;
+	color: var(--gray-04);
+	font-family: Poppins-Medium;
+	font-size: 1.2rem;
+	padding: 15px;
+	cursor: pointer;
+}
