@@ -1,89 +1,85 @@
 import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../context/Context";
-import {Link, useNavigate} from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import "./AdminPanel.css"
 
 const AdminPanel = () => {
     const {data,setData} = useContext(dataContext)
-    const [titleInput, setTitleInput] = useState("")
-    const [descriptionInput, setDescriptionInput] = useState("")
-    const [priceInput, setPriceInput] = useState("")
-    const [ratingInput, setRatingInput] = useState(2.5)
-    const [stockInput, setStockInput] = useState(1)
-    const [categoryInput, setCategoryInput] = useState("")
-    const [brandInput, setBrandInput] = useState("")
-
-    const [changeInput, setChangeInput] = useState("")
-    const [changeTitle, setChangeTitle] = useState("")
-    const [changePrice, setChangePrice] = useState("")
-    const [changeRating, setChangeRating] = useState("")
-    const [changeDescription, setChangeDescription] = useState("")
-    const [changeImage, setChangeImage] = useState("")
-
+    const defaultImage = `../src/assets/FakeShop/images/default.png`
     let generatedID = data.products.length <= 40 ? 40 : data.products.length; //hardcoden? oder einmalig am anfang length speichern.
-    const imgPath = `../src/assets/FakeShop/images/default.png`
+
+    const defaultFields = [
+        "new article",
+        1,
+        1,
+        2.5,
+        "no description",
+        "no category",
+        "no brand"
+]
+    const [changeInput, setChangeInput] = useState(-1)
+
+    const [changeImage, setChangeImage] = useState(defaultImage)
+    const [changeTitle, setChangeTitle] = useState(defaultFields[0])
+    const [changeStock, setChangeStock] = useState(defaultFields[1])
+    const [changePrice, setChangePrice] = useState(defaultFields[2])
+    const [changeRating, setChangeRating] = useState(defaultFields[3])
+    const [changeDescription, setChangeDescription] = useState(defaultFields[4])
+    const [changeCategory, setChangeCategory] = useState(defaultFields[5])
+    const [changeBrand, setChangeBrand] = useState(defaultFields[6])
+
+    const [toggleBtn,setBtnToggle] = useState(false)
 
     const newProductLayout = { 
 			"id": generatedID,
-			"title": titleInput,
-			"description": descriptionInput,
-			"price": priceInput,
-			"rating": ratingInput,
-			"stock": stockInput,
-			"brand": brandInput,
-			"category": categoryInput,
-			"image": imgPath
+			"title": changeTitle,
+			"description": changeDescription,
+			"price": changePrice,
+			"rating": changeRating,
+			"stock": changeStock,
+			"brand": changeBrand,
+			"category": changeCategory,
+			"image": defaultImage
         }
 
-    const handleTitle = (event) => {
-        event.preventDefault();
-        setTitleInput(event.target.value)
+    const resetFields = () => {
+        setChangeInput(-1)
+        setChangeTitle(defaultFields[0])
+        setChangeStock(defaultFields[1])
+        setChangePrice(defaultFields[2])
+        setChangeRating(defaultFields[3])
+        setChangeDescription(defaultFields[4])
+        setChangeBrand(defaultFields[5])
+        setChangeCategory(defaultFields[6])
+        setChangeImage(defaultImage)
     }
 
-    const handleDescription = (event) => {
-        event.preventDefault();
-        setDescriptionInput(event.target.value)
-    }
-
-    const handlePrice = (event) => {
-        event.preventDefault();
-        setPriceInput(event.target.value)
-    }
-
-    const handleRating = (event) => {
-        event.preventDefault();
-        setRatingInput(event.target.value)
-    }
-
-    const handleStock = (event) => {
-        event.preventDefault();
-        setStockInput(event.target.value)
-    }
-
-    const handleCategory = (event) => {
-        event.preventDefault();
-        setCategoryInput(event.target.value)
-    }
-
-    const handleBrand = (event) => {
-        event.preventDefault();
-        setBrandInput(event.target.value)
-    }
-
-    const handleChange = (event) => {
-        event.preventDefault();     
-        const changeID = event.target.value;                           
-        setChangeInput(changeID);
+    const setCurrentProduct = (changeID) => {
+        setChangeImage(data.products[changeID].image)
         setChangeTitle(data.products[changeID].title);
+        setChangeStock(data.products[changeID].stock);
         setChangePrice(data.products[changeID].price);
+        setChangeCategory(data.products[changeID].category);
+        setChangeBrand(data.products[changeID].brand);
         setChangeDescription(data.products[changeID].description);
         setChangeRating(data.products[changeID].rating);
     }
 
+    const handleChange = (event) => {
+        const changeID = Number(event.target.value); 
+        if(changeID != -1){         
+            setChangeInput(changeID);
+            setCurrentProduct(changeID)
+            setBtnToggle(true)
+        }else{
+            setChangeInput(changeID)
+            setBtnToggle(false)
+            resetFields();
+        }
+    }
+
     const handleChangeTitle = (event) => {
         event.preventDefault();
-        setChangeImage(data.products[changeInput].image)
         setChangeTitle(event.target.value);
     }
     const handleChangePrice = (event) => {
@@ -94,115 +90,129 @@ const AdminPanel = () => {
         event.preventDefault();
         setChangeRating(event.target.value);
     }
+    const handleChangeStock = (event) => {
+        event.preventDefault();
+        setChangeStock(event.target.value);
+    }
     const handleChangeDescription = (event) => {
         event.preventDefault();
         setChangeDescription(event.target.value);
     }
+    const handleChangeCategory = (event) => {
+        event.preventDefault();
+        setChangeCategory(event.target.value);
+    }
+    const handleChangeBrand = (event) => {
+        event.preventDefault();
+        setChangeBrand(event.target.value);
+    }
 
     const handleDeleteButton = (event) => {
-        event.preventDefault();
-        if(changeInput != ""){
-            let response = confirm("Willst du wirklich das Produkt löschen?");
+        event.preventDefault()
+        const changeID = changeInput
+        console.log(changeID);
+        if(changeID != -1){
+            let response = confirm("Willst du wirklich das Produkt "+changeID+" löschen?");
             if(response){
                 const products = [...data.products];
-                products.splice(changeInput, 1);
-                const newData = {products}
+                products.splice(changeID, 1);
+                const newData = {products}                
+                    if(changeID+1 <= products.length && changeID-1 >= 0){
+                        setCurrentProduct(changeID -1)
+                        setChangeInput(changeID -1)
+                        document.getElementById("chooseProduct").value = changeID -1
+                    }else if(changeID-1 >= 0){
+                        setCurrentProduct(changeID-1)
+                        setChangeInput(changeID-1)
+                        document.getElementById("chooseProduct").value = changeID-1
+                    }else if(changeID-1 == -1){
+                        setCurrentProduct(products[0].id)
+                    }
                 setData(newData);
-            }  
+            }
         }
     }
 
     const changeFields = (event) => {
-        event.preventDefault();
-        if(changeInput != ""){
-            data.products[changeInput].title = changeTitle;
-            data.products[changeInput].price = changePrice;
-            data.products[changeInput].rating = changeRating;
-            data.products[changeInput].description = changeDescription;
+        event.preventDefault()
+        const changeID = changeInput 
+        if(changeID != -1){
+            setChangeInput(changeID)  
+            data.products[changeID].title = changeTitle;
+            data.products[changeID].price = changePrice;
+            data.products[changeID].stock = changeStock;
+            data.products[changeID].category = changeCategory;
+            data.products[changeID].brand = changeBrand;
+            data.products[changeID].rating = changeRating;
+            data.products[changeID].description = changeDescription;
         }
+        alert(`Das Produkt "${changeTitle}" wurde verändert`)
     }
 
     const addNewProduct = (event) => {
-        event.preventDefault();
+        event.preventDefault()
         const products =[...data.products];
         products.push(newProductLayout);
         const newData = {products}
         setData(newData);
         generatedID++;
 
+        alert(`Das Produkt "${newProductLayout.title}" wurde erstellt`)
+
      //   let response = confirm("Neues Produkt wurde erstellt. Auf Home zurückkehren?");
      //   response? useNavigate("./home") : null;
     }
 
     useEffect(() => {
-
-    },[data,changeImage])
+        console.log(changeInput);
+    },[data,changeInput])
 
     return (
     <>
         <section className="adminSection">
-            <form onSubmit={addNewProduct}>
-            <h2>NEUES PRODUKT ERSTELLEN</h2>
-                <article className="addProduct">    
-                <label htmlFor="title">Title: 
-                    <input required name="title" type="text" onChange={handleTitle} />
-                </label>
-                <label htmlFor="description">Description: 
-                    <input required name="description" type="text" onChange={handleDescription} />
-                </label>
-                <label htmlFor=""> Price: 
-                    <input required type="number" onChange={handlePrice} />
-                </label>
-                <label htmlFor=""> Rating: {ratingInput}
-                    <input required type="range"  value={ratingInput} max={5.0} min={0.0} step={0.1} onChange={handleRating} />
-                </label>
-                <label htmlFor=""> Stock: {stockInput}
-                    <input required type="range" value={stockInput} max={1000.0} min={1} step={1} onChange={handleStock} />
-                </label>
-                <label htmlFor=""> brand: 
-                    <input required type="text" onChange={handleBrand} />
-                </label>
-                <label htmlFor=""> category: 
-                    <input required type="text" onChange={handleCategory} />
-                </label>
-                <input type="submit" value="ADD NEW PRODUCT"/>
-                </article>
+            <form>
+            <h2>PRODUKT ERSTELLEN, ÄNDERN ODER ENTFERNEN</h2>
                 <article className="createProduct">
-                    <h2>PRODUKT ÄNDERN ODER ENTFERNEN</h2>
-                        <select onChange={handleChange} name="" id="">
-                            <option key={-1}>NONE</option>
+                        <select onChange={handleChange} name="" id="chooseProduct">
+                            <option value={-1} key={-1}>NEUES PRODUKT ERSTELLEN</option>
                             {[...data.products].map((product,index) => {
                                 return <option value={index} key={index}>{product.title}</option>
                             })}
                         </select>
                             <>
-                                {console.log(changeImage)}
-                                <img src={changeImage} alt="" />
-                                <h3>ARTIKEL ID {changeInput}</h3>
-                                <label htmlFor=""> TITLE: 
-                                    <input onChange={handleChangeTitle} value={changeTitle} type="text" />
-                                </label>
-                                <label htmlFor="">PRICE: 
-                                    <input onChange={handleChangePrice} value={changePrice} type="text" />
-                                </label>
-                                <label htmlFor="">RATING: 
-                                    <input onChange={handleChangeRating} value={changeRating} min={0.1} max={5.0} step={0.1} type="range" />
-                                    {changeRating}
-                                </label>
-                                <label htmlFor="">DESCRIPTION:
+                                    <div>
+                                        <img src={changeImage} alt="" />
+                                        <div className="rangeDiv">
+                                            <h3>{changeStock} STOCK:</h3>
+                                            <input onChange={handleChangeStock} value={changeStock} min={1} max={1000} step={1} type="range" />
+                                            <h3>{changeRating} RATING:</h3>
+                                            <input onChange={handleChangeRating} value={changeRating} min={0.1} max={5.0} step={0.1} type="range" />    
+                                        </div>
+                                    </div>
+                                    <h3>{changeInput==-1?`CREATE ARTICLE NUMBER ${generatedID}` : `ARTICLE ID ${changeInput}`}</h3>
+                                    <div>
+                                        <h3>TITLE:</h3>
+                                        <input onChange={handleChangeTitle} value={changeTitle} type="text" />
+                                    </div>
+                                    <div>
+                                        <h3>PRICE:</h3>
+                                        <input onChange={handleChangePrice} value={changePrice} type="number" />
+                                    </div>
+                                    <div>
+                                        <h3>CATEGORY:</h3>
+                                        <input onChange={handleChangeCategory} value={changeCategory} type="text" />
+                                    </div>
+                                    <div>
+                                        <h3>BRAND:</h3>
+                                        <input onChange={handleChangeBrand} value={changeBrand} type="text" />
+                                    </div>
+                                    <h3>DESCRIPTION:</h3>
                                     <textarea onChange={handleChangeDescription} value={changeDescription}/>
-                                </label>
-
-                            
-                                {data.products[0].category}
-                                {data.products[0].brand}
-                                {data.products[0].stock}
-                                
                             </>
-                        
-                            <div>
-                                <button onClick={handleDeleteButton}>DELETE</button>
-                                <button onClick={changeFields}>CHANGE</button>
+                            <div className="adminBtnDiv">
+                                <button  className={toggleBtn?"":"disabled"} id="adminDelete" onClick={handleDeleteButton}>DELETE</button>
+                                <button  className={toggleBtn?"":"disabled"} id="adminChange" onClick={changeFields}>CHANGE</button>
+                                <button className={toggleBtn?"disabled":""} id="adminNew" onClick={addNewProduct}>ADD NEW</button>
                             </div>
                 </article>
             </form>

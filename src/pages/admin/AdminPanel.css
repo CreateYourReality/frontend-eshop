@@ -1,11 +1,20 @@
-.adminSection .addProduct{
-    display: flex;
-    flex-direction: column;
-    min-height: 50vh;
-}
 
 .adminSection{
-    min-height: 100vh;
+    min-height: 80vh;
+    margin-top: 25px;
+}
+
+.adminSection h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.adminSection input{
+    margin: 5px 0;
+}
+
+.createProduct h3:first-of-type{
+    margin:10px 0;
 }
 
 .adminSection form{
@@ -13,6 +22,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 90%;
 }
 
 .adminSection .createProduct{
@@ -20,36 +30,48 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 50vh;
 }
 
-.adminSection .createProduct input[type="text"]{
-    width: 90%;
+.adminSection .createProduct input[type="text"],
+.adminSection .createProduct input[type="number"]{
+    width: 80%;
 }
 
-.adminSection .createProduct label{
-    width: 90%;
+.rangeDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.adminSection .createProduct img{
-    min-width: 70%;
-    max-width: 70%;
+.createProduct img{
+    min-width: clamp(1rem,40vw,40rem);
+    max-width: clamp(1rem,40vw,40rem);
+    min-height: clamp(1rem,40vw,40rem);
+    max-height: clamp(1rem,40vw,40rem);
     padding: 10px;
-}
-
-.adminSection form input,
-.adminSection form button{
-    margin-top: 10px;
-}
-
-.adminSection label{
-    display: inline-block;
 }
 
 .adminSection textarea{
     width: 100%;
     resize: none;
     min-height: 100px;
+}
+
+#adminChange.disabled,
+#adminDelete.disabled,
+#adminNew.disabled
+{
+    background-color: dimgray;
+    opacity: 70%;
+    cursor:default;
+}
+
+#adminChange.disabled:hover,
+#adminDelete.disabled:hover,
+#adminNew.disabled:hover{
+    background-color: dimgray;
+    color: white;
 }
 
 .createProduct div{
@@ -59,18 +81,37 @@
     width: 100%;
 }
 
-.createProduct div button{
+.createProduct div button,
+.createProduct div input[type="submit"]{
     padding: 10px 15px;
     border-radius: 5px;
     color: white;
-    background-color: var(--blue);
+    background-color: blue;
     cursor: pointer;
 }
 
-.createProduct div button:first-of-type:hover{
-    background-color: crimson ;
+#adminDelete{
+    background-color: crimson;
 }
 
-.createProduct div button:last-of-type:hover{
-    background-color: purple;
+#adminDelete:hover{
+    background-color: red ;
+}
+
+#adminChange:hover{
+    background-color: var(--blue);
+}
+
+#adminNew{
+    background-color: green;
+}
+
+#adminNew:hover{
+    background-color: lightgreen;
+    color: black;
+}
+
+
+.adminBtnDiv{
+    margin-top: 10px;
 }
