@@ -6,7 +6,7 @@ import AddToCartBtn from "../../components/addToCartBtn/AddToCartBtn";
 import GoBackHeader from "../../components/goBackHeader/GoBackHeader";
 import Footer from "../../components/Footer/Footer";
 import star from "../../assets/img/Star.png";
-import AddToFavBtn from "../../components/addToFavBtn/addToFavBtn";
+import AddToFavBtn from "../../components/addToFavBtn/AddToFavBtn";
 import MinusSvg from "../../components/svgComponents/minus/MinusSvg";
 import PlusSvg from "../../components/svgComponents/plus/PlusSvg";
 
