@@ -15,7 +15,7 @@ const Home = () => {
 
     const { user } = useContext(userContext)
     const { shoppingcart, setShoppingcart } = useContext(shoppingcartContext);
-    const { favorites } = useContext(favoritesContext);
+    const { favorites, setFavorites } = useContext(favoritesContext);
 	const [favoriteProducts, setFavoriteProducts] = useState([]);
 
 
@@ -25,8 +25,7 @@ const Home = () => {
 		));
 
         user?setShoppingcart(user[0].cart):shoppingcart.length === 0?setShoppingcart([]):null
-        user?setFavoriteProducts(user[0].fav):favoriteProducts.length === 0?setFavoriteProducts([]):null
-
+        user?setFavorites(user[0].fav):favoriteProducts.length === 0?setFavorites([]):null
         setFilter([[],[],[]])
     }, [])
 

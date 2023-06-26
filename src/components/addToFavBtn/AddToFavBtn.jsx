@@ -22,10 +22,9 @@ const AddToFavBtn = () => {
 		favoriteProducts===0?setFavorites([]):null
 		const setUserItem = () => {
 			if (user) {
-				
-				const newUsers = users.map(item => item.username === user[0].username && item.email === user[0].email?{...item, fav: favoriteProducts}:item)
+				const newUsers = users.map(item => item.username === user[0].username && item.email === user[0].email?{...item, fav: favorites}:item)
 	
-				const updateUser = user.map(item => item.username === user[0].username && item.email === user[0].email?{...item, fav: favoriteProducts}:item)
+				const updateUser = user.map(item => item.username === user[0].username && item.email === user[0].email?{...item, fav: favorites}:item);
 				setUsers(newUsers)
 				setUser(updateUser)
 			}

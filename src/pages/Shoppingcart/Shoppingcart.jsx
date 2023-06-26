@@ -23,7 +23,6 @@ const Shoppingcart = () => {
     
 	const setUserItem = () => {
 		if (user) {
-            console.log(user);
 			const newUsers = users.map(item => item.username === user[0].username && item.email === user[0].email?{...item, cart: shoppingcart}:item)
 
 			const updateUser = user.map(item => item.username === user[0].username && item.email === user[0].email?{...item, cart: shoppingcart}:item)
@@ -89,7 +88,7 @@ const Shoppingcart = () => {
 				{shoppingcart ? (
 					<div className="productList">
 						{shoppingcart?.sort(getSortType(sortBy)).filter(text.length!==0?filterByText:(a) => a).map((products, index) => (
-								<article className='articleCard'>
+								<article className='articleCard' key={index}>
                                     <div onClick={() => removeProduct(index)} className="svg-wrapper">
                                         <DeleteSvg />
                                     </div>
