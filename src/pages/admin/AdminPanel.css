@@ -2,6 +2,8 @@
 .adminSection{
     min-height: 80vh;
     margin-top: 25px;
+    font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
 }
 
 .adminSection h2{
@@ -9,12 +11,21 @@
     margin-bottom: 10px;
 }
 
+.createProduct select{
+    font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+}
+
 .adminSection input{
     margin: 5px 0;
+    border-radius: 5px;
+    padding-left: 3px;
+    font-family: "Poppins-ExtraLight", Arial, Helvetica, sans-serif;
+
 }
 
 .createProduct h3:first-of-type{
-    margin:10px 0;
+    margin-bottom:10px 0;
 }
 
 .adminSection form{
@@ -23,6 +34,9 @@
     justify-content: center;
     align-items: center;
     width: 90%;
+    box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.10);
+    border-radius: 15px;
+    padding: 10px;
 }
 
 .adminSection .createProduct{
@@ -44,18 +58,31 @@
     flex-direction: column;
 }
 
-.createProduct img{
+.productImg{
     min-width: clamp(1rem,40vw,40rem);
     max-width: clamp(1rem,40vw,40rem);
     min-height: clamp(1rem,40vw,40rem);
     max-height: clamp(1rem,40vw,40rem);
     padding: 10px;
+    background: var(--gray-07, #f0f3f8);
+    border-radius: 15px;
+    margin: 5px;
 }
+
+.star {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
 
 .adminSection textarea{
     width: 100%;
     resize: none;
     min-height: 100px;
+    padding-left: 3px;
+    padding-top: 1px;
+    font-family: "Poppins-ExtraLight", Arial, Helvetica, sans-serif;
+    font-size: small;
 }
 
 #adminChange.disabled,
@@ -88,6 +115,7 @@
     color: white;
     background-color: blue;
     cursor: pointer;
+    border: none;
 }
 
 #adminDelete{

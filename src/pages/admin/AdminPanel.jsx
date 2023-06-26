@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../context/Context";
 import Footer from "../../components/Footer/Footer";
 import "./AdminPanel.css"
+import star from "../../assets/img/Star.png";
+
 
 const AdminPanel = () => {
     const {data,setData} = useContext(dataContext)
@@ -134,7 +136,6 @@ const AdminPanel = () => {
         event.preventDefault()
         const changeID = changeInput 
         if(changeID != -1){
-            setChangeInput(changeID)  
             data.products[changeID].title = changeTitle;
             data.products[changeID].price = changePrice;
             data.products[changeID].stock = changeStock;
@@ -142,8 +143,9 @@ const AdminPanel = () => {
             data.products[changeID].brand = changeBrand;
             data.products[changeID].rating = changeRating;
             data.products[changeID].description = changeDescription;
+            setChangeInput(changeID)  
+            alert(`Product "${changeTitle}" updated`)
         }
-        alert(`Product "${changeTitle}" updated`)
     }
 
     const addNewProduct = (event) => {
@@ -174,11 +176,11 @@ const AdminPanel = () => {
                         </select>
                             <>
                                     <div>
-                                        <img src={changeImage} alt="" />
+                                        <img className="productImg" src={changeImage} alt="productimg" />
                                         <div className="rangeDiv">
                                             <h3>{changeStock} STOCK:</h3>
                                             <input onChange={handleChangeStock} value={changeStock} min={1} max={1000} step={1} type="range" />
-                                            <h3>{changeRating} RATING:</h3>
+                                            <h3>{changeRating}<img className='star' src={star} alt='Star' />RATING:</h3>
                                             <input onChange={handleChangeRating} value={changeRating} min={0.1} max={5.0} step={0.1} type="range" />    
                                         </div>
                                     </div>

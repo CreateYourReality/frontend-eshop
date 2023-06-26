@@ -2,7 +2,7 @@ footer {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	height: 10vh;
+	min-height: 70px;
 	position: sticky;
 	left: 0;
 	bottom: 0;

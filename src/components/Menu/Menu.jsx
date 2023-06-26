@@ -12,7 +12,7 @@ const Menu = ({user, setUser}) => {
     const { setFavorites } = useContext(favoritesContext);
     return ( 
         <>
-        <div className="dd-menu" onClick={() => setOpen(prev => !prev)} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+        <div className="dd-menu" onClick={() => setOpen(prev => !prev)}>
             <div className="svg-wrapper">
                 {user?<AccountSvg />:<NavLink to="/login"><Logout /></NavLink>}
             </div>

@@ -33,14 +33,12 @@
 	text-align: center;
 	padding: 14px;
 }
-.go-back-header div {
-	width: 100%;
-}
 
 .head-text-container {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	width: 100%;
 }
 
 @media screen and (min-width: 1440px) {

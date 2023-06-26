@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CategorieContainer from "./CategorieContainer/CategorieContainer";
 import { filterContext, dataContext } from "../../context/Context";
 import './CategorieSlider.css'
@@ -9,11 +9,16 @@ const CategorieSlider = () => {
     const categoriesArray = [...new Set(data.products.map((item, i) => item.category))]
     //const [categorie, setCategorie] = useState();
     const {filter, setFilter} = useContext(filterContext);
+    const [categorieText, setCategorieText] = useState("")
+    
+    useEffect(() => {
+        setFilter([[categorieText],[],[]])
+    }, [categorieText])
 
     return ( 
         <>
             <div className="CategorieSlider">
-                {categoriesArray.map((categorie, i) => <CategorieContainer setCategorie={setFilter} text={categorie} i={i} key={i}/>)}
+                {categoriesArray.map((categorie, i) => <CategorieContainer categorieText={categorieText} setCategorieText={setCategorieText} filter={filter} setCategorie={setFilter} text={categorie} i={i} key={i}/>)}
             </div>
             <div className="ProductListHome">
                 <h3>Popular</h3>

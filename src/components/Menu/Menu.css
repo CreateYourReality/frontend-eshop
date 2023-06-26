@@ -34,4 +34,8 @@
 	font-weight: 600;
 	line-height: 2.4rem;
 	letter-spacing: 0.01rem;
+	cursor: pointer;
+}
+.svg-wrapper {
+	cursor: pointer;
 }
