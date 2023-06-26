@@ -1,14 +1,40 @@
-.adminSection{
+.adminSection .addProduct{
+    display: flex;
     flex-direction: column;
-    min-height: 80vh;
+    min-height: 50vh;
 }
 
+.adminSection{
+    min-height: 100vh;
+}
 
 .adminSection form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.adminSection .createProduct{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+}
+
+.adminSection .createProduct input[type="text"]{
+    width: 90%;
+}
+
+.adminSection .createProduct label{
+    width: 90%;
+}
+
+.adminSection .createProduct img{
+    min-width: 70%;
+    max-width: 70%;
+    padding: 10px;
 }
 
 .adminSection form input,
@@ -18,4 +44,33 @@
 
 .adminSection label{
     display: inline-block;
+}
+
+.adminSection textarea{
+    width: 100%;
+    resize: none;
+    min-height: 100px;
+}
+
+.createProduct div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.createProduct div button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--blue);
+    cursor: pointer;
+}
+
+.createProduct div button:first-of-type:hover{
+    background-color: crimson ;
+}
+
+.createProduct div button:last-of-type:hover{
+    background-color: purple;
 }
