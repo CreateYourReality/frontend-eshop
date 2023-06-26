@@ -119,11 +119,9 @@ const AdminPanel = () => {
                     if(changeID+1 <= products.length && changeID-1 >= 0){
                         setCurrentProduct(changeID -1)
                         setChangeInput(changeID -1)
-            //            document.getElementById("chooseProduct").value = changeID -1
                     }else if(changeID-1 >= 0){
                         setCurrentProduct(changeID-1)
                         setChangeInput(changeID-1)
-                  //      document.getElementById("chooseProduct").value = changeID-1
                     }else if(changeID-1 == -1){
                         setCurrentProduct(products[0].id-1)
                     }
@@ -155,16 +153,12 @@ const AdminPanel = () => {
         const newData = {products}
         setData(newData);
         generatedID++;
-
         alert(`Das Produkt "${newProductLayout.title}" wurde erstellt`)
-
-     //   let response = confirm("Neues Produkt wurde erstellt. Auf Home zurückkehren?");
-     //   response? useNavigate("./home") : null;
     }
 
     useEffect(() => {
     },[data,changeInput])
-
+    
     return (
     <>
         <section className="adminSection">
