@@ -6,6 +6,7 @@ import Footer from "../../components/Footer/Footer";
 import GoBackHeader from "../../components/goBackHeader/GoBackHeader";
 import { Link } from "react-router-dom";
 import ArticleCard from "../../components/ArticleCard/ArticleCard";
+import NothingHere from "../../components/NothingHere/NothingHere";
 
 const Favorites = () => {
 	const { data } = useContext(dataContext);
@@ -44,19 +45,23 @@ const Favorites = () => {
 			<main className='productList'>
 				{favoriteProducts ? (
 					<>
-						{favoriteProducts?.map((product, index) => (
-							
-								<article  key={index} className='articleCard'>
-									<ArticleCard
-										title={product.title}
-										image={product.image}
-										id={product.id}
-										rating={product.rating}
-										price={product.price}
-									/>
-								</article>
-							
-						))}
+						{favorites.length === 0 ? (
+							<NothingHere />
+						) : (
+							favoriteProducts?.map((product, index) => (
+								
+									<article  key={index} className='articleCard'>
+										<ArticleCard
+											title={product.title}
+											image={product.image}
+											id={product.id}
+											rating={product.rating}
+											price={product.price}
+										/>
+									</article>
+								
+							))
+						)}
 					</>
 				) : (
 					<p>LOADING DATA...</p>
