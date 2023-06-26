@@ -17,9 +17,11 @@ const GoBackHeader = props => {
 			<button onClick={() => currentLocation == path?goBack():props.isMenu?props.setOpen?props.setOpen(false):null:navigate("/home")}>
 				<img src={arrow} alt='go-back' />
 			</button>
-			<div>
-				<p>{props.text}</p>
-				{props.summe?<span>{props.summe}€</span>:<></>}
+			<div className="head-text-container">
+				<div>
+					<p>{props.text}</p>
+				</div>
+			{props.summe?<p>Der Warenkorb beinhaltet: <span>{props.summe}€</span></p>:<></>}
 			</div>
 		</div>
 	);

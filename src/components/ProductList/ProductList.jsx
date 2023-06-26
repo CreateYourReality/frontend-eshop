@@ -94,7 +94,7 @@ const ProductList = ({searchtext}) => {
     },[sortBy, searchtext, filter])
 
 
-    const maxArticleHome = 4;
+    const maxArticleHome = 8;
     let i = 0;
 
     return ( 
@@ -117,8 +117,7 @@ const ProductList = ({searchtext}) => {
                         }
 
                         return (
-                        <Link key={index} to={`/details/${product.id}`}>
-                            <article className="articleCard"  >
+                            <article className="articleCard" key={index} >
                                 <ArticleCard
                                     title={product.title}
                                     image={product.image}
@@ -127,7 +126,6 @@ const ProductList = ({searchtext}) => {
                                     price={product.price}
                                 />
                             </article>
-                        </Link>
                         )}                             
                         )}
                 </>

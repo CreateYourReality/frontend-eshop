@@ -12,8 +12,16 @@
 	top: 0;
 	bottom: 0;
 }
-
-.go-back-header p {
+.go-back-header .head-text-container p {
+	font-family: "Poppins-Medium", Arial, Helvetica, sans-serif;
+	font-weight: 500;
+	font-size: 1rem;
+}
+.go-back-header .head-text-container p span {
+	color: var(--blue, #364fd4);
+	font-size: 1.3rem;
+}
+.go-back-header .head-text-container div p {
 	color: var(--gray-01, #1e2126);
 	width: 100%;
 	font-size: 2rem;
@@ -26,6 +34,12 @@
 }
 .go-back-header div {
 	width: 100%;
+}
+
+.head-text-container {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 @media screen and (min-width: 1440px) {

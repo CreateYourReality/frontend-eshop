@@ -80,7 +80,9 @@
 	line-height: 1.8rem;
 	margin-bottom: 5px;
 }
-
+.articleCard a {
+	display: contents;
+}
 .articleCard figure div {
 	margin-bottom: 6px;
 }

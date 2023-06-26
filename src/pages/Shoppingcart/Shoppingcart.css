@@ -1,3 +1,17 @@
 .shoppingcart svg {
 	fill: var(--gray-04, #b9c1cc);
 }
+
+.articleCard .svg-wrapper {
+	width: 20%;
+}
+.articleCard .svg-wrapper svg {
+	width: 100%;
+}
+.search-field {
+	width: 100%;
+}
+.shoppingcart {
+	display: flex;
+	flex-direction: column;
+}
