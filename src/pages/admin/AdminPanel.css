@@ -3,6 +3,7 @@
     min-height: 80vh;
     margin-top: 25px;
     font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
 }
 
 .adminSection h2{
@@ -12,6 +13,7 @@
 
 .createProduct select{
     font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+    border-radius: 5px;
 }
 
 .adminSection input{

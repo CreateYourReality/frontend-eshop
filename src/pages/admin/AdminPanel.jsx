@@ -136,7 +136,6 @@ const AdminPanel = () => {
         event.preventDefault()
         const changeID = changeInput 
         if(changeID != -1){
-            setChangeInput(changeID)  
             data.products[changeID].title = changeTitle;
             data.products[changeID].price = changePrice;
             data.products[changeID].stock = changeStock;
@@ -144,6 +143,7 @@ const AdminPanel = () => {
             data.products[changeID].brand = changeBrand;
             data.products[changeID].rating = changeRating;
             data.products[changeID].description = changeDescription;
+            setChangeInput(changeID)  
             alert(`Product "${changeTitle}" updated`)
         }
     }
