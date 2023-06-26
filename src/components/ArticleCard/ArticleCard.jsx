@@ -1,5 +1,5 @@
 import "./ArticleCard.css"
-import star from '../../assets/img/star.png'
+import star from '../../assets/img/Star.png'
 import frame from '../../assets/img/Frame.svg'
 import { useEffect, useState, useContext } from "react"
 import MinusSvg from "../svgComponents/minus/MinusSvg"
