@@ -52,6 +52,16 @@
 	font-weight: 500;
 	line-height: 1.8rem;
 	padding: 8px 15px;
+	cursor: pointer;
+	border-radius: 12px;
+	transition: 0.3s ease-in-out;
+}
+
+.popup .container .checkbox:hover {
+	background-color: var(--blue);
+	color: var(--white);
+	transform: scale(1.05);
+	box-shadow: 1px 1px 5px var(--gray-04);
 }
 
 .popup .wrapper {
