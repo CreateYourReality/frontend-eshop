@@ -111,7 +111,7 @@ const AdminPanel = () => {
         event.preventDefault()
         const changeID = changeInput
         if(changeID != -1){
-            let response = confirm("Willst du wirklich das Produkt "+changeID+" löschen?");
+            let response = confirm("Delete product id "+changeID+"?");
             if(response){
                 const products = [...data.products];
                 products.splice(changeID, 1);
@@ -143,7 +143,7 @@ const AdminPanel = () => {
             data.products[changeID].rating = changeRating;
             data.products[changeID].description = changeDescription;
         }
-        alert(`Das Produkt "${changeTitle}" wurde verändert`)
+        alert(`Product "${changeTitle}" updated`)
     }
 
     const addNewProduct = (event) => {
@@ -153,20 +153,21 @@ const AdminPanel = () => {
         const newData = {products}
         setData(newData);
         generatedID++;
-        alert(`Das Produkt "${newProductLayout.title}" wurde erstellt`)
+        alert(`Product "${newProductLayout.title}" created`)
     }
 
     useEffect(() => {
     },[data,changeInput])
-    
+
     return (
     <>
         <section className="adminSection">
             <form>
-            <h2>PRODUKT ERSTELLEN, ÄNDERN ODER ENTFERNEN</h2>
+            <h2>ADMIN PANEL</h2>
+            <h2>CREATE, UPDATE OR DELETE PRODUCT</h2>
                 <article className="createProduct">
                         <select value={changeInput} onChange={handleChange} name="" id="chooseProduct">
-                            <option value={-1} key={-1}>NEUES PRODUKT ERSTELLEN</option>
+                            <option value={-1} key={-1}>CREATE NEW PRODUCT</option>
                             {[...data.products].map((product,index) => {
                                 return <option value={index} key={index}>{product.title}</option>
                             })}
