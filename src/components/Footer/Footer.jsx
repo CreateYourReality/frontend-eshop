@@ -35,13 +35,7 @@ const Footer = () => {
 					<HeartSvg />
 					{favorites.length!==0?<div className="note">{favorites.length}</div>:null}
 				</div>
-			</NavLink>
-			<NavLink to="/adminpanel">
-				<div className="svg-wrapper">
-					ADMIN
-				</div>
-			</NavLink>    
-			
+			</NavLink>			
 		</footer>
 	);
 };

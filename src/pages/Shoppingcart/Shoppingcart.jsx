@@ -7,6 +7,7 @@ import DeleteSvg from "../../components/svgComponents/delete/DeleteSvg";
 import SearchInput from "../../components/inputs/SearchInput/SearchInput"
 import './Shoppingcart.css'
 import SelectSortType from "../../components/SelectSortType/SelectSortType"
+import { NavLink } from "react-router-dom";
 
 const Shoppingcart = () => {
     const [summe, setSumme] = useState(0)
@@ -106,9 +107,11 @@ const Shoppingcart = () => {
 								</article>
 						))}
 					</div>
+                    
 				) : (
-					<p>DATEN WERDEN GELADEN...</p>
+					<p>LOADING DATA...</p>
 				)}
+                {shoppingcart.length !== 0?<NavLink className="example" to="/checkout">Checkout</NavLink>:<></>}
 			</main>
 			<Footer />
 		</>

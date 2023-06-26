@@ -130,7 +130,7 @@ const ProductList = ({searchtext}) => {
                         )}
                 </>
             ) : (
-                <p>DATEN WERDEN GELADEN...</p>
+                <p>LOADING DATA...</p>
              )}
 
         </section>

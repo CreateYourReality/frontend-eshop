@@ -12,7 +12,7 @@ const Header = ({text, setSearchText}) => {
     
     return ( 
         <header>
-            {text?<div className="headliner"><h1>{text} {user?`, ${user[0].username}!`:<></>}</h1><Menu user={user} setUser={setUser}/></div>:<></>}
+            {text?<div className="headliner"><h1>{text}{user?<>{`,`}<br/>{`${user[0].username}!`}</>:<></>}</h1><Menu user={user} setUser={setUser}/></div>:<></>}
             <Search setSearchText={setSearchText}/>
         </header>
      );

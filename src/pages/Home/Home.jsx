@@ -18,7 +18,6 @@ const Home = () => {
     const { favorites, setFavorites } = useContext(favoritesContext);
 	const [favoriteProducts, setFavoriteProducts] = useState([]);
 
-
     useEffect(() => {
         setFavoriteProducts(data.products.filter(product =>
 			favorites.some(fav => product.id === Number(fav)),

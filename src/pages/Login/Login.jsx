@@ -4,6 +4,7 @@ import LoginForm from "../../components/LoginForm/LoginForm";
 import GoBackHeader from "../../components/goBackHeader/GoBackHeader";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
 import { usersContext } from "../../context/Context";
+import './Login.css'
 
 const Login = () => {
     const [Login, setLogin] = useState(true)
@@ -14,8 +15,10 @@ const Login = () => {
             <header>
                 <GoBackHeader text='Log in'/>
             </header>
-            <main>
+            <main className="loginForm">
+                <section className="loginFormSection">
                 {Login?<LoginForm  users={users} setUsers={setUsers} setLogin={setLogin}/>:<RegisterForm setUsers={setUsers} setLogin={setLogin}/>}
+                </section>
             </main>
             <Footer />
         </>

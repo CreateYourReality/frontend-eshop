@@ -1,0 +1,69 @@
+.loginForm label {
+	color: #000;
+	text-align: center;
+	font-size: 1.2rem;
+	font-family: "Poppins", Arial, Helvetica, sans-serif;
+	font-weight: 500;
+	line-height: 1.8rem;
+}
+.loginForm {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	width: 100%;
+}
+.loginFormSection {
+	min-height: 50vh;
+	min-height: 50svh;
+	height: 100%;
+	width: 65%;
+}
+.loginForm form {
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+}
+.loginForm form div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 5px;
+}
+.loginForm form div:last-of-type {
+	gap: 5px;
+}
+.buttonBox {
+	display: flex;
+	flex-direction: column;
+}
+
+.buttonBox {
+	color: var(--gray-01, #1e2126);
+	font-size: 1.6rem;
+	font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+	font-weight: 600;
+	line-height: 2.4rem;
+	letter-spacing: 0.01rem;
+}
+.loginForm input {
+	color: #000;
+	text-align: left;
+	font-size: 1.2rem;
+	font-family: "Poppins", Arial, Helvetica, sans-serif;
+	font-weight: 500;
+	line-height: 1.8rem;
+	width: 100%;
+	padding: 1rem;
+	border: 2px solid var(--gray-04, #b9c1cc);
+	border-radius: 12px;
+}
+.loginForm input:focus {
+	outline: none;
+	border: 2px solid var(--blue);
+}

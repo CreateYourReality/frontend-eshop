@@ -1,16 +1,5 @@
 [
         {
-            "firstname": "Gast",
-            "lastname": "",
-            "id": 0, 
-            "username": "Gast",
-            "email": "",
-            "password": "",
-            "birthday": 0,
-            "cart": [],
-            "fav": []
-         },
-        {
             "firstname": "Max",
             "lastname": "Mustermann",
             "id": 1,

@@ -45,8 +45,8 @@ const Favorites = () => {
 				{favoriteProducts ? (
 					<>
 						{favoriteProducts?.map((product, index) => (
-							<Link key={index} to={`/details/${product.id}`}>
-								<article className='articleCard'>
+							
+								<article  key={index} className='articleCard'>
 									<ArticleCard
 										title={product.title}
 										image={product.image}
@@ -55,11 +55,11 @@ const Favorites = () => {
 										price={product.price}
 									/>
 								</article>
-							</Link>
+							
 						))}
 					</>
 				) : (
-					<p>DATEN WERDEN GELADEN...</p>
+					<p>LOADING DATA...</p>
 				)}
 			</main>
 			<Footer />

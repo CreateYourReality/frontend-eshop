@@ -19,6 +19,8 @@ import Favorites from "./pages/Favorites/Favorites";
 import AdminPanel from "./pages/admin/AdminPanel";
 import Shoppingcart from "./pages/Shoppingcart/Shoppingcart";
 import Login from "./pages/Login/Login";
+import Profile from "./pages/profile/Profile";
+import Checkout from "./pages/checkout/Checkout";
 
 function App() {
 	const [loading, setLoading] = useState(true);
@@ -29,7 +31,6 @@ function App() {
 	const [favorites, setFavorites] = useState([]);
 	const [shoppingcart, setShoppingcart] = useState([])
 
-	
 	return (
 		<>
 			<>
@@ -75,6 +76,15 @@ function App() {
 										<Route
 										path='/login'
 										element={loading ? <LoadingScreen /> : <Login />}
+										/>
+										{user?<Route
+										path='/profile'
+										element={loading ? <LoadingScreen /> : <Profile />}
+										/>:<></>}
+									
+										<Route
+										path='/checkout'
+										element={loading ? <LoadingScreen /> : <Checkout />}
 										/>
 								</Routes>
 								</BrowserRouter>

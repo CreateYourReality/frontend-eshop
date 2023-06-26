@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import Logout from "../svgComponents/logout/Logout";
 import { useContext } from "react";
 import { shoppingcartContext, favoritesContext } from "../../context/Context";
+import './Menu.css'
 
 const Menu = ({user, setUser}) => {
     const [open, setOpen] = useState(false)
@@ -18,7 +19,7 @@ const Menu = ({user, setUser}) => {
             {user?
                 <div className={open?"dd-menu-list visible":"dd-menu-list"}>
                 <div className="dd-menu-item"><NavLink to="/profile">Profile</NavLink></div>
-                {user[0].username === "Admin"?<div className="dd-menu-item"><NavLink to="/adminpanel">adminpanel</NavLink></div>:<></>}
+                {user[0].username === "Admin"?<div className="dd-menu-item"><NavLink to="/adminpanel">Adminpanel</NavLink></div>:<></>}
                 <div className="dd-menu-item" onClick={() => setUser(undefined)&setShoppingcart([])&setFavorites([])}>Logout</div>
                 </div>:<></>}
         </div>

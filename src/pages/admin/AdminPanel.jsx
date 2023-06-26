@@ -176,7 +176,6 @@ const AdminPanel = () => {
                             })}
                         </select>
                             <>
-                                {console.log(changeImage)}
                                 <img src={changeImage} alt="" />
                                 <h3>ARTIKEL ID {changeInput}</h3>
                                 <label htmlFor=""> TITLE: 

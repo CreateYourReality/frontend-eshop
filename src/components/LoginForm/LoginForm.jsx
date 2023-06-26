@@ -12,20 +12,20 @@ const LoginForm = ({users, setUsers, setLogin}) => {
     const handleLogin = (e) => {
         e.preventDefault();
 
-        const loggeduser =  JSON.parse(localStorage.getItem("user"))
-        //setUsers(prev => console.log(prev))
-        loggeduser?
+        const loggedusers =  JSON.parse(localStorage.getItem("users") || "[]")
+        loggedusers?
         setUsers(prev => {
-            const loggedusers = [...prev];
-            const hasUserIndex = loggedusers.findIndex(item => item.username === loggeduser.username||item.email === loggeduser.email);
+            console.log(loggedusers);
+            const loggedusersArray = [...prev];
+            const hasUserIndex = loggedusersArray.findIndex(item => item.username === loggedusers.username||item.email === loggedusers.email);
 
-            hasUserIndex!==-1?null:loggedusers.push(loggeduser)
-            return loggedusers
+            hasUserIndex!==-1?null:loggedusersArray.push(loggedusers)
+            return loggedusersArray
         }):null
 
         const checkUsername = users.some(item => input.username === item.email||input.username === item.username)
         const checkPassword =  users.some(item => input.password === item.password)
-        
+
         const weFilter = users.filter((item) => item.username === input.username||item.email === input.username)
 
         checkUsername&&checkPassword?setUser(weFilter):alert("wrong Email/password")
@@ -36,17 +36,21 @@ const LoginForm = ({users, setUsers, setLogin}) => {
         <>
             <form onSubmit={handleLogin}>
                 <div>
-                    <label htmlFor="username">Username/E-Mail:</label>
+                    <label htmlFor="username"></label>
                     <input autoComplete="on" type="text" name="username" value={input.username} id="username" onChange={(e) => setInput({...input,[e.target.name]:e.target.value})} placeholder="Username/E-Mail"/>
                 </div>
                 <div>
-                <label htmlFor="password">password</label>
+                <label htmlFor="password"></label>
                     <input autoComplete="on" type="password" value={input.password} onChange={(e) => setInput({...input,[e.target.name]:e.target.value})} name="password" id="password" placeholder="password"/>
                 </div>
                 <div>
-                <button>Log in</button>
-                <button onClick={() => setLogin(false)}>Register</button>
+                    <button className="example"type="submit">Log in</button>
                 </div>
+                <div className="buttonBox">
+                    <p> Noch kein Account?</p>
+                    <button className="example"type="button" onClick={() => setLogin(false)}>Register</button>
+                </div>
+                
             </form>
         </>
      );
