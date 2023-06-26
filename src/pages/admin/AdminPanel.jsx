@@ -110,7 +110,6 @@ const AdminPanel = () => {
     const handleDeleteButton = (event) => {
         event.preventDefault()
         const changeID = changeInput
-        console.log(changeID);
         if(changeID != -1){
             let response = confirm("Willst du wirklich das Produkt "+changeID+" löschen?");
             if(response){
@@ -120,13 +119,13 @@ const AdminPanel = () => {
                     if(changeID+1 <= products.length && changeID-1 >= 0){
                         setCurrentProduct(changeID -1)
                         setChangeInput(changeID -1)
-                        document.getElementById("chooseProduct").value = changeID -1
+            //            document.getElementById("chooseProduct").value = changeID -1
                     }else if(changeID-1 >= 0){
                         setCurrentProduct(changeID-1)
                         setChangeInput(changeID-1)
-                        document.getElementById("chooseProduct").value = changeID-1
+                  //      document.getElementById("chooseProduct").value = changeID-1
                     }else if(changeID-1 == -1){
-                        setCurrentProduct(products[0].id)
+                        setCurrentProduct(products[0].id-1)
                     }
                 setData(newData);
             }
@@ -164,7 +163,6 @@ const AdminPanel = () => {
     }
 
     useEffect(() => {
-        console.log(changeInput);
     },[data,changeInput])
 
     return (
@@ -173,7 +171,7 @@ const AdminPanel = () => {
             <form>
             <h2>PRODUKT ERSTELLEN, ÄNDERN ODER ENTFERNEN</h2>
                 <article className="createProduct">
-                        <select onChange={handleChange} name="" id="chooseProduct">
+                        <select value={changeInput} onChange={handleChange} name="" id="chooseProduct">
                             <option value={-1} key={-1}>NEUES PRODUKT ERSTELLEN</option>
                             {[...data.products].map((product,index) => {
                                 return <option value={index} key={index}>{product.title}</option>

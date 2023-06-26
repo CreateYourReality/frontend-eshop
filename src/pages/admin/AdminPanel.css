@@ -34,7 +34,7 @@
 
 .adminSection .createProduct input[type="text"],
 .adminSection .createProduct input[type="number"]{
-    width: 80%;
+    width: 70%;
 }
 
 .rangeDiv{
@@ -77,7 +77,7 @@
 .createProduct div{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -114,4 +114,5 @@
 
 .adminBtnDiv{
     margin-top: 10px;
+    justify-content: space-around;
 }
