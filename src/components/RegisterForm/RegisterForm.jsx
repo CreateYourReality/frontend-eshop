@@ -11,12 +11,6 @@ const RegisterForm = ({setLogin}) => {
    
         setLogin(true)
     }
-    useEffect(() => {
-        console.log(test);
-        setTest(prev => !prev)
-        console.log(test);
-
-    },[localStorage])
     return ( 
         <>
             <form onSubmit={() => {}}>
@@ -41,11 +35,11 @@ const RegisterForm = ({setLogin}) => {
                     <input autoComplete="on" type="password"value={input.password} onChange={(e) => setInput({...input,[e.target.name]:e.target.value})} name="password" id="password" placeholder="Password" required/>
                 </div>
                 <div>
-                <button className="example"onClick={handleSubmit}>Register</button>
+                <button type="submit" className="example" onClick={handleSubmit}>Register</button>
                 </div>
                 <div className="buttonBox">
                     <p>Schon ein Account?</p>
-                    <button className="example"onClick={() => setLogin(true)}>Log in</button>
+                    <button className="example" type="button" onClick={() => setLogin(true)}>Log in</button>
                 </div>
             </form>
         </>

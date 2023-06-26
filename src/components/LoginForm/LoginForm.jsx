@@ -15,7 +15,7 @@ const LoginForm = ({users, setUsers, setLogin}) => {
         const loggedusers =  JSON.parse(localStorage.getItem("users") || "[]")
         loggedusers?
         setUsers(prev => {
-            console.log(loggedusers);
+            
             const loggedusersArray = [...prev];
             const hasUserIndex = loggedusersArray.findIndex(item => item.username === loggedusers.username||item.email === loggedusers.email);
 
