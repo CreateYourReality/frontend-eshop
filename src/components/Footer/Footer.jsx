@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./Footer.css";
 import ShapeSvg from "../svgComponents/shape/ShapeSvg";
-import SearchSvg from "../svgComponents/Search/SearchSvg";
+import SearchSvg from "../svgComponents/search/SearchSvg";
 import BagSvg from "../svgComponents/bag/BagSvg";
 import HeartSvg from "../svgComponents/heart/HeartSvg";
 import { useContext } from "react";
