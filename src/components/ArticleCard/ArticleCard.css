@@ -167,7 +167,26 @@
 	opacity: 75%;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
+	.articleCard h3 {
+		font-size: 1rem;
+		line-height: 1.6rem;
+		margin-bottom: 3px;
+	}
+
+	.articleCard h2 {
+		font-size: 1.2rem;
+		line-height: 1.8rem;
+		margin-bottom: 2px;
+	}
+
+	.articleCard figcaption p {
+		font-size: 0.8rem;
+		line-height: 1.4rem;
+	}
+}
+
+@media screen and (min-width: 992px) {
 	.articleCard h3 {
 		font-size: 1rem;
 		line-height: 1.6rem;

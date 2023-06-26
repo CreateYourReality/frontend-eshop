@@ -20,8 +20,30 @@
 	transform: scale(0.98);
 	box-shadow: 3px 2px 22px 1px var(--blue);
 }
+tr {
+	padding: 0;
+}
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
+	.example {
+		font-size: 1.4rem;
+		line-height: 2rem;
+		padding: 0.8rem;
+	}
+}
+tr {
+	padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.example {
+		font-size: 1.4rem;
+		line-height: 2rem;
+		padding: 0.8rem;
+	}
+}
+
+@media screen and (min-width: 992px) {
 	.example {
 		font-size: 1.4rem;
 		line-height: 2rem;

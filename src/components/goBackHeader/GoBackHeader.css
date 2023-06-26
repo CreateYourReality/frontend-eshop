@@ -11,6 +11,7 @@
 	position: absolute;
 	top: 0;
 	bottom: 0;
+	cursor: pointer;
 }
 .go-back-header .head-text-container p {
 	font-family: "Poppins-Medium", Arial, Helvetica, sans-serif;

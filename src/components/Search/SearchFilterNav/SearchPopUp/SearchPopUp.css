@@ -58,7 +58,29 @@
   display: none;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
+  .popup {
+    padding: 0 16px;
+  }
+  .popup .container h2 {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+  .popup .container .checkbox {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    padding: 6px 12px;
+  }
+  .popup .wrapper {
+    margin-left: 8px;
+    gap: 3px;
+  }
+  .article-wrapper {
+    height: calc(100% - 180px);
+  }
+}
+
+@media screen and (min-width: 992px) {
   .popup {
     padding: 0 16px;
   }
