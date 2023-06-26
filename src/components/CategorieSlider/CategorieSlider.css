@@ -35,7 +35,23 @@
   line-height: 1.8rem;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
+  .CategorieSlider {
+    gap: 15px;
+  }
+
+  .ProductListHome h3 {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+
+  .viewAll {
+    font-size: 1rem;
+    line-height: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
   .CategorieSlider {
     gap: 15px;
   }

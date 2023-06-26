@@ -11,6 +11,11 @@
 	background: none;
 	width: 10vw;
 	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+
+.add-to-fav-btn:active {
+	transform: scale(0.9);
 }
 
 .add-to-fav-svg {

@@ -1,24 +1,52 @@
 .example {
-  width: 100%;
-  border: none;
-  color: white;
-  padding: 1rem;
-  border-radius: 12px;
-  background: var(--blue, #364fd4);
-  color: #fff;
-  text-align: center;
-  /* Body 1 */
-  font-size: 1.6rem;
-  font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  line-height: 2.4rem;
-  letter-spacing: 0.01rem;
+	width: 100%;
+	border: none;
+	color: white;
+	padding: 1rem;
+	border-radius: 12px;
+	background: var(--blue, #364fd4);
+	color: #fff;
+	text-align: center;
+	/* Body 1 */
+	font-size: 1.6rem;
+	font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+	font-weight: 600;
+	line-height: 2.4rem;
+	letter-spacing: 0.01rem;
+	transition: 0.3s ease-in-out;
 }
 
-@media screen and (min-width: 1440px) {
-  .example {
-    font-size: 1.4rem;
-    line-height: 2rem;
-    padding: 0.8rem;
-  }
+.example:active {
+	transform: scale(0.98);
+	box-shadow: 3px 2px 22px 1px var(--blue);
+}
+tr {
+	padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.example {
+		font-size: 1.4rem;
+		line-height: 2rem;
+		padding: 0.8rem;
+	}
+}
+tr {
+	padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.example {
+		font-size: 1.4rem;
+		line-height: 2rem;
+		padding: 0.8rem;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.example {
+		font-size: 1.4rem;
+		line-height: 2rem;
+		padding: 0.8rem;
+	}
 }

@@ -13,7 +13,13 @@ const AdminPanel = () => {
     const [stockInput, setStockInput] = useState(1)
     const [categoryInput, setCategoryInput] = useState("")
     const [brandInput, setBrandInput] = useState("")
-    const [deleteInput, setDeleteInput] = useState("")
+
+    const [changeInput, setChangeInput] = useState("")
+    const [changeTitle, setChangeTitle] = useState("")
+    const [changePrice, setChangePrice] = useState("")
+    const [changeRating, setChangeRating] = useState("")
+    const [changeDescription, setChangeDescription] = useState("")
+    const [changeImage, setChangeImage] = useState("")
 
     let generatedID = data.products.length <= 40 ? 40 : data.products.length; //hardcoden? oder einmalig am anfang length speichern.
     const imgPath = `../src/assets/FakeShop/images/default.png`
@@ -65,17 +71,55 @@ const AdminPanel = () => {
         setBrandInput(event.target.value)
     }
 
-    const handleDelete = (event) => {
+    const handleChange = (event) => {
+        event.preventDefault();     
+        const changeID = event.target.value;                           
+        setChangeInput(changeID);
+        setChangeTitle(data.products[changeID].title);
+        setChangePrice(data.products[changeID].price);
+        setChangeDescription(data.products[changeID].description);
+        setChangeRating(data.products[changeID].rating);
+    }
+
+    const handleChangeTitle = (event) => {
         event.preventDefault();
-        setDeleteInput(event.target.value);
+        setChangeImage(data.products[changeInput].image)
+        setChangeTitle(event.target.value);
+    }
+    const handleChangePrice = (event) => {
+        event.preventDefault();
+        setChangePrice(event.target.value);
+    }
+    const handleChangeRating = (event) => {
+        event.preventDefault();
+        setChangeRating(event.target.value);
+    }
+    const handleChangeDescription = (event) => {
+        event.preventDefault();
+        setChangeDescription(event.target.value);
     }
 
     const handleDeleteButton = (event) => {
         event.preventDefault();
-        const products = [...data.products];
-        products.splice(deleteInput, 1);
-        const newData = {products}
-        setData(newData);
+        if(changeInput != ""){
+            let response = confirm("Willst du wirklich das Produkt löschen?");
+            if(response){
+                const products = [...data.products];
+                products.splice(changeInput, 1);
+                const newData = {products}
+                setData(newData);
+            }  
+        }
+    }
+
+    const changeFields = (event) => {
+        event.preventDefault();
+        if(changeInput != ""){
+            data.products[changeInput].title = changeTitle;
+            data.products[changeInput].price = changePrice;
+            data.products[changeInput].rating = changeRating;
+            data.products[changeInput].description = changeDescription;
+        }
     }
 
     const addNewProduct = (event) => {
@@ -92,12 +136,14 @@ const AdminPanel = () => {
 
     useEffect(() => {
 
-    },[data])
+    },[data,changeImage])
 
     return (
     <>
         <section className="adminSection">
             <form onSubmit={addNewProduct}>
+            <h2>NEUES PRODUKT ERSTELLEN</h2>
+                <article className="addProduct">    
                 <label htmlFor="title">Title: 
                     <input required name="title" type="text" onChange={handleTitle} />
                 </label>
@@ -119,22 +165,46 @@ const AdminPanel = () => {
                 <label htmlFor=""> category: 
                     <input required type="text" onChange={handleCategory} />
                 </label>
-              
                 <input type="submit" value="ADD NEW PRODUCT"/>
+                </article>
+                <article className="createProduct">
+                    <h2>PRODUKT ÄNDERN ODER ENTFERNEN</h2>
+                        <select onChange={handleChange} name="" id="">
+                            <option key={-1}>NONE</option>
+                            {[...data.products].map((product,index) => {
+                                return <option value={index} key={index}>{product.title}</option>
+                            })}
+                        </select>
+                            <>
+                                {console.log(changeImage)}
+                                <img src={changeImage} alt="" />
+                                <h3>ARTIKEL ID {changeInput}</h3>
+                                <label htmlFor=""> TITLE: 
+                                    <input onChange={handleChangeTitle} value={changeTitle} type="text" />
+                                </label>
+                                <label htmlFor="">PRICE: 
+                                    <input onChange={handleChangePrice} value={changePrice} type="text" />
+                                </label>
+                                <label htmlFor="">RATING: 
+                                    <input onChange={handleChangeRating} value={changeRating} min={0.1} max={5.0} step={0.1} type="range" />
+                                    {changeRating}
+                                </label>
+                                <label htmlFor="">DESCRIPTION:
+                                    <textarea onChange={handleChangeDescription} value={changeDescription}/>
+                                </label>
 
-                <hr />
-
-                <label htmlFor="">DELETE
-                    <select onChange={handleDelete} name="" id="">
-                        <option key={-1}>NONE</option>
-
-                        {[...data.products].map((product,index) => {
-                          return <option value={index} key={index}>{product.title}</option>
-                        })}
-                    </select>
-
-                        <button onClick={handleDeleteButton}>DELETE</button>
-                </label>
+                            
+                                {data.products[0].category}
+                                {data.products[0].brand}
+                                {data.products[0].stock}
+                                
+                            </>
+                        
+                            <div>
+                                <button onClick={handleDeleteButton}>DELETE</button>
+                                <button onClick={changeFields}>CHANGE</button>
+                            </div>
+                </article>
             </form>
         </section>
         <Footer/>
