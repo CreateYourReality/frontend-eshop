@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { dataContext, shoppingcartContext } from "../../context/Context";
+import { dataContext, shoppingcartContext, userContext, usersContext } from "../../context/Context";
 import Footer from "../../components/Footer/Footer";
 import GoBackHeader from "../../components/goBackHeader/GoBackHeader";
 import ArticleCard from "../../components/ArticleCard/ArticleCard";
@@ -9,9 +9,30 @@ import './Shoppingcart.css'
 import SelectSortType from "../../components/SelectSortType/SelectSortType"
 
 const Shoppingcart = () => {
-	const { shoppingcart, setShoppingcart } = useContext(shoppingcartContext);
     const [summe, setSumme] = useState(0)
     const [text, setText] = useState("")
+
+	const {users, setUsers} = useContext(usersContext)
+    const { user, setUser } = useContext(userContext)
+    const { shoppingcart, setShoppingcart } = useContext(shoppingcartContext);
+
+
+    useEffect(() => {
+        user?setShoppingcart(user[0].cart):shoppingcart.length === 0?setShoppingcart([]):null
+    }, [])
+    
+	const setUserItem = () => {
+		if (user) {
+            console.log(user);
+			const newUsers = users.map(item => item.username === user[0].username && item.email === user[0].email?{...item, cart: shoppingcart}:item)
+
+			const updateUser = user.map(item => item.username === user[0].username && item.email === user[0].email?{...item, cart: shoppingcart}:item)
+			setUsers(newUsers)
+			setUser(updateUser)
+		}
+	}
+
+
 
     const removeProduct = (i) => {
         setShoppingcart(prev => {
@@ -53,8 +74,8 @@ const Shoppingcart = () => {
         shoppingcart?.forEach(item => {
             sum += item.product.price * item.counter
         });
-
         setSumme(sum)
+        setUserItem()
     }, [shoppingcart])
 
     return ( 

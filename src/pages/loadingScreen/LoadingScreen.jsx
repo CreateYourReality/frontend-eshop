@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { loadingContext, dataContext } from "../../context/Context";
+import { loadingContext, dataContext, usersContext } from "../../context/Context";
 import ShoppingBag from "../../assets/svg/ShoppingBag";
 import "./LoadingScreen.css";
 import EshopFont from "../../assets/svg/EshopFont";
@@ -7,6 +7,13 @@ import EshopFont from "../../assets/svg/EshopFont";
 const LoadingScreen = () => {
 	const { setData } = useContext(dataContext);
 	const { setLoading } = useContext(loadingContext);
+	const { setUsers } = useContext(usersContext);
+
+	useEffect(() => {
+        fetch("../src/assets/FakeShop/users.json")
+        .then(res => res.json())
+        .then(userData => setUsers(userData))
+    }, [])
 
 	useEffect(() => {
 		//const url = "http://feuerwerkankreativitaet.biz/data.json";
@@ -18,7 +25,6 @@ const LoadingScreen = () => {
 				setData(data);
 			});
 	}, []);
-
 	const DeactivateLoading = () => {
 		setTimeout(stopLoading, 2500);
 	};

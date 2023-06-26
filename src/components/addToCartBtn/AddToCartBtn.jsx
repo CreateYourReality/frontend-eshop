@@ -1,15 +1,29 @@
 import "./AddToCartBtn.css";
-import AddToFav from "../../assets/svg/AddToFav";
-import { useParams } from "react-router-dom";
-import { useContext } from "react";
-import { dataContext, shoppingcartContext } from "../../context/Context";
-import RemoveFav from "../../assets/svg/RemoveFav";
+import { useContext, useEffect, useState } from "react";
+import { dataContext, shoppingcartContext, userContext, usersContext } from "../../context/Context";
 
 const AddToCartBtn = ({selectedProduct, counter}) => {
-	const params = useParams();
+	const {users, setUsers} = useContext(usersContext)
+    const { user, setUser } = useContext(userContext)
 
-	const { data, setData } = useContext(dataContext);
+	const setUserItem = () => {
+		if (user) {
+			
+			const newUsers = users.map(item => item.username === user[0].username && item.email === user[0].email?{...item, cart: shoppingcart}:item)
+
+			const updateUser = user.map(item => item.username === user[0].username && item.email === user[0].email?{...item, cart: shoppingcart}:item)
+
+			setUsers(newUsers)
+			setUser(updateUser)
+		}
+	}
 	const { shoppingcart, setShoppingcart } = useContext(shoppingcartContext);
+
+	useEffect(() => {setUserItem()},[shoppingcart])
+	useEffect(() => {
+        shoppingcart.length === 0?setShoppingcart([]):null
+    }, [])
+	
 	const isInsideCart = shoppingcart.some(item => item.product.id === selectedProduct.id&&item.counter === counter)
 	const hasSameCount = shoppingcart.some(item => item.product.id === selectedProduct.id&&item.counter !== counter)
 
@@ -27,6 +41,7 @@ const AddToCartBtn = ({selectedProduct, counter}) => {
 			});
 		}
 	};
+	
 	
 	return (
 		<>

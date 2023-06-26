@@ -1,10 +1,10 @@
-{
-   "users": [
+[
         {
             "firstname": "Gast",
             "lastname": "",
-            "id": 0, "Username": "Gast",
-            "E-Mail": "",
+            "id": 0, 
+            "username": "Gast",
+            "email": "",
             "password": "",
             "birthday": 0,
             "cart": [],
@@ -13,9 +13,9 @@
         {
             "firstname": "Max",
             "lastname": "Mustermann",
-            "id": 0,
-            "Username": "Mäxchen Musti",
-            "E-Mail": "maxmustermann@maxmustermann.de",
+            "id": 1,
+            "username": "Mäxchen Musti",
+            "email": "maxmustermann@maxmustermann.de",
             "password": "maxmueller123",
             "birthday": 0,
             "cart": [],
@@ -24,14 +24,12 @@
         {
             "firstname": "Admin",
             "lastname": "",
-            "id": 0,
-            "Username": "Admin",
-            "E-Mail": "admin@admin.de",
+            "id": 2,
+            "username": "Admin",
+            "email": "admin@admin.de",
             "password": "admin123",
             "birthday": 0,
             "cart": [],
             "fav": []
         }
-    
-   ]  
-}
+]  

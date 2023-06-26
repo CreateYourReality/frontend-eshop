@@ -11,7 +11,8 @@ import {
 	filterContext,
 	favoritesContext,
 	shoppingcartContext,
-	userContext
+	userContext,
+	usersContext
 } from "./context/Context";
 import Onboarding from "./pages/Onboarding/Onboarding";
 import Favorites from "./pages/Favorites/Favorites";
@@ -22,14 +23,17 @@ import Login from "./pages/Login/Login";
 function App() {
 	const [loading, setLoading] = useState(true);
 	const [data, setData] = useState([]);
-	const [user, setUser] = useState([])
+	const [user, setUser] = useState()
+	const [users, setUsers] = useState([])
 	const [filter, setFilter] = useState([[], [], []]);
 	const [favorites, setFavorites] = useState([]);
 	const [shoppingcart, setShoppingcart] = useState([])
 
+	
 	return (
 		<>
 			<>
+			<usersContext.Provider value={{users, setUsers}}>
 			<userContext.Provider value={{ user, setUser }}>
 				<loadingContext.Provider value={{ loading, setLoading }}>
 					<dataContext.Provider value={{ data, setData }}>
@@ -80,6 +84,7 @@ function App() {
 					</dataContext.Provider>
 				</loadingContext.Provider>
 			</userContext.Provider>
+			</usersContext.Provider>
 			</>
 		</>
 	);
