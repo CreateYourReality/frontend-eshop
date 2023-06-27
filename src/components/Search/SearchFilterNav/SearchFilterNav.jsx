@@ -5,11 +5,12 @@ import SearchPopUp from "./SearchPopUp/SearchPopUp";
 
 const SearchFilterNav = () => {
     const [open, setOpen] = useState(false)
+    
     return ( 
         <>
-            <nav>
+            <nav >
                 <img onClick={() => setOpen(true)} src={navIcon} alt="navicon"/> 
-                {open?<SearchPopUp setOpen={setOpen}/>:<></>}
+                <SearchPopUp open={open} setOpen={setOpen}/>
             </nav>
         </>
      );

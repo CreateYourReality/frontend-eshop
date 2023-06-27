@@ -6,7 +6,7 @@ import CheckBox from "../../../inputs/CheckBox/CheckBox";
 import "./SearchPopUp.css";
 import GoBackHeader from "../../../goBackHeader/GoBackHeader";
 
-const SearchPopUp = ({ setOpen }) => {
+const SearchPopUp = ({open ,setOpen}) => {
 	const { filter, setFilter } = useContext(filterContext);
 	const [myFilters, setMyFilters] = useState();
 	const { data } = useContext(dataContext);
@@ -28,8 +28,8 @@ const SearchPopUp = ({ setOpen }) => {
 
 	return (
 		<>
-			<section className='popup'>
-				<GoBackHeader isMenu={true} setOpen={setOpen} text='Filters' />
+			<section className={open?'popup visible':'popup'}>
+				<GoBackHeader isMenu={true} open={open} setOpen={setOpen} text='Filters' />
 				<div className='article-wrapper'>
 					<article className='container'>
 						<h2>Categorie</h2>
