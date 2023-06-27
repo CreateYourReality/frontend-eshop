@@ -134,138 +134,98 @@
 	margin-bottom: 18px;
 }
 
-@media screen and (min-width: 768px) {
-	.header {
-		padding-top: 30px;
-		padding-bottom: 12px;
-	}
-
-	.title-div h2 {
-		font-size: 1.8rem;
-		line-height: 2.6rem;
-	}
-
-	.detail-sec article {
-		margin-bottom: 40px;
+@media (min-width: 768px) {
+	.img-wrapper {
+		max-width: 50%;
 	}
 
 	.detail-sec .img-wrapper {
-		min-height: 280px;
+		margin-bottom: 0;
+	}
+
+	.detail-sec article {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: auto;
+		padding: 15px;
+		margin-top: 4vh;
+		max-width: 50%;
 		margin-bottom: 20px;
 	}
 
-	.button-div button {
-		width: 20px;
-		height: 20px;
+	.add-to-fav {
+		width: 50px;
 	}
 
-	.counter-state {
-		font-size: 1.4rem;
-		line-height: 2rem;
+	.button-div {
+		display: flex;
 	}
 
-	.rating {
-		margin-bottom: 9px;
+	.price-div {
+		justify-content: flex-start;
+		flex-direction: column;
+		align-items: flex-start;
 	}
 
-	.star {
-		width: 14px;
-		height: 14px;
-		margin-right: 3px;
+	.description-div {
+		max-width: 25%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: auto;
 	}
 
-	.product-rating {
-		font-size: 1.1rem;
-		line-height: 1.6rem;
+	.example {
+		max-width: 25%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: auto;
 	}
 
-	.price-div p {
-		font-size: 1.2rem;
-		line-height: 1.8rem;
+	.infoBox {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		max-width: 50%;
 	}
 
-	.price-div h3 {
-		font-size: 2.4rem;
-		line-height: 3.4rem;
-	}
-
-	.description-div p {
-		font-size: 1.2rem;
-		line-height: 1.8rem;
-		margin-bottom: 20px;
-	}
-
-	.description-div h4 {
-		font-size: 1.8rem;
-		line-height: 2rem;
-		margin-bottom: 14px;
+	.title-div {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 2px;
+		flex-direction: column;
 	}
 }
-
-@media screen and (min-width: 992px) {
-	.header {
-		padding-top: 30px;
-		padding-bottom: 12px;
+@media (min-width: 992px) {
+	.img-wrapper {
+		max-width: 50%;
 	}
 
-	.title-div h2 {
-		font-size: 1.8rem;
-		line-height: 2.6rem;
+	.add-to-fav {
+		width: 50px;
 	}
 
-	.detail-sec article {
-		margin-bottom: 40px;
+	.price-div {
+		justify-content: flex-start;
 	}
 
-	.detail-sec .img-wrapper {
-		min-height: 280px;
-		margin-bottom: 20px;
+	.description-div {
+		max-width: 25%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: auto;
+		flex-direction: column;
 	}
 
-	.button-div button {
-		width: 20px;
-		height: 20px;
-	}
-
-	.counter-state {
-		font-size: 1.4rem;
-		line-height: 2rem;
-	}
-
-	.rating {
-		margin-bottom: 9px;
-	}
-
-	.star {
-		width: 14px;
-		height: 14px;
-		margin-right: 3px;
-	}
-
-	.product-rating {
-		font-size: 1.1rem;
-		line-height: 1.6rem;
-	}
-
-	.price-div p {
-		font-size: 1.2rem;
-		line-height: 1.8rem;
-	}
-
-	.price-div h3 {
-		font-size: 2.4rem;
-		line-height: 3.4rem;
-	}
-
-	.description-div p {
-		font-size: 1.2rem;
-		line-height: 1.8rem;
-		margin-bottom: 20px;
-	}
-
-	.description-div h4 {
-		font-size: 1.8rem;
-		line-height: 2rem;
-		margin-bottom: 14px;
+	.example {
+		max-width: 25%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: auto;
 	}
 }
