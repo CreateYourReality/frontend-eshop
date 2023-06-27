@@ -24,7 +24,7 @@ const Home = () => {
 		));
 
         user?setShoppingcart(user[0].cart):shoppingcart.length === 0?setShoppingcart([]):null
-        user?setFavorites(user[0].fav):favoriteProducts.length === 0?setFavorites([]):null
+        user?setFavorites(user[0].fav):favorites.length === 0?setFavorites([]):null
         setFilter([[],[],[]])
     }, [])
 
