@@ -1,14 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { usersContext } from "../../context/Context";
 const RegisterForm = ({setLogin}) => {
     
-    const [input, setInput] = useState({username: "", email: "", currentpassword: "", firstname:"", lastname: "", password: "", fav: [], cart: []})
+    const {users, setUsers} = useContext(usersContext)
+    const [input, setInput] = useState({username: "", email: "", firstname:"", lastname: "", password: "", fav: [], cart: []})
     
-    const [test, setTest] = useState(true)
     const handleSubmit = (e) => {
         e.preventDefault();
         localStorage.setItem("user", JSON.stringify(input))
+        setUsers(prev => {
+            const loggedusersArray = [...prev];
+            const hasUserIndex = loggedusersArray.findIndex(item => item.username === input.username||item.email === input.email);
 
-   
+            hasUserIndex!==-1?null:loggedusersArray.push(input)
+            console.log(loggedusersArray);
+            return loggedusersArray
+        })
         setLogin(true)
     }
     return ( 
