@@ -5,44 +5,50 @@ import { userContext } from "../../context/Context";
 const LoginForm = ({ users, setUsers, setLogin }) => {
 	const [input, setInput] = useState({ username: "", password: "" });
 	const { user, setUser } = useContext(userContext);
+	const [usersCopy, setUsersCopy] = useState([...users]);
 	const navigate = useNavigate();
 
-const LoginForm = ({users, setUsers, setLogin}) => {
-    const [input, setInput] = useState({username: "", password: ""})
-    const { user, setUser } =useContext(userContext)
-    const [usersCopy, setUsersCopy] = useState([...users])
-    const navigate = useNavigate()
+	const handleLogin = e => {
+		e.preventDefault();
 
+		const loggedusers = JSON.parse(localStorage.getItem("user") || "[]");
+		if (loggedusers) {
+			setUsers(prev => {
+				const loggedusersArray = [...prev];
+				const hasUserIndex = loggedusersArray.findIndex(
+					item =>
+						item.username === loggedusers.username ||
+						item.email === loggedusers.email,
+				);
 
-    const handleLogin = (e) => {
-        e.preventDefault();
-        
-        const loggedusers =  JSON.parse(localStorage.getItem("user") || "[]")
-        if(loggedusers) {
-        setUsers(prev => {
-            
-            const loggedusersArray = [...prev];
-            const hasUserIndex = loggedusersArray.findIndex(item => item.username === loggedusers.username||item.email === loggedusers.email);
+				hasUserIndex !== -1 ? null : loggedusersArray.push(loggedusers);
 
-            hasUserIndex!==-1?null:loggedusersArray.push(loggedusers)
-            
-            return loggedusersArray
-        })
-        setUsersCopy(prev => {
-            const loggedusersArray = [...prev];
-            const hasUserIndex = loggedusersArray.findIndex(item => item.username === loggedusers.username||item.email === loggedusers.email);
+				return loggedusersArray;
+			});
+			setUsersCopy(prev => {
+				const loggedusersArray = [...prev];
+				const hasUserIndex = loggedusersArray.findIndex(
+					item =>
+						item.username === loggedusers.username ||
+						item.email === loggedusers.email,
+				);
 
-            hasUserIndex!==-1?null:loggedusersArray.push(loggedusers)
-            
-            return loggedusersArray
-        })
-        }
-        
-        
-        const checkUsername = usersCopy.some(item => input.username === item.email||input.username === item.username)
-        const checkPassword =  usersCopy.some(item => input.password === item.password)
+				hasUserIndex !== -1 ? null : loggedusersArray.push(loggedusers);
 
-        const weFilter = usersCopy.filter((item) => item.username === input.username||item.email === input.username)
+				return loggedusersArray;
+			});
+		}
+
+		const checkUsername = usersCopy.some(
+			item => input.username === item.email || input.username === item.username,
+		);
+		const checkPassword = usersCopy.some(
+			item => input.password === item.password,
+		);
+
+		const weFilter = usersCopy.filter(
+			item => item.username === input.username || item.email === input.username,
+		);
 
 		checkUsername && checkPassword
 			? setUser(weFilter)
