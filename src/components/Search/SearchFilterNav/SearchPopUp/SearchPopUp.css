@@ -15,6 +15,7 @@
 	padding: 0 22px;
 	min-height: 100vh;
 	min-height: 100svh;
+	cursor: auto;
 	/* animation: popupAnimation 0.8s ease-in-out forwards; */
 	/* animation-delay: 0.1s; */
 	opacity: 1;
