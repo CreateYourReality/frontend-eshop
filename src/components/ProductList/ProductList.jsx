@@ -47,7 +47,7 @@ const ProductList = ({searchtext}) => {
                 case "0 - 20 €": return a.price>=0&&a.price<=20;break;
                 case "20 - 50 €": return a.price>=20&&a.price<=50 ;break;
                 case "50 - 100 €": return a.price>=50&&a.price<=100 ;break;
-                case "über 100 €": return a.price>=100 ;break;
+                case "over 100 €": return a.price>=100 ;break;
                 default : return null;
             }
         }
