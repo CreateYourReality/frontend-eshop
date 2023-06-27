@@ -6,7 +6,7 @@ import CheckBox from "../../../inputs/CheckBox/CheckBox";
 import "./SearchPopUp.css";
 import GoBackHeader from "../../../goBackHeader/GoBackHeader";
 
-const SearchPopUp = ({open ,setOpen}) => {
+const SearchPopUp = ({ open, setOpen }) => {
 	const { filter, setFilter } = useContext(filterContext);
 	const [myFilters, setMyFilters] = useState();
 	const { data } = useContext(dataContext);
@@ -20,7 +20,7 @@ const SearchPopUp = ({open ,setOpen}) => {
 	const categoriesArray = [
 		...new Set(data.products.map((item, i) => item.category)),
 	];
-	const priceArray = ["0 - 20 €", "20 - 50 €", "50 - 100 €", "über 100 €"];
+	const priceArray = ["0 - 20 €", "20 - 50 €", "50 - 100 €", "over 100 €"];
 	const brandsArray = [...new Set(data.products.map((item, i) => item.brand))];
 	useEffect(() => {
 		setMyFilters([categories, price, brands]);
@@ -28,8 +28,13 @@ const SearchPopUp = ({open ,setOpen}) => {
 
 	return (
 		<>
-			<section className={open?'popup visible':'popup'}>
-				<GoBackHeader isMenu={true} open={open} setOpen={setOpen} text='Filters' />
+			<section className={open ? "popup visible" : "popup"}>
+				<GoBackHeader
+					isMenu={true}
+					open={open}
+					setOpen={setOpen}
+					text='Filters'
+				/>
 				<div className='article-wrapper'>
 					<article className='container'>
 						<h2>Categorie</h2>
