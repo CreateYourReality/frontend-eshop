@@ -11,9 +11,20 @@
             "fav": []
         },
         {
+            "firstname": "Rudolf",
+            "lastname": "Mustermann",
+            "id": 2,
+            "username": "Super Apfelstudelcode",
+            "email": "supercode@supercode.de",
+            "password": "1234",
+            "birthday": 0,
+            "cart": [],
+            "fav": []
+        },
+        {
             "firstname": "Admin",
             "lastname": "",
-            "id": 2,
+            "id": 3,
             "username": "Admin",
             "email": "admin@admin.de",
             "password": "admin123",

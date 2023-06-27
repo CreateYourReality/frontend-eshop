@@ -7,32 +7,42 @@ const LoginForm = ({ users, setUsers, setLogin }) => {
 	const { user, setUser } = useContext(userContext);
 	const navigate = useNavigate();
 
-	const handleLogin = e => {
-		e.preventDefault();
+const LoginForm = ({users, setUsers, setLogin}) => {
+    const [input, setInput] = useState({username: "", password: ""})
+    const { user, setUser } =useContext(userContext)
+    const [usersCopy, setUsersCopy] = useState([...users])
+    const navigate = useNavigate()
 
-		const loggedusers = JSON.parse(localStorage.getItem("users") || "[]");
-		loggedusers
-			? setUsers(prev => {
-					const loggedusersArray = [...prev];
-					const hasUserIndex = loggedusersArray.findIndex(
-						item =>
-							item.username === loggedusers.username ||
-							item.email === loggedusers.email,
-					);
 
-					hasUserIndex !== -1 ? null : loggedusersArray.push(loggedusers);
-					return loggedusersArray;
-			  })
-			: null;
+    const handleLogin = (e) => {
+        e.preventDefault();
+        console.log(JSON.parse(localStorage.getItem("user")|| "[]"));
+        const loggedusers =  JSON.parse(localStorage.getItem("user") || "[]")
+        if(loggedusers) {
+        setUsers(prev => {
+            
+            const loggedusersArray = [...prev];
+            const hasUserIndex = loggedusersArray.findIndex(item => item.username === loggedusers.username||item.email === loggedusers.email);
 
-		const checkUsername = users.some(
-			item => input.username === item.email || input.username === item.username,
-		);
-		const checkPassword = users.some(item => input.password === item.password);
+            hasUserIndex!==-1?null:loggedusersArray.push(loggedusers)
+            console.log(loggedusersArray);
+            return loggedusersArray
+        })
+        setUsersCopy(prev => {
+            const loggedusersArray = [...prev];
+            const hasUserIndex = loggedusersArray.findIndex(item => item.username === loggedusers.username||item.email === loggedusers.email);
 
-		const weFilter = users.filter(
-			item => item.username === input.username || item.email === input.username,
-		);
+            hasUserIndex!==-1?null:loggedusersArray.push(loggedusers)
+            console.log(loggedusersArray);
+            return loggedusersArray
+        })
+        }
+        
+        console.log(usersCopy);
+        const checkUsername = usersCopy.some(item => input.username === item.email||input.username === item.username)
+        const checkPassword =  usersCopy.some(item => input.password === item.password)
+
+        const weFilter = usersCopy.filter((item) => item.username === input.username||item.email === input.username)
 
 		checkUsername && checkPassword
 			? setUser(weFilter)
