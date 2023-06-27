@@ -3,11 +3,12 @@ import { dataContext } from "../../context/Context";
 import Footer from "../../components/Footer/Footer";
 import "./AdminPanel.css"
 import star from "../../assets/img/Star.png";
+import defaultPng from "../../assets/img/apfelstudel.png"
 
 
 const AdminPanel = () => {
     const {data,setData} = useContext(dataContext)
-    const defaultImage = `../src/assets/FakeShop/images/default.png`
+    const defaultImage = defaultPng
     let generatedID = data.products.length <= 40 ? 40 : data.products.length; //hardcoden? oder einmalig am anfang length speichern.
 
     const defaultFields = [
