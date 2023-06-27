@@ -28,6 +28,10 @@
 	font-weight: 500;
 	line-height: 1.8rem;
 }
+.resize {
+	width: 32px;
+	height: 32px;
+}
 
 @media screen and (min-width: 1440px) {
 	.categorieContainer .img-wrapper {

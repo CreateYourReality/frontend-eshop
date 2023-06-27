@@ -94,7 +94,7 @@ const ProductList = ({searchtext}) => {
     },[sortBy, searchtext, filter])
 
 
-    const maxArticleHome = 8;
+    const maxArticleHome = 6;
     let i = 0;
 
     return ( 

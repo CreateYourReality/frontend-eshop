@@ -163,7 +163,7 @@ const AdminPanel = () => {
 
     return (
     <>
-        <section className="adminSection">
+        <main className="adminSection">
             <form>
             <h2>ADMIN PANEL</h2>
             <h2>CREATE, UPDATE OR DELETE PRODUCT</h2>
@@ -211,7 +211,7 @@ const AdminPanel = () => {
                             </div>
                 </article>
             </form>
-        </section>
+        </main>
         <Footer/>
     </>
       );
