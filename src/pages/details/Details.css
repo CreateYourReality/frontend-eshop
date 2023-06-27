@@ -41,6 +41,7 @@
 	background-color: var(--gray-07, #f0f3f8);
 	min-height: 310px;
 	margin-bottom: 24px;
+	padding: 30px;
 }
 .detail-sec .img-wrapper img {
 	height: 100%;
@@ -150,6 +151,7 @@
 
 	.detail-sec .img-wrapper {
 		margin-bottom: 0;
+		padding: 0;
 	}
 
 	.detail-sec article {
@@ -197,9 +199,11 @@
 	.infoBox {
 		display: flex;
 		flex-direction: column;
-		max-width: 50%;
+		min-width: 50%;
 		align-items: center;
 		margin: auto;
+		min-height: 25vh;
+		justify-content: space-between;
 	}
 
 	.title-div {
