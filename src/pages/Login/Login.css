@@ -38,6 +38,7 @@
 .loginForm form div:last-of-type {
 	gap: 5px;
 }
+
 .buttonBox {
 	display: flex;
 	flex-direction: column;
@@ -66,4 +67,16 @@
 .loginForm input:focus {
 	outline: none;
 	border: 2px solid var(--blue);
+}
+
+@media (min-width: 768px) {
+	.loginForm form div {
+		justify-content: center;
+	}
+	.loginForm input {
+		width: 35%;
+	}
+	.loginFormSection .example {
+		max-width: 35%;
+	}
 }
