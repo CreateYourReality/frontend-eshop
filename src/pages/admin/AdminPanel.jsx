@@ -211,7 +211,7 @@ const AdminPanel = () => {
                             </div>
                 </article>
             </form>
-        </section>
+        </main>
         <Footer/>
     </>
       );
