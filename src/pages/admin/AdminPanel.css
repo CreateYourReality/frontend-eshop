@@ -36,8 +36,8 @@
     align-items: center;
     box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.10);
     border-radius: 15px;
-    padding: 10px;
     margin: auto;
+    padding: 5px;
 }
 
 .adminSection .createProduct{
@@ -144,4 +144,19 @@
 .adminBtnDiv{
     margin-top: 10px;
     justify-content: space-around;
+}
+
+@media (min-width: 768px) {
+    .adminSection form{
+        padding: 30px;
+    }
+}
+
+@media (min-width: 992px) {
+        .productImg{
+            min-width: 20vw;
+            max-width: 20vw;
+            min-height: 20vw;
+            max-height: 20vw;
+    }
 }
