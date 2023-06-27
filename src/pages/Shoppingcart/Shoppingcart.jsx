@@ -121,7 +121,7 @@ const Shoppingcart = () => {
 					) : (
 					<div className="productList">
 						{shoppingcart?.sort(getSortType(sortBy)).filter(text.length!==0?filterByText:(a) => a).map((products, index) => (
-								<article className='articleCard'>
+								<article key={index} className='articleCard'>
                                     <div onClick={() => removeProduct(index)} className="svg-wrapper">
                                         <DeleteSvg />
                                     </div>
