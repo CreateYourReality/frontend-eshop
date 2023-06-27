@@ -77,7 +77,7 @@ const LoginForm = ({ users, setUsers, setLogin }) => {
 					</button>
 				</div>
 				<div className='buttonBox'>
-					<p>"Not registered yet?"</p>
+					<p>Not registered yet?</p>
 					<button
 						className='example'
 						type='button'
