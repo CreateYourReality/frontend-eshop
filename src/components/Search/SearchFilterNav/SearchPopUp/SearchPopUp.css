@@ -64,13 +64,6 @@
 	transition: 0.3s ease-in-out;
 }
 
-.popup .container .checkbox:hover {
-	background-color: var(--blue);
-	color: var(--white);
-	transform: scale(1.05);
-	box-shadow: 1px 1px 5px var(--gray-04);
-}
-
 .popup .wrapper {
 	display: flex;
 	flex-wrap: wrap;
@@ -114,6 +107,12 @@
 }
 
 @media screen and (min-width: 992px) {
+	.popup .container .checkbox:hover {
+		background-color: var(--blue);
+		color: var(--white);
+		transform: scale(1.05);
+		box-shadow: 1px 1px 5px var(--gray-04);
+	}
 	.popup {
 		padding: 0 16px;
 	}
